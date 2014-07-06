@@ -18,6 +18,17 @@
 	min-height: 100%;
 }
 
+.jumbotron.jumbotron-bg2 {
+	background: url("http://infominer.infomine.com/files/2011/05/istock_000008330653medium.jpg") no-repeat center top fixed;
+}
+
+/*http://infominer.infomine.com/files/2011/05/istock_000008330653medium.jpg*/
+
+.jumbotron.jumbotron-bg1 {
+	background: url("http://mahfa.org/wp-content/uploads/2013/03/hd-header.jpg") no-repeat center top fixed;
+}
+
+
 article > section.panel-body h5 {
 	line-height: 1.6;
 }
@@ -40,6 +51,39 @@ section h4 {
 	padding-bottom: 15px;
 }
 
+.frontend footer#footer {
+	position: relative;
+	background-color: #222;
+	padding-top: 25px;
+	color: #555;
+}
+
+.frontend footer#footer .legal a {
+	color: #555;
+	font-weight: 600;
+	font-size: 11px;
+}
+
+.frontend footer#footer p.copyright a {
+	color: #0092b6 !important;
+	margin: 0 2px;
+}
+
+.frontend footer#footer p.copyright {
+	font-weight: 600;
+	word-spacing: 1px;
+	font-size: 11px;
+}
+.frontend footer#footer h3,
+.frontend footer#footer h4,
+.frontend footer#footer h5 {
+	color: #666;
+}
+
+.jumbotron .table-layout p {
+	color: #aaa !important;
+}
+
 .pt60 {
 	padding-top: 60px;
 }
@@ -55,5 +99,6 @@ section h4 {
 .fsize13 { 
 	font-size: 13px;
 }
+
 
 
