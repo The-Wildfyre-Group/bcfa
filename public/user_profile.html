@@ -67,286 +67,25 @@ LAST UPDATE: 23/06/2014
             <div class="navbar-toolbar clearfix">
                 <!-- START Left nav -->
                 <ul class="nav navbar-nav navbar-left">
-                    <!-- Sidebar shrink -->
-                    <li class="hidden-xs hidden-sm">
-                        <a href="javascript:void(0);" class="sidebar-minimize" data-toggle="minimize" title="Minimize sidebar">
-                            <span class="meta">
-                                <span class="icon"></span>
-                            </span>
-                        </a>
-                    </li>
-                    <!--/ Sidebar shrink -->
-
-                    <!-- Offcanvas left: This menu will take position at the top of template header (mobile only). Make sure that only #header have the `position: relative`, or it may cause unwanted behavior -->
-                    <li class="navbar-main hidden-lg hidden-md hidden-sm">
-                        <a href="javascript:void(0);" data-toggle="sidebar" data-direction="ltr" rel="tooltip" title="Menu sidebar">
-                            <span class="meta">
-                                <span class="icon"><i class="ico-paragraph-justify3"></i></span>
-                            </span>
-                        </a>
-                    </li>
-                    <!--/ Offcanvas left -->
-
-                    <!-- Message dropdown -->
-                    <li class="dropdown custom" id="header-dd-message">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="meta">
-                                <span class="icon"><i class="ico-bubbles3"></i></span>
-                            </span>
-                        </a>
-
-                        <!-- mustache template: used for update the `.media-list` requested from server-side -->
-                        <script class="mustache-template" type="x-tmpl-mustache">
-                        
-                            {{#data}}
-                            <a href="page-message-rich.html" class="media border-dotted new">
-                                <span class="pull-left">
-                                    <img src="../image/avatar/{{picture}}" class="media-object img-circle" alt="">
-                                </span>
-                                <span class="media-body">
-                                    <span class="media-heading">{{name}}</span>
-                                    <span class="media-text ellipsis nm">{{text}}</span>
-
-                                    {{#meta.star}}<span class="media-meta"><i class="ico-star3"></i></span>{{/meta.star}}
-                                    {{#meta.reply}}<span class="media-meta"><i class="ico-reply"></i></span>{{/meta.reply}}
-                                    {{#meta.attachment}}<span class="media-meta"><i class="ico-attachment"></i></span>{{/meta.attachment}}
-                                    <span class="media-meta pull-right">{{meta.time}}</span>
-                                </span>
-                            </a>
-                            {{/data}}
-                        
-                        </script>
-                        <!--/ mustache template -->
-
-                        <!-- Dropdown menu -->
-                        <div class="dropdown-menu" role="menu">
-                            <div class="dropdown-header">
-                                <span class="title">Messages <span class="count"></span></span>
-                                <span class="option text-right"><a href="javascript:void(0);">New message</a></span>
-                            </div>
-                            <div class="dropdown-body slimscroll">
-                                <!-- Search form -->
-                                <form class="form-horizontal" action="">
-                                    <div class="has-icon">
-                                        <input type="text" class="form-control" placeholder="Search message...">
-                                        <i class="ico-search form-control-icon"></i>
-                                    </div>
-                                </form>
-                                <!--/ Search form -->
-
-                                <!-- indicator -->
-                                <div class="indicator inline"><span class="spinner"></span></div>
-                                <!--/ indicator -->
-
-                                <!-- Message list -->
-                                <div class="media-list">
-                                    <a href="page-message-rich.html" class="media border-dotted read">
-                                        <span class="pull-left">
-                                            <img src="image/avatar/avatar1.jpg" class="media-object img-circle" alt="">
-                                        </span>
-                                        <span class="media-body">
-                                            <span class="media-heading">Martina Poole</span>
-                                            <span class="media-text ellipsis nm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</span>
-                                            <!-- meta icon -->
-                                            <span class="media-meta"><i class="ico-reply"></i></span>
-                                            <span class="media-meta"><i class="ico-attachment"></i></span>
-                                            <span class="media-meta pull-right">20m</span>
-                                            <!--/ meta icon -->
-                                        </span>
-                                    </a>
-
-                                    <a href="page-message-rich.html" class="media border-dotted read">
-                                        <span class="pull-left">
-                                            <img src="../image/avatar/avatar3.jpg" class="media-object img-circle" alt="">
-                                        </span>
-                                        <span class="media-body">
-                                            <span class="media-heading">Walter Foster</span>
-                                            <span class="media-text ellipsis nm">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
-                                            <!-- meta icon -->
-                                            <span class="media-meta"><i class="ico-attachment"></i></span>
-                                            <span class="media-meta pull-right">21h</span>
-                                            <!--/ meta icon -->
-                                        </span>
-                                    </a>
-
-                                    <a href="page-message-rich.html" class="media border-dotted read">
-                                        <span class="pull-left">
-                                            <img src="../image/avatar/avatar4.jpg" class="media-object img-circle" alt="">
-                                        </span>
-                                        <span class="media-body">
-                                            <span class="media-heading">Callum Santosr</span>
-                                            <span class="media-text ellipsis nm">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
-                                            <!-- meta icon -->
-                                            <span class="media-meta pull-right">1d</span>
-                                            <!--/ meta icon -->
-                                        </span>
-                                    </a>
-
-                                    <a href="page-message-rich.html" class="media border-dotted read">
-                                        <span class="pull-left">
-                                            <img src="../image/avatar/avatar5.jpg" class="media-object img-circle" alt="">
-                                        </span>
-                                        <span class="media-body">
-                                            <span class="media-heading">Noelani Blevins</span>
-                                            <span class="media-text ellipsis nm">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis.</span>
-                                            <!-- meta icon -->
-                                            <span class="media-meta pull-right">2d</span>
-                                            <!--/ meta icon -->
-                                        </span>
-                                    </a>
-
-                                    <a href="page-message-rich.html" class="media border-dotted read">
-                                        <span class="pull-left">
-                                            <img src="../image/avatar/avatar8.jpg" class="media-object img-circle" alt="">
-                                        </span>
-                                        <span class="media-body">
-                                            <span class="media-heading">Carl Johnson</span>
-                                            <span class="media-text ellipsis nm">Curabitur consequat, lectus sit amet luctus vulputate, nisi sem</span>
-                                            <!-- meta icon -->
-                                            <span class="media-meta"><i class="ico-attachment"></i></span>
-                                            <span class="media-meta pull-right">2w</span>
-                                            <!--/ meta icon -->
-                                        </span>
-                                    </a>
-
-                                    <a href="page-message-rich.html" class="media border-dotted read">
-                                        <span class="pull-left">
-                                            <img src="../image/avatar/avatar9.jpg" class="media-object img-circle" alt="">
-                                        </span>
-                                        <span class="media-body">
-                                            <span class="media-heading">Tamara Moon</span>
-                                            <span class="media-text ellipsis nm">Aliquam ultrices iaculis odio. Nam interdum enim non nisi. Aenean eget metus.</span>
-                                            <!-- meta icon -->
-                                            <span class="media-meta"><i class="ico-attachment"></i></span>
-                                            <span class="media-meta pull-right">2w</span>
-                                            <!--/ meta icon -->
-                                        </span>
-                                    </a>
-                                </div>
-                                <!--/ Message list -->
-                            </div>
-                        </div>
-                        <!--/ Dropdown menu -->
-                    </li>
-                    <!--/ Message dropdown -->
-
-                    <!-- Notification dropdown -->
-                    <li class="dropdown custom" id="header-dd-notification">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="meta">
-                                <span class="icon"><i class="ico-bell"></i></span>
-                                <span class="hasnotification hasnotification-danger"></span>
-                            </span>
-                        </a>
-
-                        <!-- mustache template: used for update the `.media-list` requested from server-side -->
-                        <script class="mustache-template" type="x-tmpl-mustache">
-                        
-                            {{#data}}
-                            <a href="javascript:void(0);" class="media border-dotted new">
-                                <span class="media-object pull-left">
-                                    <i class="{{icon}}"></i>
-                                </span>
-                                <span class="media-body">
-                                    <span class="media-text">{{{text}}}</span>
-                                    <span class="media-meta pull-right">{{meta.time}}</span>
-                                </span>
-                            </a>
-                            {{/data}}
-                        
-                        </script>
-                        <!--/ mustache template -->
-
-                        <!-- Dropdown menu -->
-                        <div class="dropdown-menu" role="menu">
-                            <div class="dropdown-header">
-                                <span class="title">Notification <span class="count"></span></span>
-                                <span class="option text-right"><a href="javascript:void(0);">Clear all</a></span>
-                            </div>
-                            <div class="dropdown-body slimscroll">
-                                <!-- indicator -->
-                                <div class="indicator inline"><span class="spinner"></span></div>
-                                <!--/ indicator -->
-
-                                <!-- Message list -->
-                                <div class="media-list">
-                                    <a href="javascript:void(0);" class="media read border-dotted">
-                                        <span class="media-object pull-left">
-                                            <i class="ico-basket2 bgcolor-info"></i>
-                                        </span>
-                                        <span class="media-body">
-                                            <span class="media-text">Duis aute irure dolor in <span class="text-primary semibold">reprehenderit</span> in voluptate.</span>
-                                            <!-- meta icon -->
-                                            <span class="media-meta pull-right">2d</span>
-                                            <!--/ meta icon -->
-                                        </span>
-                                    </a>
-
-                                    <a href="javascript:void(0);" class="media read border-dotted">
-                                        <span class="media-object pull-left">
-                                            <i class="ico-call-incoming"></i>
-                                        </span>
-                                        <span class="media-body">
-                                            <span class="media-text">Aliquip ex ea commodo consequat.</span>
-                                            <!-- meta icon -->
-                                            <span class="media-meta pull-right">1w</span>
-                                            <!--/ meta icon -->
-                                        </span>
-                                    </a>
-
-                                    <a href="javascript:void(0);" class="media read border-dotted">
-                                        <span class="media-object pull-left">
-                                            <i class="ico-alarm2"></i>
-                                        </span>
-                                        <span class="media-body">
-                                            <span class="media-text">Excepteur sint <span class="text-primary semibold">occaecat</span> cupidatat non.</span>
-                                            <!-- meta icon -->
-                                            <span class="media-meta pull-right">12w</span>
-                                            <!--/ meta icon -->
-                                        </span>
-                                    </a>
-
-                                    <a href="javascript:void(0);" class="media read border-dotted">
-                                        <span class="media-object pull-left">
-                                            <i class="ico-checkmark3 bgcolor-success"></i>
-                                        </span>
-                                        <span class="media-body">
-                                            <span class="media-text">Lorem ipsum dolor sit amet, <span class="text-primary semibold">consectetur</span> adipisicing elit.</span>
-                                            <!-- meta icon -->
-                                            <span class="media-meta pull-right">14w</span>
-                                            <!--/ meta icon -->
-                                        </span>
-                                    </a>
-                                </div>
-                                <!--/ Message list -->
-                            </div>
-                        </div>
-                        <!--/ Dropdown menu -->
-                    </li>
-                    <!--/ Notification dropdown -->
-
-                    <!-- Search form toggler  -->
+                    
+                    <!-- Directory Link  -->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="dropdown" data-target="#dropdown-form">
+                        <a href="javascript:void(0);">
                             <span class="meta">
-                                <span class="icon"><i class="ico-search"></i></span>
+                                <span class="icon"><i class="ico-users"></i></span>
                             </span>
                         </a>
                     </li>
-                    <!--/ Search form toggler -->
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="meta">
+                                <span class="icon"><i class="ico-users"></i></span>
+                            </span>
+                        </a>
+                    </li>
+                    <!--/ Directory Link -->
                 </ul>
                 <!--/ END Left nav -->
-
-                <!-- START navbar form -->
-                <div class="navbar-form navbar-left dropdown" id="dropdown-form">
-                    <form action="" role="search">
-                        <div class="has-icon">
-                            <input type="text" class="form-control" placeholder="Search application...">
-                            <i class="ico-search form-control-icon"></i>
-                        </div>
-                    </form>
-                </div>
-                <!-- START navbar form -->
 
                 <!-- START Right nav -->
                 <ul class="nav navbar-nav navbar-right">
@@ -354,8 +93,8 @@ LAST UPDATE: 23/06/2014
                     <li class="dropdown profile">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="meta">
-                                <span class="avatar"><img src="image/avatar/avatar7.jpg" class="img-circle" alt="" /></span>
-                                <span class="text hidden-xs hidden-sm pl5">Erich Reyes</span>
+                                <span class="avatar"><img src="https://media.licdn.com/media/p/2/000/0c3/146/0c64997.jpg" class="img-circle" alt="" /></span>
+                                <span class="text hidden-xs hidden-sm pl5">Cordis Stanfield</span>
                                 <span class="caret"></span>
                             </span>
                         </a>
@@ -384,16 +123,6 @@ LAST UPDATE: 23/06/2014
                         </ul>
                     </li>
                     <!-- Profile dropdown -->
-
-                    <!-- Offcanvas right This menu will take position at the top of template header (mobile only). Make sure that only #header have the `position: relative`, or it may cause unwanted behavior -->
-                    <li class="navbar-main">
-                        <a href="javascript:void(0);" data-toggle="sidebar" data-direction="rtl" rel="tooltip" title="Feed / contact sidebar">
-                            <span class="meta">
-                                <span class="icon"><i class="ico-users3"></i></span>
-                            </span>
-                        </a>
-                    </li>
-                    <!--/ Offcanvas right -->
                 </ul>
                 <!--/ END Right nav -->
             </div>
@@ -408,685 +137,132 @@ LAST UPDATE: 23/06/2014
                 <!-- pattern + overlay -->
                 <div class="overlay pattern pattern10"></div>
                 <!--/ pattern + overlay -->
-                <div class="container" style="padding-top:8%;">
-                    <h1 class=" text-white text-center">Khadijah Coakley, CFA</h1>
-                    <h4 class="thin text-white text-center">Chief Investment Officer, Fidelity</h4>
-                    <div class="text-center pt15">
-                        <a href="javascript:void(0);" class="btn btn-primary">Connect</i></a>
-                        <a href="javascript:void(0);" class="btn btn-default">Send Message</i></a>
-                    </div>
-                </div>
+               
             </section>
             <!--/ END jumbotron -->
 
+
+
             <!-- START Template Container -->
             <div class="container">
+                
                 <div class="col-md-10 col-md-offset-1">
                     <!-- START Row -->
                     <div class="row">
-                    <!-- Left Side / Top side -->
-                    <div class="col-md-9">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <!-- image post -->
-                                <div class="panel">
-                                    <!-- User info -->
-                                    <ul class="list-table pa15">
-                                        <li class="text-left" style="width:60px;">
-                                            <img class="img-circle" src="../image/avatar/avatar9.jpg" alt="" width="50px" height="50px">
-                                        </li>
+                        <!-- Left Side / Top side -->
+                        <div class="col-md-8">
+                            <div class="widget panel">
+                                <!-- panel body -->
+                                <div class="panel-body p20">
+                                    <ul class="list-unstyled">
                                         <li class="text-left">
-                                            <p class="ellipsis nm"><span class="semibold">Tamara Moon</span> created an event</p>
-                                            <p class="text-muted nm">3 Hour ago</p>
-                                        </li>
-                                        <li class="text-right" style="width:60px;">
-                                            <div class="btn-group">
-                                            <button type="button" class="btn btn-link dropdown-toggle text-default" data-toggle="dropdown"><i class="ico-menu2"></i></button>
-                                                <ul class="dropdown-menu dropdown-menu-right">
-                                                    <li><a href="javascript:void(0);">Report</a></li>
-                                                    <li><a href="javascript:void(0);">Setting</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="javascript:void(0);" class="text-danger">Delete post</a></li>
-                                                </ul>
-                                            </div>
+                                            <br/>
+                                            <h3 class="semibold mb0">Bio</h3>
+                                            <hr/>
+                                            <p>Xavier Capital Management, LLC is a registered investment adviser specializing in fixed income portfolios. The firm, headquartered in Largo, Maryland, was founded in 2006 with the goal of delivering attractive risk-adjusted returns to client portfolios by integrating the highest industry standards on a smaller, more flexible platform.</p>
+
+                                            <p>Xavier Capital is dedicated to providing clients with the highest level of service and building strong, value-added relationships over time. We market our products and services to various types of institutional clients including public funds, corporations, endowments and foundations, hospitals, religious organizations and Taft-Hartley plans. Xavier Capital is 100% employee owned.</p>
                                         </li>
                                     </ul>
-                                    <!--/ User info -->
-                                    <hr class="nm"><!-- horizontal line -->
-                                    <!-- Panel body -->
-                                    <div class="panel-body">
-                                        <h5 class="semibold mb5 mt0 text-success">Birthday party at my house</h5>
-                                        <p class="nm ellipsis">
-                                            <a href="javascript:void(0);" class="text-default"><i class="ico-calendar3"></i> March 19th, 2013</a>&nbsp;
-                                            <a href="javascript:void(0);" class="text-default"><i class="ico-location"></i> New York</a>
-                                        </p>
-                                    </div>
-                                    <!--/ Panel body -->
-                                    <hr class="nm"><!-- horizontal line -->
-                                    <!-- Thumbnail -->
-                                    <div class="thumbnail thumbnail-album">
-                                        <!-- media -->
-                                        <div class="media">
-                                            <!-- indicator -->
-                                            <div class="indicator"><span class="spinner"></span></div>
-                                            <!--/ indicator -->
-                                            <img data-toggle="unveil" src="../image/background/400x250/placeholder.jpg" data-src="http://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=400x200&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&sensor=false" alt="Cover" width="100%">
-                                        </div>
-                                        <!--/ media -->
-                                        <!-- meta -->
-                                        <ul class="meta">
-                                            <li>
-                                                <div class="img-group img-group-stack">
-                                                    <img src="../image/avatar/avatar7.jpg" class="img-circle" alt="">
-                                                    <img src="../image/avatar/avatar2.jpg" class="img-circle" alt="">
-                                                    <span class="more img-circle">2+</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <p class="nm"><a href="javascript:void(0);" class="semibold">4 people</a> is going</p>
-                                            </li>
-                                        </ul>
-                                        <!--/ meta -->
-                                    </div>
-                                    <!--/ Thumbnail -->
-                                    <hr class="nm"><!-- horizontal line -->
-                                    <!-- Toolbar -->
-                                    <div class="panel-toolbar-wrapper">
-                                        <div class="panel-toolbar">
-                                            <a href="javascript:void(0);" class="semibold text-default">Going</a>
-                                            <span class="text-muted mr5 ml5">&#8226;</span>
-                                            <a href="javascript:void(0);" class="semibold text-default">Maybe</a>
-                                            <span class="text-muted mr5 ml5">&#8226;</span>
-                                            <a href="javascript:void(0);" class="semibold text-default">Share</a>
-                                        </div>
-                                    </div>
-                                    <!--/ Toolbar -->
-                                    <!-- Comment box -->
-                                    <textarea class="form-control form-control-minimal" rows="3" placeholder="Write your comment"></textarea>
-                                    <!--/ Comment box -->
-                                </div>
-                                <!--/ image post -->
+                                    
+                                    <br>
 
-                                <!-- Text/status post -->
-                                <div class="panel">
-                                    <!-- User info -->
-                                    <ul class="list-table pa15">
-                                        <li class="text-left" style="width:60px;">
-                                            <img class="img-circle" src="../image/avatar/avatar9.jpg" alt="" width="50px" height="50px">
-                                        </li>
-                                        <li class="text-left">
-                                            <p class="ellipsis nm"><span class="semibold">Tamara Moon</span> wrote</p>
-                                            <p class="text-muted nm">4 Hour ago</p>
-                                        </li>
-                                        <li class="text-right" style="width:60px;">
-                                            <div class="btn-group">
-                                            <button type="button" class="btn btn-link dropdown-toggle text-default" data-toggle="dropdown"><i class="ico-menu2"></i></button>
-                                                <ul class="dropdown-menu dropdown-menu-right">
-                                                    <li><a href="javascript:void(0);">Report</a></li>
-                                                    <li><a href="javascript:void(0);">Setting</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="javascript:void(0);" class="text-danger">Delete post</a></li>
-                                                </ul>
+                                    <!-- table -->
+                                    <table class="table border-bottom-thick">
+                                        <thead></thead>
+                                        <tbody>
+                                            <tr>
+                                                <td width="50%"><h5 class="bold">Alma Mater</h5></td>
+                                                <td>
+                                                    <h5 class="nm"><a href="#">Howard University</a></h5>
+                                                    <h5 class="nm"><a href="#">University of Tennessee</a></h5>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%"><h5 class="bold">Degree(s)</h5></td>
+                                                <td>
+                                                    <h5 class="nm"><a href="#">BBA, Finance</a></h5>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%"><h5 class="bold">CFA Holder Since</h5></td>
+                                                <td>
+                                                    <h5 class="nm"><a href="#">2012</a></h5>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%"><h5 class="bold">Industries</h5></td>
+                                                <td>
+                                                    <h5 class="nm"><a href="#">Tech, Finance</a></h5>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%">
+                                                    <h5 class="bold">Skills</h5>
+                                                    <h6 class="text-muted pr15">Cordis has demonstrated professional experience in these areas.</h5>
+                                                </td>
+                                                <td>
+                                                    <h5 class="nm"><a href="#">Ruby on rails development, asset management, product development, web development, capital raising, risk management, compliance</a></h5>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%"><h5 class="bold">Interests</h5></td>
+                                                <td>
+                                                    <h5 class="nm"><a href="#">Finance, Real Estate, Running</a></h5>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--/ table -->
+
+                                    <div class="well well-minimal nm">
+                                        <!-- START Twitter Widget -->
+                                        <div class="panel-toolbar-wrapper transparent">
+                                            <div class="panel-toolbar">
+                                                <h4 class="semibold nm text-linkedin"><i class="bg-white ico-linkedin mr5"></i>LinkedIn</h4>
                                             </div>
-                                        </li>
-                                    </ul>
-                                    <!--/ User info -->
-                                    <hr class="nm"><!-- horizontal line -->
-                                    <div class="panel-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    </div>
-                                    <hr class="nm"><!-- horizontal line -->
-                                    <!-- Toolbar -->
-                                    <div class="panel-toolbar-wrapper">
-                                        <div class="panel-toolbar">
-                                            <a href="javascript:void(0);" class="semibold text-default">Comment</a>
-                                            <span class="text-muted mr5 ml5">&#8226;</span>
-                                            <a href="javascript:void(0);" class="semibold text-default">Love this</a>
-                                            <span class="text-muted mr5 ml5">&#8226;</span>
-                                            <a href="javascript:void(0);" class="semibold text-default">Share</a>
+                                            <div class="panel-toolbar text-right">
+                                                <a class="btn ws1 btn-primary bs-888 linkedin-blue" href="https://www.linkedin.com/profile/view?id=61383975&authType=NAME_SEARCH&authToken=ZG3w&locale=en_US&srchid=44154641404630328160&srchindex=1&srchtotal=1&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A44154641404630328160%2CVSRPtargetId%3A61383975%2CVSRPcmpt%3Aprimary" target="_blank">
+                                                    <h5 class="nm">View LinkedIn Profile</h5>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <!--/ Toolbar -->
-                                    <div class="panel-body slimscroll np" style="height:200px;">
-                                        <!-- Comment list -->
-                                        <ul class="media-list">
-                                            <li class="media border-dotted">
-                                                <a href="javascript:void(0);" class="pull-left">
-                                                    <img src="../image/avatar/avatar6.jpg" class="media-object img-circle" alt="">
-                                                </a>
-                                                <div class="media-body">
-                                                    <p class="media-heading">Arthur Abbott</p>
-                                                    <p class="media-text">Lorem ipsum dolor sit amet, consectetur.</p>
-                                                    <!-- meta icon -->
-                                                    <p class="media-meta pull-right">2m</p>
-                                                    <!--/ meta icon -->
-                                                </div>
-                                            </li>
-                                            <li class="media border-dotted">
-                                                <a href="javascript:void(0);" class="pull-left">
-                                                    <img src="../image/avatar/avatar1.jpg" class="media-object img-circle" alt="">
-                                                </a>
-                                                <div class="media-body">
-                                                    <p class="media-heading">Martina Poole</p>
-                                                    <p class="media-text">Lorem ipsum dolor sit amet, consectetur.</p>
-                                                    <!-- meta icon -->
-                                                    <p class="media-meta pull-right">20m</p>
-                                                    <!--/ meta icon -->
-                                                </div>
-                                            </li>
-                                            <li class="media border-dotted">
-                                                <a href="javascript:void(0);" class="pull-left">
-                                                    <img src="../image/avatar/avatar2.jpg" class="media-object img-circle" alt="">
-                                                </a>
-                                                <div class="media-body">
-                                                    <p class="media-heading">Elvis Christensen</p>
-                                                    <p class="media-text">Duis aute irure dolor in reprehenderit.</p>
-                                                    <!-- meta icon -->
-                                                    <p class="media-meta pull-right">5h</p>
-                                                    <!--/ meta icon -->
-                                                </div>
-                                            </li>
-                                            <li class="media border-dotted">
-                                                <a href="javascript:void(0);" class="pull-left">
-                                                    <img src="../image/avatar/avatar3.jpg" class="media-object img-circle" alt="">
-                                                </a>
-                                                <div class="media-body">
-                                                    <p class="media-heading">Walter Foster</p>
-                                                    <p class="media-text">Cum sociis natoque penatibus et.</p>
-                                                    <!-- meta icon -->
-                                                    <p class="media-meta pull-right">21h</p>
-                                                    <!--/ meta icon -->
-                                                </div>
-                                            </li>
-                                            <li class="media border-dotted">
-                                                <a href="javascript:void(0);" class="pull-left">
-                                                    <img src="../image/avatar/avatar4.jpg" class="media-object img-circle" alt="">
-                                                </a>
-                                                <div class="media-body">
-                                                    <p class="media-heading">Callum Santosr</p>
-                                                    <p class="media-text">Cum sociis natoque penatibus.</p>
-                                                    <!-- meta icon -->
-                                                    <p class="media-meta pull-right">1d</p>
-                                                    <!--/ meta icon -->
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <!--/ Comment list -->
-                                    </div>
-                                    <hr class="nm"><!-- horizontal line -->
-                                    <!-- Comment box -->
-                                    <textarea class="form-control form-control-minimal" rows="3" placeholder="Write your comment"></textarea>
-                                    <!--/ Comment box -->
+                                    <!--/ END Bio -->
                                 </div>
-                                <!--/ Text/status post -->
+                                <!--/ panel body -->
+                                <!-- panel ribbon -->
+                                <a href="javascript:void(0);" class="panel-ribbon panel-ribbon-primary"><i class="ico-info"></i></a>
+                                <!--/ panel ribbon -->
                             </div>
                         </div>
-                    </div>
-                    <!--/ Left Side / Top side -->
-
-                    <!-- Right Side / Bottom side -->
-                    <div class="col-md-3">
-                        <div class="panel panel-minimal nm">
-                            <!-- START Twitter Widget -->
-                            <div class="panel-toolbar-wrapper">
-                                <div class="panel-toolbar">
-                                    <h5 class="semibold nm text-info"><i class="ico-twitter mr5"></i>Twitter</h5>
-                                </div>
-                                <div class="panel-toolbar text-right">
-                                    <button class="btn btn-sm btn-default">Follow</button>
-                                </div>
+                        <!--/ Right side / bottom side -->
+                        <div class="col-md-4">
+                            <div class="text-left">
+                                <img class="img-circle img-bordered" src="https://media.licdn.com/media/p/2/000/0c3/146/0c64997.jpg" alt="" style="margin-top: -100px; z-index: 999; position: relative;" width="180px" height="180px">
                             </div>
-                            <div class="panel-body pt0 pb0">
-                                <ul class="list-table">
-                                    <li style="width:55px;">
-                                        <img class="img-circle" src="image/avatar/avatar9.jpg" alt="" width="45px" height="45px">
-                                    </li>
-                                    <li class="text-left">
-                                        <h5 class="semibold ellipsis">
-                                            Tamara Moon<br>
-                                            <small class="text-muted">@tmoon</small>
-                                        </h5>
-                                    </li>
-                                </ul>
+
+                            <!-- START Widget Panel -->
+
+                            <h3 class="text-left">Cordis M. Stanfield</h3>
+                            <h4 class="thin text-left">Co-Founder & Principal, Wildfyre</h4>
+                            <h5><i class="ico-map-marker mr5 text-teal"></i> Washington, DC</h5>
+                            <div class="pt15">
+                                <a href="javascript:void(0);" class="btn btn-primary">Connect</i></a>
+                                <a href="javascript:void(0);" class="btn btn-default">Send Message</i></a>
                             </div>
-                            <ul class="nav nav-justified mt15">
-                                <li class="text-center">
-                                    <h4 class="nm">12.5k</h4>
-                                    <p class="nm text-muted">Followers</p>
-                                </li>
-                                <li class="text-center">
-                                    <h4 class="nm">1853</h4>
-                                    <p class="nm text-muted">Following</p>
-                                </li>
-                                <li class="text-center">
-                                    <h4 class="nm">3451</h4>
-                                    <p class="nm text-muted">Tweets</p>
-                                </li>
-                            </ul>
-                            <!--/ END Twitter Widget -->
-
-                            <hr><!--horizontal line -->
-
-                            <!-- START Bio -->
-                            <div class="panel-toolbar-wrapper">
-                                <div class="panel-toolbar">
-                                    <h5 class="semibold nm text-info"><i class="ico-info2 mr5"></i>About</h5>
-                                </div>
-                                <div class="panel-toolbar text-right">
-                                    <button class="btn btn-sm btn-default"><i class="ico-pencil7"></i></button>
-                                </div>
-                            </div>
-                            <div class="panel-body pt0">
-                                <p class="semibold mb5">Bio</p>
-                                <ul class="list-unstyled mb10">
-                                    <li><i class="ico-briefcase text-muted mr5"></i> UI/UX Designer</li>
-                                    <li><i class="ico-graduation text-muted mr5"></i> Studied interface design</li>
-                                    <li><i class="ico-location text-muted mr5"></i> Lives in Sierra Leone</li>
-                                    <li><i class="ico-home4 text-muted mr5"></i> From Perth, Australia</li>
-                                </ul>
-                            </div>
-                            <!--/ END Bio -->
-
-                            <hr><!--horizontal line -->
-
-                            
                         </div>
+                        <!--/ END Row -->
                     </div>
-                    <!--/ Right side / bottom side -->
-                    </div>
-                    <!--/ END Row -->
                 </div>
-            </div>
-            <!--/ END Template Container -->
-
-            <!-- START To Top Scroller -->
-            <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
+                <!-- START To Top Scroller -->
+                <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
+            </div><!--/ END Template Container -->
             <!--/ END To Top Scroller -->
 
         </section>
-        <!--/ END Template Main -->
+            <!--/ END Template Main -->
 
-        <!-- START Template Sidebar (right) -->
-        <aside class="sidebar sidebar-right">
-            <!-- START Offcanvas -->
-            <div class="offcanvas-container" data-toggle="offcanvas" data-options='{"openerClass":"offcanvas-opener", "closerClass":"offcanvas-closer"}'>
-                <!-- START Wrapper -->
-                <div class="offcanvas-wrapper">
-                    <!-- Offcanvas Left -->
-                    <div class="offcanvas-left">
-                        <!-- Header -->
-                        <div class="header pl0 pr0">
-                            <ul class="list-table nm">
-                                <li style="width:50px;">
-                                    <a href="javascript:void(0);" class="btn btn-link text-default offcanvas-closer"><i class="ico-arrow-left6 fsize16"></i></a>
-                                </li>
-                                <li class="text-center">
-                                    <h5 class="semibold nm">Settings</h5>
-                                </li>
-                                <li style="width:50px;" class="text-right">
-                                    <a href="javascript:void(0);" class="btn btn-link text-default"><i class="ico-info22 fsize16"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--/ Header -->
-
-                        <!-- Content -->
-                        <div class="content slimscroll">
-                            <h5 class="heading">News Feed</h5>
-                            <ul class="topmenu">
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <span class="figure"><i class="ico-plus"></i></span>
-                                        <span class="text">Add &amp; Manage Source</span>
-                                        <span class="arrow"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <span class="figure"><i class="ico-google-plus"></i></span>
-                                        <span class="text">Google Reader</span>
-                                        <span class="arrow"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <span class="figure"><i class="ico-twitter2"></i></span>
-                                        <span class="text">Twitter Source</span>
-                                        <span class="arrow"></span>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <h5 class="heading">Friends</h5>
-                            <ul class="topmenu">
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <span class="figure"><i class="ico-search22"></i></span>
-                                        <span class="text">Find Friends</span>
-                                        <span class="arrow"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <span class="figure"><i class="ico-user-plus2"></i></span>
-                                        <span class="text">Add Friends</span>
-                                        <span class="arrow"></span>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <h5 class="heading">Account</h5>
-                            <ul class="topmenu">
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <span class="figure"><i class="ico-user2"></i></span>
-                                        <span class="text">Edit Account</span>
-                                        <span class="arrow"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <span class="figure"><i class="ico-envelop"></i></span>
-                                        <span class="text">Manage Subscription</span>
-                                        <span class="arrow"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <span class="figure"><i class="ico-location6"></i></span>
-                                        <span class="text">Location Service</span>
-                                        <span class="arrow"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <span class="figure"><i class="ico-switch"></i></span>
-                                        <span class="text">Logout</span>
-                                        <span class="arrow"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="text-danger">
-                                        <span class="figure"><i class="ico-minus-circle2"></i></span>
-                                        <span class="text">Deactivate</span>
-                                        <span class="arrow"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--/ Content -->
-                    </div>
-                    <!--/ Offcanvas Left -->
-
-                    <!-- Offcanvas Content -->
-                    <div class="offcanvas-content">
-                        <!-- Content -->
-                        <div class="content slimscroll">
-                            <!-- START profile -->
-                            <div class="panel nm">
-                    <!-- thumbnail -->
-                    <div class="thumbnail">
-                        <!-- media -->
-                        <div class="media">
-                            <!-- indicator -->
-                            <div class="indicator"><span class="spinner"></span></div>
-                            <!--/ indicator -->
-                            <img data-toggle="unveil" src="../image/background/400x250/placeholder.jpg" data-src="../image/background/400x250/background3.jpg" alt="Cover" width="100%">
-                        </div>
-                        <!--/ media -->
-                    </div>
-                    <!--/ thumbnail -->
-                </div>
-                <div class="panel-body text-center" style="margin-top:-55px;z-index:11">
-                    <img class="img-circle mb5" src="../image/avatar/avatar7.jpg" alt="" width="75">
-                    <h5 class="bold mt0 mb5">Erich Reyes</h5>
-                    <p>Administrator</p>
-                    <button type="button" class="btn btn-primary offcanvas-opener offcanvas-open-ltr"><i class="ico-settings"></i> Settings</button>
-                </div>
-                            <!--/ END profile -->
-
-                            <!-- START contact -->
-                            <div class="media-list media-list-contact">
-                    <h5 class="heading pa15 pb0">Family</h5>
-                    <a href="javascript:void(0);" class="media offcanvas-opener offcanvas-open-rtl">
-                        <span class="media-object pull-left">
-                            <img src="../image/avatar/avatar1.jpg" class="img-circle" alt="">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading"><span class="hasnotification hasnotification-success mr5"></span> Autumn Barker</span>
-                            <span class="media-meta ellipsis">Malaysia</span>
-                        </span>
-                    </a>
-                    <a href="javascript:void(0);" class="media offcanvas-opener offcanvas-open-rtl">
-                        <span class="media-object pull-left">
-                            <img src="../image/avatar/avatar2.jpg" class="img-circle" alt="">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading"><span class="hasnotification hasnotification-success mr5"></span> Giselle Horn</span>
-                            <span class="media-meta ellipsis">Bolivia</span>
-                        </span>
-                    </a>
-                    <a href="javascript:void(0);" class="media offcanvas-opener offcanvas-open-rtl">
-                        <span class="media-object pull-left">
-                            <img src="../image/avatar/avatar.png" class="img-circle" alt="">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading"><span class="hasnotification hasnotification-danger mr5"></span> Austin Shields</span>
-                            <span class="media-meta ellipsis">Timor-Leste</span>
-                        </span>
-                    </a>
-                    <a href="javascript:void(0);" class="media offcanvas-opener offcanvas-open-rtl">
-                        <span class="media-object pull-left">
-                            <img src="../image/avatar/avatar.png" class="img-circle" alt="">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading"><span class="hasnotification hasnotification-danger mr5"></span> Caryn Gibson</span>
-                            <span class="media-meta ellipsis">Libya</span>
-                        </span>
-                    </a>
-                    <a href="javascript:void(0);" class="media offcanvas-opener offcanvas-open-rtl">
-                        <span class="media-object pull-left">
-                            <img src="../image/avatar/avatar3.jpg" class="img-circle" alt="">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading"><span class="hasnotification hasnotification-success mr5"></span> Nash Evans</span>
-                            <span class="media-meta ellipsis">Honduras</span>
-                        </span>
-                    </a>
-
-                    <h5 class="heading pa15 pb0">Friends</h5>
-                    <a href="javascript:void(0);" class="media offcanvas-opener offcanvas-open-rtl">
-                        <span class="media-object pull-left">
-                            <img src="../image/avatar/avatar4.jpg" class="img-circle" alt="">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading"><span class="hasnotification hasnotification-default mr5"></span> Josiah Johnson</span>
-                            <span class="media-meta ellipsis">Belgium</span>
-                        </span>
-                    </a>
-                    <a href="javascript:void(0);" class="media offcanvas-opener offcanvas-open-rtl">
-                        <span class="media-object pull-left">
-                            <img src="../image/avatar/avatar.png" class="img-circle" alt="">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading"><span class="hasnotification hasnotification-default mr5"></span> Philip Hewitt</span>
-                            <span class="media-meta ellipsis">Bahrain</span>
-                        </span>
-                    </a>
-                    <a href="javascript:void(0);" class="media offcanvas-opener offcanvas-open-rtl">
-                        <span class="media-object pull-left">
-                            <img src="../image/avatar/avatar5.jpg" class="img-circle" alt="">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading"><span class="hasnotification hasnotification-default mr5"></span> Wilma Hunt</span>
-                            <span class="media-meta ellipsis">Dominica</span>
-                        </span>
-                    </a>
-                    <a href="javascript:void(0);" class="media offcanvas-opener offcanvas-open-rtl">
-                        <span class="media-object pull-left">
-                            <img src="../image/avatar/avatar6.jpg" class="img-circle" alt="">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading"><span class="hasnotification hasnotification-success mr5"></span> Noah Gill</span>
-                            <span class="media-meta ellipsis">Guatemala</span>
-                        </span>
-                    </a>
-
-                    <h5 class="heading pa15 pb0">Others</h5>
-                    <a href="javascript:void(0);" class="media offcanvas-opener offcanvas-open-rtl">
-                        <span class="media-object pull-left">
-                            <img src="../image/avatar/avatar8.jpg" class="img-circle" alt="">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading"><span class="hasnotification hasnotification-success mr5"></span> David Fisher</span>
-                            <span class="media-meta ellipsis">French Guiana</span>
-                        </span>
-                    </a>
-                    <a href="javascript:void(0);" class="media offcanvas-opener offcanvas-open-rtl">
-                        <span class="media-object pull-left">
-                            <img src="../image/avatar/avatar9.jpg" class="img-circle" alt="">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading"><span class="hasnotification hasnotification-success mr5"></span> Samantha Avery</span>
-                            <span class="media-meta ellipsis">Jersey</span>
-                        </span>
-                    </a>
-                    <a href="javascript:void(0);" class="media offcanvas-opener offcanvas-open-rtl">
-                        <span class="media-object pull-left">
-                            <img src="../image/avatar/avatar.png" class="img-circle" alt="">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading"><span class="hasnotification hasnotification-success mr5"></span> Madaline Medina</span>
-                            <span class="media-meta ellipsis">Finland</span>
-                        </span>
-                    </a>
-                </div>
-                            <!--/ END contact -->
-                        </div>
-                        <!--/ Content -->
-                    </div>
-                    <!--/ Offcanvas Content -->
-
-                    <!-- Offcanvas Right -->
-                    <div class="offcanvas-right has-footer">
-                        <!-- Header -->
-                        <div class="header pl0 pr0">
-                            <ul class="list-table nm">
-                                <li style="width:50px;">
-                                    <a href="javascript:void(0);" class="btn btn-link text-default offcanvas-closer"><i class="ico-arrow-left6 fsize16"></i></a>
-                                </li>
-                                <li class="text-center">
-                                    <h5 class="semibold nm">
-                                        <p class="nm">Autumn Barker</p>
-                                        <small>Last seen 02:21am</small>
-                                    </h5>
-                                </li>
-                                <li style="width:50px;" class="text-right">
-                                    <a href="javascript:void(0);" class="btn btn-link text-default"><i class="ico-info22 fsize16"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--/ Header -->
-
-                        <!-- Content -->
-                        <div class="content slimscroll">
-                            <!-- START chat -->
-                            <ul class="media-list media-list-bubble">
-                            <li class="media media-right">
-                                <a href="javascript:void(0);" class="media-object">
-                                    <img src="../image/avatar/avatar7.jpg" class="img-circle" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <p class="media-text">eros non enim commodo hendrerit.</p>
-                                    <span class="clearfix"></span>
-                                    <p class="media-text">Suspendisse dui.</p>
-                                    <span class="clearfix"></span>
-                                    <p class="media-text">eu nulla at</p>
-                                    <!-- meta -->
-                                    <span class="clearfix"></span><!-- important: clearing floated media text -->
-                                    <p class="media-meta">Sun, Mar 02</p>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <a href="javascript:void(0);" class="media-object">
-                                    <img src="../image/avatar/avatar6.jpg" class="img-circle" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <p class="media-text">Etiam laoreet, libero et tristique pellentesque, tellus sem mollis dui, in sodales elit erat.</p>
-                                    <span class="clearfix"></span>
-                                    <p class="media-text">faucibus ut, nulla. Cras eu tellus</p>
-                                    <!-- meta -->
-                                    <span class="clearfix"></span><!-- important: clearing floated media text -->
-                                    <p class="media-meta">Tue, Oct 01</p>
-                                </div>
-                            </li>
-                            <li class="media media-right">
-                                <a href="javascript:void(0);" class="media-object">
-                                    <img src="../image/avatar/avatar7.jpg" class="img-circle" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <p class="media-text">Duis a mi fringilla mi lacinia mattis. Integer</p>
-                                    <!-- meta -->
-                                    <span class="clearfix"></span><!-- important: clearing floated media text -->
-                                    <p class="media-meta">Fri, Sep 27</p>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <a href="javascript:void(0);" class="media-object">
-                                    <img src="../image/avatar/avatar6.jpg" class="img-circle" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <p class="media-text">Praesent interdum ligula eu enim. Etiam imperdiet dictum magna.</p>
-                                    <!-- meta -->
-                                    <span class="clearfix"></span><!-- important: clearing floated media text -->
-                                    <p class="media-meta">Wed, Aug 28</p>
-                                </div>
-                            </li>
-                            <li class="media media-right">
-                                <a href="javascript:void(0);" class="media-object">
-                                    <img src="../image/avatar/avatar7.jpg" class="img-circle" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <p class="media-text">Aliquam rutrum lorem ac risus. Morbi metus. Vivamus euismod urna.</p>
-                                    <!-- meta -->
-                                    <span class="clearfix"></span><!-- important: clearing floated media text -->
-                                    <p class="media-meta">Sat, Sep 27</p>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <a href="javascript:void(0);" class="media-object">
-                                    <img src="../image/avatar/avatar6.jpg" class="img-circle" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <p class="media-text">Vestibulum accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac</p>
-                                    <span class="clearfix"></span>
-                                    <p class="media-text">Nam porttitor scelerisque neque</p>
-                                    <!-- meta -->
-                                    <span class="clearfix"></span><!-- important: clearing floated media text -->
-                                    <p class="media-meta">Sun, Feb 22</p>
-                                </div>
-                            </li>
-                        </ul>
-                            <!--/ END chat -->
-                        </div>
-                        <!--/ Content -->
-
-                        <!-- Footer -->
-                        <div class="footer">
-                            <div class="has-icon">
-                                <input type="text" class="form-control" placeholder="Type message...">
-                                <i class="ico-paper-plane form-control-icon"></i>
-                            </div>
-                        </div>
-                        <!--/ Footer -->
-                    </div>
-                    <!--/ Offcanvas Right -->
-                </div>
-                <!--/ END Wrapper -->
-            </div>
-            <!--/ END Offcanvas -->
-        </aside>
-        <!--/ END Template Sidebar (right) -->
 
         <!-- START JAVASCRIPT SECTION (Load javascripts at bottom to reduce load time) -->
         <!-- Library script : mandatory -->
