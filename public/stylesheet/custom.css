@@ -14,7 +14,7 @@
 
  .jumbotron.jumbotron-bg7 {
 	background: url("http://i.huffpost.com/gen/1410042/thumbs/o-AFRICANAMERICAN-COUPLE-WITH-FINANCIAL-PLANNER-facebook.jpg") no-repeat center top fixed;
-	height: 400px;
+	height: 800px;
 	min-height: 100%;
 }
 
@@ -116,6 +116,10 @@ section h4 {
 
 .jumbotron.jumbotron-bg3 {
 	background: url("http://www.blackloveadvice.com/wp-content/uploads/2011/11/bigstock_Black_Business_Woman_Text_Mess_7014568.jpg") no-repeat center top fixed;
+}
+
+.jumbotron.jumbotron-bg6 {
+background: url("http://www.worldpropertychannel.com/news-assets/Stock-Purchase.jpg") no-repeat center bottom fixed;
 }
 
 	
