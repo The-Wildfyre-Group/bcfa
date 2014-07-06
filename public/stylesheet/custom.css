@@ -29,6 +29,7 @@
 }
 
 
+
 article > section.panel-body h5 {
 	line-height: 1.6;
 }
@@ -104,7 +105,7 @@ section h4 {
 	margin-right: 5px;
 }
 
-html.backend .jumbotron {
+.jumbotron {
 	position: relative;
 	padding: 0;
 	background: url(http://www.primium.fi/images/finance1.jpg) no-repeat center top fixed;
@@ -112,6 +113,11 @@ html.backend .jumbotron {
 	background-size: cover;
 	color: #fff!important;
 }
+
+.jumbotron.jumbotron-bg3 {
+	background: url("http://www.blackloveadvice.com/wp-content/uploads/2011/11/bigstock_Black_Business_Woman_Text_Mess_7014568.jpg") no-repeat center top fixed;
+}
+
 	
 .p20 {
 	padding: 15px 35px;
@@ -150,3 +156,25 @@ table td > h6 {
 i.bg-white {background: #fff; padding: 5px; border-radius: 2px; border: 1px solid #eee; box-shadow: 1px 1px 1px #888;}
 
 .ws1 {word-spacing: 1px;}
+
+.pt0 {padding-top: 0 !important;}
+
+
+.page-header.page-header-block {
+	background-color: #fbfcfc;
+	border-bottom-color: transparent;
+	box-shadow: 1px 1px 1px #ccc;
+}
+
+
+.shuffle .panel {
+	position: relative;
+	border-width: 1px;
+	border-color: #cfd9db;
+	border-bottom-width: 1px;
+	border-radius: 3px;
+	-webkit-box-shadow: none;
+	box-shadow: 1px 1px 1px #eee;
+	border-top: 1px solid #e5e5e5;
+	border-left: 1px solid #eee;
+}
