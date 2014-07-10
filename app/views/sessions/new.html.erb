@@ -1,0 +1,226 @@
+<%= render 'shared/head_home'%>
+
+    <!-- START Body -->
+    <body>
+        <!-- START Template Header -->
+        <header id="header" class="navbar navbar-fixed-top">
+            <div class="container">
+                <!-- START navbar header -->
+                <div class="navbar-header">
+                    <!-- Brand -->
+                    <a class="navbar-brand" href="/">
+                        <span class="logo-figure" style="margin-left:-4px;"></span>
+                        <span class="logo-text"></span>
+                    </a>
+                    <!--/ Brand -->
+                </div>
+                <!--/ END navbar header -->
+
+                <!-- START Toolbar -->
+                <div class="navbar-toolbar clearfix">
+                    <!-- START Left nav -->
+                    <ul class="nav navbar-nav">
+                        <!-- Navbar collapse: This menu will take position at the top of template header (mobile only). Make sure that only #header have the `position: relative`, or it may cause unwanted behavior -->
+                        <li class="navbar-main navbar-toggle">
+                            <a href="javascript:void(0);" data-toggle="collapse" data-target="#navbar-collapse">
+                                <span class="meta">
+                                    <span class="icon"><i class="ico-paragraph-justify3"></i></span>
+                                </span>
+                            </a>
+                        </li>
+                        <!--/ Navbar collapse -->
+                    </ul>
+                    <!--/ END Left nav -->
+
+                    <!-- START navbar form -->
+                    <div class="navbar-form navbar-left dropdown" id="dropdown-form">
+                        <form action="" role="search">
+                            <div class="has-icon">
+                                <input type="text" class="form-control" placeholder="Search this site...">
+                                <i class="ico-search form-control-icon"></i>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- START navbar form -->
+
+                    <!-- START Right nav -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Search form toggler -->
+                        <li>
+                            <a href="about.html" data-toggle="dropdown" data-target="#dropdown-form">
+                                <span class="meta">
+                                    <span class="icon"><i class="ico-search"></i></span>
+                                </span>
+                            </a>
+                        </li>
+                        <!--/ Search form toggler -->
+                    </ul>
+                    <!--/ END Right nav -->
+
+                     <!-- START nav collapse -->
+                <%= render 'shared/home_navigation' %>
+                    <!--/ END nav collapse -->
+                </div>
+                <!--/ END Toolbar -->
+            </div>
+        </header>
+        <!--/ END Template Header -->
+
+        <!-- START Template Main -->
+        <section id="main" role="main">
+
+         <section class="jumbotron jumbotron-bg1 nm" data-stellar-background-ratio="0.4" style="min-height:1100px;">
+            <!-- pattern + overlay -->
+            
+            
+
+            <!-- START Register Content -->
+            <section class="section">
+            <!-- pattern + overlay -->
+            <div class="overlay pattern pattern2"></div>
+            <!--/ pattern + overlay -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 pt60 pb60">
+                            <!-- Header -->
+                            <div class="section-header section-header-bordered text-center">
+                                <h2 class="section-title">
+                                    <span class="font-alt nm">Login To Your Account</span>
+                                </h2>
+                            </div>
+                            <!--/ Header -->
+                        </div>
+
+                        <div class="col-md-6 col-md-offset-3">
+                            
+
+                           
+
+                            <!-- Login form -->
+							<%= form_tag sessions_path, :html => {:class => "panel"} do %>
+                            
+                                <div class="panel-body">
+                              
+                                    <div class="form-group">
+										
+                                        <div class="form-stack has-icon pull-left">
+											
+                                            <%= text_field_tag(:email, nil, {placeholder: "Email", class: "form-control", type: "text"}) do %>
+                                            <i class="ico-user2 form-control-icon"></i>
+											<%end%>
+											
+                                        </div>
+                                        <div class="form-stack has-icon pull-left">
+                                            <%= text_field_tag(:password, nil, {placeholder: "Password", type: "password", class: "form-control"}) do %>
+                                            <i class="ico-lock2 form-control-icon"></i>
+											<% end %>
+                                        </div>
+                                    </div>
+
+                                    <!-- Error container -->
+                                    <div id="error-container"class="mb15"></div>
+                                    <!--/ Error container -->
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <div class="checkbox custom-checkbox">  
+                                                    <input type="checkbox" name="remember" id="remember" value="1">  
+                                                    <label for="remember">&nbsp;&nbsp;Remember me</label>   
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 text-right">
+                                                <a href="javascript:void(0);">Lost password?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group nm">
+                                        <button type="submit" class="btn btn-block btn-primary"><span class="semibold">Login</span></button>
+                                    </div>
+                                </div>
+								<% end %>
+                            <!-- Login form -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--/ END Register Content -->
+
+            <!-- START To Top Scroller -->
+            <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
+            <!--/ END To Top Scroller -->
+        </section>
+        <!--/ END Template Main -->
+
+        <!-- START Template Footer -->
+        <footer id="footer" role="contentinfo">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <!-- About -->
+                    <div class="col-md-10">
+                        <div class="col-md-11 row">
+                            <h4 class="mt0">About Us</h4>
+                            <p>We are dedicated to connecting, supporting, and empowering black professionals that have achieved the CFA designation and those pursuing the CFA course of study.</p>
+                        </div>
+                    </div>
+                    <!--/ About -->
+
+                    <!-- Address + Social -->
+                    <div class="col-md-2">
+                         <h4 class="font-alt mt0">Stay Connect</h4>
+                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Facebook"><i class="ico-facebook2"></i></a>
+                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Twitter"><i class="ico-twitter2"></i></a>
+                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Google+"><i class="ico-google-plus2"></i></a>
+                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Instagram"><i class="ico-instagram2"></i></a>
+                    </div>
+                    <!--/ Address + Social -->
+
+                    
+                </div>
+                <!--/ row -->
+            </div>
+            <!--/ container -->
+
+            <!-- bottom footer -->
+            <div class="footer-bottom">
+                <!-- container -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 copyright">
+                            <!-- copyright -->
+                            <p class="nm copyright">&copy; Copyright 2014 by <a href="javascript:void(0);" class="">The Wildfyre Group</a>. All Rights Reserved.</p>
+                            <!--/ copyright -->
+                        </div>
+                        <div class="col-sm-6 text-right legal">
+                            <a href="javascript:void(0);" class="">Privacy Policy</a>
+                            <span class="ml5 mr5">&#8226;</span>
+                            <a href="javascript:void(0);" class="">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+                <!--/ container -->
+            </div>
+            <!--/ bottom footer -->
+        </footer>
+        <!--/ END Template Footer -->
+
+        <!-- START JAVASCRIPT SECTION (Load javascripts at bottom to reduce load time) -->
+        <!-- Library script : mandatory -->
+        <script type="text/javascript" src="/library/jquery/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/library/jquery/js/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="/library/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/library/core/js/core.min.js"></script>
+        <!--/ Library script -->
+
+        <!-- App and page level script -->
+        <script type="text/javascript" src="/plugins/sparkline/js/jquery.sparkline.min.js"></script><!-- will be use globaly as a summary on sidebar menu -->
+        <script type="text/javascript" src="/javascript/app.min.js"></script>
+        
+        
+        <!--/ App and page level scrip -->
+        <!--/ END JAVASCRIPT SECTION -->
+    </body>
+    <!--/ END Body -->
+</html>

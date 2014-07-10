@@ -1,0 +1,83 @@
+<%= render 'shared/user_head'%>
+        
+         <section class="jumbotron jumbotron-bg3 nm" data-stellar-background-ratio="0.4" style="min-height:320px;">
+            <!-- pattern + overlay -->
+            <div class="overlay pattern pattern10"></div>
+            <!--/ pattern + overlay -->
+        </section>
+
+        <!-- START Template Main -->
+        <section id="main pt0" role="main">
+            <!-- START Template Container -->
+            <!-- Page Header -->
+            <div class="page-header page-header-block">
+                 <div class="page-header-section">
+                    <div class="toolbar">
+                        <div class="col-md-4 col-md-offset-4">
+                            <div class="has-icon">
+                                <input type="search" class="form-control input-lg" name="shuffle-filter" id="shuffle-filter" placeholder="Search people by name">
+                                <i class="ico-search form-control-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page Header -->
+
+            <div class="container pt60">
+
+                <!-- START Row -->
+                <div class="row" id="shuffle-grid">
+					
+					<% @users.each do |user| %>
+                    <div class="col-sm-6 col-md-4 shuffle">
+                        <div class="panel widget">
+                            <div class="table-layout nm">
+                                <div class="col-xs-4 text-center"><img src="<%= user.avatar %>" width="100%"></div>
+                                <div class="col-xs-8 valign-middle">
+                                    <div class="panel-body">
+                                        <h5 class="semibold mt0 mb5"><a href="user_profile.html"><%= user.full_name %></a></h5>
+                                        <p class="ellipsis text-muted mb5"><i class="ico-envelop mr5"></i> <%= user.email %></p>
+                                        <p class="text-muted nm"><i class="ico-location2 mr5"></i> <%= user.user_detail.try(:location_description) %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<% end %>
+					
+					
+                </div>
+                <!--/ END Row -->
+            </div>
+            <!--/ END Template Container -->
+
+            <!-- START To Top Scroller -->
+            <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
+            <!--/ END To Top Scroller -->
+
+        </section>
+        <!--/ END Template Main -->
+
+        <!-- START JAVASCRIPT SECTION (Load javascripts at bottom to reduce load time) -->
+        <!-- Library script : mandatory -->
+        <script type="text/javascript" src="/library/jquery/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/library/jquery/js/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="/library/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/library/core/js/core.min.js"></script>
+        <!--/ Library script -->
+
+        <!-- App and page level script -->
+        <script type="text/javascript" src="/plugins/sparkline/js/jquery.sparkline.min.js"></script><!-- will be use globaly as a summary on sidebar menu -->
+        <script type="text/javascript" src="/javascript/app.min.js"></script>
+        
+        
+        <script type="text/javascript" src="/plugins/shuffle/js/jquery.shuffle.min.js"></script>
+        
+        <script type="text/javascript" src="/javascript/pages/people.js"></script>
+        
+        <!--/ App and page level script -->
+        <!--/ END JAVASCRIPT SECTION -->
+    </body>
+    <!--/ END Body -->
+</html>
