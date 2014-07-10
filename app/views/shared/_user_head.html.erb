@@ -1,0 +1,99 @@
+<%= render 'shared/head' %>
+    <!-- START Body -->
+    <body>
+        <!-- START Template Header -->
+        <header id="header" class="navbar navbar-fixed-top">
+            <!-- START navbar header -->
+            <div class="navbar-header">
+                <!-- Brand -->
+                <a class="navbar-brand" href="/">
+                    <span class="logo-figure"></span>
+                    <span class="logo-text"></span>
+                </a>
+                <!--/ Brand -->
+            </div>
+            <!--/ END navbar header -->
+
+            <!-- START Toolbar -->
+            <div class="navbar-toolbar clearfix">
+                <!-- START Left nav -->
+                <ul class="nav navbar-nav navbar-left">
+                    <!-- Directory Link  -->
+				 <% if request.path == users_path %>
+                      <li class="active">
+			 	 <% else %>
+					<li class="">
+			     <% end %>
+                        <a href="<%= users_path %> ">
+                            <span class="meta">
+                                <span class="icon">
+                                    <i class="ico-users mr5"></i> 
+                                    <small class="semibold">People Directory</small>
+                                </span>
+                            </span>
+                        </a>
+                    </li>
+				 <% if request.path == user_path(@user) %>
+                      <li class="active">
+			 	 <% else %>
+					<li class="">
+			     <% end %>
+                        <a href="<%= user_path(@user) %>">
+                            <span class="meta">
+                                <span class="icon">
+                                    <i class="ico-user mr5"></i> 
+                                    <small class="semibold">View Profile</small>
+                                </span>
+                            </span>
+                        </a>
+                    </li>
+					 <% if request.path == edit_user_path(@user) %>
+                       <li class="active">
+				 	 <% else %>
+						<li class="">
+				     <% end %>
+                        <a href="<%= edit_user_path(@user) %>">
+                            <span class="meta">
+                                <span class="icon">
+                                    <i class="ico-edit mr5"></i> 
+                                    <small class="semibold">Edit Profile</small>
+                                </span>
+                            </span>
+                        </a>
+                    </li>
+                    <!--/ Directory Link -->
+                </ul>
+                <!--/ END Left nav -->
+
+                <!-- START Right nav -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Profile dropdown -->
+                    <li class="dropdown profile">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="meta">
+                                <span class="avatar"><img src="<%= @user.avatar %>" class="img-circle" alt="" /></span>
+                                <span class="text hidden-xs hidden-sm pl5"><%= @user.full_name %></span>
+                                <span class="caret"></span>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                         
+                           <li class="divider"></li>
+                            <li><a href="<%= user_path(@user) %>"><span class="icon"><i class="ico-user-plus2"></i></span> My Profile</a></li>
+                            <li><a href="<%= edit_user_path(@user) %>"><span class="icon"><i class="ico-cog4"></i></span> Edit Profile</a></li>
+                            <li class="divider"></li>
+                            <li>
+								<%= link_to session_path(current_user.id), method: :delete do %>
+								<span class="icon"><i class="ico-exit"></i></span> Log Out
+							    <% end %>
+							</li>
+							
+                        </ul>
+                    </li>
+                    <!-- Profile dropdown -->
+                </ul>
+                <!--/ END Right nav -->
+            </div>
+            <!--/ END Toolbar -->
+        </header>
+        <!--/ END Template Header -->
