@@ -15,10 +15,6 @@ class ApplicationController < ActionController::Base
   
   # users
   
-  def test_for_me?
-    
-  end
-  
   def new_user
     @user ||= User.new
   end
@@ -27,5 +23,6 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_authentication_token(cookies[:authentication_token]) if cookies[:authentication_token]
   end
   
-  helper_method :new_user, :current_user, :test_for_me?
+  helper_method :new_user, :current_user
+  
 end
