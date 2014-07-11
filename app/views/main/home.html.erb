@@ -1,1 +1,615 @@
-<%= @user.email %> is logged in.
+<!DOCTYPE html>
+<!-- 
+TEMPLATE NAME : Adminre frontend
+VERSION : 1.2.0
+AUTHOR : JohnPozy
+AUTHOR URL : http://themeforest.net/user/JohnPozy
+EMAIL : pampersdry@gmail.com
+LAST UPDATE: 23/06/2014
+
+** A license must be purchased in order to legally use this template for your project **
+** PLEASE SUPPORT ME. YOUR SUPPORT ENSURE THE CONTINUITY OF THIS PROJECT **
+-->
+<html class="frontend">
+    <!-- START Head -->
+    <head>
+        <!-- START META SECTION -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BlackCFA</title>
+        <meta name="author" content="pampersdry.info">
+        <meta name="description" content="Adminre is a clean and flat backend and frontend theme build with twitter bootstrap 3.1.1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../image/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../image/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../image/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="../image/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" href="../image/favicon.ico">
+        <!--/ END META SECTION -->
+
+        <!-- START STYLESHEETS -->
+        <!-- Plugins stylesheet : optional -->
+        
+        
+        <link rel="stylesheet" href="../plugins/owl/css/owl.carousel.min.css">
+        
+        <!--/ Plugins stylesheet -->
+
+        <!-- Application stylesheet : mandatory -->
+        <link rel="stylesheet" href="/library/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheet/layout.css">
+        <link rel="stylesheet" href="/stylesheet/uielement.css">
+        <link rel="stylesheet" href="/stylesheet/custom.css">
+        <!--/ Application stylesheet -->
+        <!-- END STYLESHEETS -->
+
+        <!-- START JAVASCRIPT SECTION - Load only modernizr script here -->
+        <script src="../library/modernizr/js/modernizr.min.js"></script>
+        <!--/ END JAVASCRIPT SECTION -->
+    </head>
+    <!--/ END Head -->
+
+    <!-- START Body -->
+    <body>
+        <!-- START Template Header -->
+        <header id="header" class="navbar navbar-fixed-top">
+            <div class="container">
+                <!-- START navbar header -->
+                <div class="navbar-header">
+                    <!-- Brand -->
+                    <a class="navbar-brand" href="/">
+                        <span class="logo-figure" style="margin-left:-4px;"></span>
+                        <span class="logo-text"></span>
+                    </a>
+                    <!--/ Brand -->
+                </div>
+                <!--/ END navbar header -->
+
+                
+                <!-- START nav collapse -->
+                <%= render 'shared/member_navigation' %>
+            </div>
+        </header>
+        <!--/ END Template Header --> 
+
+        <!-- START Template Main -->
+        <section id="main" role="main">
+            <!-- START jumbotron -->
+            <section class="jumbotron jumbotron-bg7 nm" data-stellar-background-ratio="0.4" style="min-height:486px;">
+                <!-- pattern + overlay -->
+                <div class="overlay pattern pattern2"></div>
+                <!--/ pattern + overlay -->
+                <div class="container" style="padding-top:8%;">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1 class="thin text-white mt0 mb5">Get Connected. Tell a CFA.</h1>
+                            <div class="row clearfix">
+                                <div class="col-md-9">
+                                    <p class="text-white mb15 fsize14">
+                                    We are dedicated to connecting, supporting, and empowering black professionals that have achieved the CFA designation and those pursuing the CFA course of study.
+                                    </p>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 pt60 ">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Take Our BlackCFA Survey</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--/ END jumbotron -->
+
+            <!-- START Features Section -->
+            <section class="section bgcolor-white">
+                <div class="container">
+                    <br>
+                    <br>
+                    <!-- Header -->
+                    <div class="section-header text-center">
+                        <h2 class="section-title">
+                            <p class=" nm">A Worldwide Network</p>
+                            <small class="text-muted"><span class="semibold text-default">Connect</span> with hundreds of black CFAs around the world.</small>
+                        </h2>
+                    </div>
+                    <!--/ Header -->
+                    <!-- START row -->
+                    <div class="table-layout">
+                        <div class="col-md-4">
+                            <div class="table-layout animation" data-toggle="waypoints" data-showanim="fadeInRight" data-trigger-once="true">
+                                <div class="col-xs-2 valign-top"><img src="../image/icons/responsivewebdesign.png" width="100%" alt=""></div>
+                                <div class="col-xs-19 pl15">
+                                    <h4 class="font-alt">Create a Professional Profile</h4>
+                                    <p class="nm">Create a professional profile and in minutes begin connecting with peers in our global community.</p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="table-layout animation" data-toggle="waypoints" data-showanim="fadeInRight" data-trigger-once="true">
+                                <div class="col-xs-2 valign-top"><img src="../image/icons/targetaudience.png" width="100%" alt=""></div>
+                                <div class="col-xs-10 pl15">
+                                    <h4 class="font-alt">Network Online</h4>
+                                    <p class="nm">Connect with like-minded professionals around the globe that share your career aspirations and interest.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 pt15 text-center animation" data-toggle="waypoints" data-showanim="flipInY" data-trigger-once="true" data-offset="40%">
+                            <img src="../image/mockup/iphone-5s.png">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="table-layout text-right animation" data-toggle="waypoints" data-showanim="fadeInLeft" data-trigger-once="true">
+                                <div class="col-xs-10 pr15">
+                                    <h4 class="font-alt">Post and Apply for Jobs</h4>
+                                    <p class="nm">We are actively seeking corporate partnerships and professional alliances to create job opportunities for our members.</p>
+                                </div>
+                                <div class="col-xs-2 valign-top"><img src="../image/icons/marketresearch.png" width="99%" alt=""></div>
+                            </div>
+                            <br>
+                            <div class="table-layout text-right animation" data-toggle="waypoints" data-showanim="fadeInLeft" data-trigger-once="true">
+                                <div class="col-xs-10 pr15">
+                                    <h4 class="font-alt">Give Back and Contribute</h4>
+                                    <p class="nm">Help us encourage and mentor aspiring finance professionals of color and create a first-class professional association. </p>
+                                </div>
+                                <div class="col-xs-2 valign-top"><img src="../image/icons/pagequality.png" width="100%" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ END row -->
+                </div>
+            </section>
+            <!--/ END Features Section -->
+
+            
+            <!-- START Recent Blog Section -->
+            <section class="section">
+                <div class="container pt60 pb60">
+                    <!-- START row -->
+                    <div class="row">
+                        <!-- Header -->
+                        <div class="col-md-3">
+                            <div class="section-header mb5">
+                                <h1>New Features!</h1>
+                                <h3 class="section-title">
+                                    
+                                    <p class="text-muted">Stay tuned...</p>
+                                </h3>
+                            </div>
+                            <!--/ Header -->
+                            <div class="mb15">
+                                <h4 class="mb15">
+                                    We'll be rolling out several new features over the next few months.
+                                </h4>
+                                <a href="signup.html" class="btn btn-primary">Join our BlackCFA Network</a>
+                            </div>
+                        </div>
+                        <!--/ Header -->
+
+                        <!-- Blog list -->
+                        <div class="col-md-offset-1 col-md-8">
+                            <div class="row">
+                                <!-- Blog post #1 -->
+                                <div class="col-sm-4 post">
+                                    <article class="panel overflow-hidden">
+                                        <!-- Thumbnail -->
+                                        <header class="thumbnail">
+                                            <!-- media -->
+                                            <div class="media">
+                                                <!-- indicator -->
+                                                <div class="indicator"><span class="spinner"></span></div>
+                                                <!--/ indicator -->
+                                                <!-- toolbar overlay -->
+                                                <div class="overlay">
+                                                    <div class="toolbar">
+                                                        <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
+                                                    </div>
+                                                </div>
+                                                <!--/ toolbar overlay -->
+                                                <img data-toggle="unveil" src="../image/thumb/thumb1.jpg" data-src="../image/thumb/thumb1.jpg" alt="Photo" height="160px">
+                                            </div>
+                                            <!--/ media -->
+                                        </header>
+                                        <!--/ Thumbnail -->
+                                        <!-- Content -->
+                                        <section class="panel-body">
+                                            <!-- heading -->
+                                            <h5 class="mt0 ellipsis fsize13 nm"><a href="javascript:void(0);" class="text-default">Online Networking</a></h5>
+                                            <!--/ heading -->
+                                            <!-- meta -->
+                                            <p class="meta nm">
+                                                <!-- <a href="javascript:void(0);">Coming Soon</a> --><!-- date -->
+                                                <!-- <span class="text-muted mr5 ml5">&#8226;</span>
+                                                <span class="text-muted">By </span><a href="javascript:void(0);"> --><em>Summer 2014</em><!-- </a> --><!-- author -->
+                                            </p>
+                                            <!--/ meta -->
+                                        </section>
+                                        <!--/ Content -->
+                                    </article>
+                                </div>
+                                <!--/ Blog post #1 -->
+
+                                <!-- Blog post #2 -->
+                                <div class="col-sm-4 post">
+                                    <article class="panel overflow-hidden">
+                                        <!-- Thumbnail -->
+                                        <header class="thumbnail">
+                                            <!-- media -->
+                                            <div class="media">
+                                                <!-- indicator -->
+                                                <div class="indicator"><span class="spinner"></span></div>
+                                                <!--/ indicator -->
+                                                <!-- toolbar overlay -->
+                                                <div class="overlay">
+                                                    <div class="toolbar">
+                                                        <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
+                                                    </div>
+                                                </div>
+                                                <!--/ toolbar overlay -->
+                                                <img data-toggle="unveil" src="../image/thumb/thumb2.jpg" data-src="../image/thumb/thumb2.jpg" alt="Photo" height="160px">
+                                            </div>
+                                            <!--/ media -->
+                                        </header>
+                                        <!--/ Thumbnail -->
+                                        <!-- Content -->
+                                        <section class="panel-body">
+                                            <!-- heading -->
+                                            <h5 class="mt0 ellipsis fsize13 nm"><a href="javascript:void(0);" class="text-default">Employment Opportunities</a></h5>
+                                            <!--/ heading -->
+                                            <!-- meta -->
+                                            <p class="meta nm">
+                                                <!-- <a href="javascript:void(0);">Coming Soon</a> --><!-- date -->
+                                                <!-- <span class="text-muted mr5 ml5">&#8226;</span>
+                                                <span class="text-muted">By </span><a href="javascript:void(0);"> --><em>Summer 2014</em><!-- </a> --><!-- author -->
+                                            </p>
+                                            <!--/ meta -->
+                                        </section>
+                                        <!--/ Content -->
+                                    </article>
+                                </div>
+                                <!--/ Blog post #2 -->
+
+                                <!-- Blog post #3 -->
+                                <div class="col-sm-4 post">
+                                    <article class="panel overflow-hidden nm">
+                                        <!-- Thumbnail -->
+                                        <header class="thumbnail">
+                                            <!-- media -->
+                                            <div class="media">
+                                                <!-- indicator -->
+                                                <div class="indicator"><span class="spinner"></span></div>
+                                                <!--/ indicator -->
+                                                <!-- toolbar overlay -->
+                                                <div class="overlay">
+                                                    <div class="toolbar">
+                                                        <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
+                                                    </div>
+                                                </div>
+                                                <!--/ toolbar overlay -->
+                                                <img data-toggle="unveil" src="../image/thumb/thumb3.jpg" data-src="../image/thumb/thumb3.jpg" alt="Photo" height="160px">
+                                            </div>
+                                            <!--/ media -->
+                                        </header>
+                                        <!--/ Thumbnail -->
+                                        <!-- Content -->
+                                        <section class="panel-body">
+                                            <!-- heading -->
+                                            <h5 class="mt0 ellipsis fsize13 nm"><a href="javascript:void(0);" class="text-default">Professional Development</a></h5>
+                                            <!--/ heading -->
+                                            <!-- meta -->
+                                            <p class="meta nm">
+                                                <!-- <a href="javascript:void(0);">Coming Soon</a> --><!-- date -->
+                                                <!-- <span class="text-muted mr5 ml5">&#8226;</span>
+                                                <span class="text-muted">By </span><a href="javascript:void(0);"> --><em>Summer 2014</em><!-- </a> --><!-- author -->
+                                            </p>
+                                            <!--/ meta -->
+                                        </section>
+                                        <!--/ Content -->
+                                    </article>
+                                </div>
+                                <!--/ Blog post #3 -->
+                            </div>
+                            <div class="row">
+                                <!-- Blog post #1 -->
+                                <div class="col-sm-4 post">
+                                    <article class="panel overflow-hidden">
+                                        <!-- Thumbnail -->
+                                        <header class="thumbnail">
+                                            <!-- media -->
+                                            <div class="media">
+                                                <!-- indicator -->
+                                                <div class="indicator"><span class="spinner"></span></div>
+                                                <!--/ indicator -->
+                                                <!-- toolbar overlay -->
+                                                <div class="overlay">
+                                                    <div class="toolbar">
+                                                        <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
+                                                    </div>
+                                                </div>
+                                                <!--/ toolbar overlay -->
+                                                 <img data-toggle="unveil" src="../image/thumb/thumb1.jpg" data-src="../image/thumb/thumb1.jpg" alt="Photo" height="160px">
+                                            </div>
+                                            <!--/ media -->
+                                        </header>
+                                        <!--/ Thumbnail -->
+                                        <!-- Content -->
+                                        <section class="panel-body">
+                                            <!-- heading -->
+                                            <h5 class="mt0 ellipsis fsize13 nm"><a href="javascript:void(0);" class="text-default">Online Networking</a></h5>
+                                            <!--/ heading -->
+                                            <!-- meta -->
+                                            <p class="meta nm">
+                                                <!-- <a href="javascript:void(0);">Coming Soon</a> --><!-- date -->
+                                                <!-- <span class="text-muted mr5 ml5">&#8226;</span>
+                                                <span class="text-muted">By </span><a href="javascript:void(0);"> --><em>Summer 2014</em><!-- </a> --><!-- author -->
+                                            </p>
+                                            <!--/ meta -->
+                                        </section>
+                                        <!--/ Content -->
+                                    </article>
+                                </div>
+                                <!--/ Blog post #1 -->
+
+                                <!-- Blog post #2 -->
+                                <div class="col-sm-4 post">
+                                    <article class="panel overflow-hidden">
+                                        <!-- Thumbnail -->
+                                        <header class="thumbnail">
+                                            <!-- media -->
+                                            <div class="media">
+                                                <!-- indicator -->
+                                                <div class="indicator"><span class="spinner"></span></div>
+                                                <!--/ indicator -->
+                                                <!-- toolbar overlay -->
+                                                <div class="overlay">
+                                                    <div class="toolbar">
+                                                        <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
+                                                    </div>
+                                                </div>
+                                                <!--/ toolbar overlay -->
+                                                 <img data-toggle="unveil" src="../image/thumb/thumb2.jpg" data-src="../image/thumb/thumb2.jpg" alt="Photo" height="160px">
+                                            </div>
+                                            <!--/ media -->
+                                        </header>
+                                        <!--/ Thumbnail -->
+                                        <!-- Content -->
+                                        <section class="panel-body">
+                                            <!-- heading -->
+                                            <h5 class="mt0 ellipsis fsize13 nm"><a href="javascript:void(0);" class="text-default">Employment Opportunities</a></h5>
+                                            <!--/ heading -->
+                                            <!-- meta -->
+                                            <p class="meta nm">
+                                                <!-- <a href="javascript:void(0);">Coming Soon</a> --><!-- date -->
+                                                <!-- <span class="text-muted mr5 ml5">&#8226;</span>
+                                                <span class="text-muted">By </span><a href="javascript:void(0);"> --><em>Summer 2014</em><!-- </a> --><!-- author -->
+                                            </p>
+                                            <!--/ meta -->
+                                        </section>
+                                        <!--/ Content -->
+                                    </article>
+                                </div>
+                                <!--/ Blog post #2 -->
+
+                                <!-- Blog post #3 -->
+                                <div class="col-sm-4 post">
+                                    <article class="panel overflow-hidden nm">
+                                        <!-- Thumbnail -->
+                                        <header class="thumbnail">
+                                            <!-- media -->
+                                            <div class="media">
+                                                <!-- indicator -->
+                                                <div class="indicator"><span class="spinner"></span></div>
+                                                <!--/ indicator -->
+                                                <!-- toolbar overlay -->
+                                                <div class="overlay">
+                                                    <div class="toolbar">
+                                                        <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
+                                                    </div>
+                                                </div>
+                                                <!--/ toolbar overlay -->
+                                                 <img data-toggle="unveil" src="../image/thumb/thumb3.jpg" data-src="../image/thumb/thumb3.jpg" alt="Photo" height="160px">
+                                            </div>
+                                            <!--/ media -->
+                                        </header>
+                                        <!--/ Thumbnail -->
+                                        <!-- Content -->
+                                        <section class="panel-body">
+                                            <!-- heading -->
+                                            <h5 class="mt0 ellipsis fsize13 nm"><a href="javascript:void(0);" class="text-default">Professional Development</a></h5>
+                                            <!--/ heading -->
+                                            <!-- meta -->
+                                            <p class="meta nm">
+                                                <!-- <a href="javascript:void(0);">Coming Soon</a> --><!-- date -->
+                                                <!-- <span class="text-muted mr5 ml5">&#8226;</span>
+                                                <span class="text-muted">By </span><a href="javascript:void(0);"> --><em>Summer 2014</em><!-- </a> --><!-- author -->
+                                            </p>
+                                            <!--/ meta -->
+                                        </section>
+                                        <!--/ Content -->
+                                    </article>
+                                </div>
+                                <!--/ Blog post #3 -->
+                            </div>
+                        </div>
+                        <!--/ Blog list -->
+                    </div>
+                    <!--/ END row -->
+                </div>
+            </section>
+            <!--/ END Recent Blog Section -->
+
+            <!-- START Testimonials section + jumbotron -->
+            <section class="jumbotron jumbotron-bg6 nm">
+                <div class="section">
+                    <!-- pattern + overlay -->
+                    <div class="overlay pattern pattern10"></div>
+                    <!-- pattern + overlay -->
+                    <div class="container">
+                        <!-- Header -->
+                        <div class="section-header text-center">
+                            <h2 class="section-title">
+                                <div class="nm">Testimonials</div>
+                                <small>What people are saying...</small>
+                            </h2>
+                        </div>
+                        <!--/ Header -->
+                        <!-- START row -->
+                        <div class="row">
+                            <!-- example 1 -->
+                            <div class="col-sm-8 col-sm-offset-2 owl-carousel" id="customer-reviews">
+                                <!-- review #1 -->
+                                <div class="item text-center pt5">
+                                    <blockquote class="nm">
+                                        <p>A much over and much needed resource!</p>
+                                        <footer class="text-white">Pamela A.</footer>
+                                    </blockquote>
+                                </div>
+                                <!--/ review #1 -->
+                                <!-- review #2 -->
+                                <div class="item text-center pt5">
+                                    <blockquote class="nm">
+                                        <p>I am so impressed by this site! So modern and professional, I'm super excited to be a member!</p>
+                                        <footer class="text-white">Renee S.</footer>
+                                    </blockquote>
+                                </div>
+                                <!--/ review #2 -->
+                                <!-- review #3 -->
+                                <div class="item text-center pt5">
+                                    <blockquote class="nm">
+                                        <p>Shout out to Wildfyre for producing such a well-designed, high-quality platform. Will definitely be checking back often for updates</p>
+                                        <footer class="text-white">Lorenzo N.</footer>
+                                    </blockquote>
+                                </div>
+                                <!--/ review #3 -->
+                                <!-- review #4 -->
+                                <div class="item text-center pt5">
+                                    <blockquote class="nm">
+                                        <p>Excited to see the project come to fruition. Looks great!</p>
+                                        <footer class="text-white">Dana S.</footer>
+                                    </blockquote>
+                                </div>
+                                <!--/ review #4 -->
+                                <!-- review #5 -->
+                                <div class="item text-center pt5">
+                                    <blockquote class="nm">
+                                        <p>Overall a great product guys! Everything is great, the design, the utility, the feel. Thank you!</p>
+                                        <footer class="text-white">Maragret K.</footer>
+                                    </blockquote>
+                                </div>
+                                <!--/ review #5 -->
+                            </div>
+                            <!--/ example 1 -->
+                        </div>
+                        <!--/ END row -->
+                    </div>
+                </div>
+            </section>
+            <!--/ END Testimonials section + jumbotron -->
+
+            <!-- START Tweet Section -->
+            <section class="section bgcolor-primary">
+                <div class="container">
+                    <h4 class="text-center nm">
+                        <i class="ico-twitter2 mr5"></i>
+                        Black CFA is up and runnin', please check us out and give feedback.
+                        <small>23 Minute Ago</small>
+                    </h4>
+                </div>
+            </section>
+            <!--/ END Tweet Section -->
+
+            <!-- START To Top Scroller -->
+            <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
+            <!--/ END To Top Scroller -->
+        </section>
+        <!--/ END Template Main -->
+
+        <!-- START Template Footer -->
+        <footer id="footer" role="contentinfo">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <!-- About -->
+                    <div class="col-md-5">
+                        <div class="col-md-11 row">
+                            <h4 class="mt0">About Us</h4>
+                            <p>BlackCFA was founded in July 2014. The orgnaization is dedicated dedicated to connecting, supporting, and empowering black professionals that have achieved the CFA designation and those pursuing the CFA course of study. Stay tuned, we've got big plans.</p>
+                        </div>
+                    </div>
+                    <!--/ About -->
+
+                    <!-- Address + Social -->
+                    <div class="col-md-3">
+                        <h4 class="mt0">Contact Us</h4>
+                        <address>
+                            <strong>Black CFA</strong><br>
+                            Washington, DC 94107<br>
+                        </address>
+                        <h4 class="font-alt mt0">Stay Connected</h4>
+                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Facebook"><i class="ico-facebook2"></i></a>
+                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Twitter"><i class="ico-twitter2"></i></a>
+                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Google+"><i class="ico-google-plus2"></i></a>
+                    </div>
+                    <!--/ Address + Social -->
+
+                    <!-- Newsletter -->
+                    <div class="col-md-4">
+                        <h4 class="mt0">NewsLetter</h4>
+                        <form role="form">
+                            <div class="form-group">
+                                <p class="form-control-static">Subscribe to our newsletter and stay up to date with the latest news and deals!</p>
+                            </div>
+                       
+                            <button type="submit" class="btn btn-primary btn-block">Take Our BlackCFA Survey</button>
+                        </form>
+                    </div>
+                    <!--/ Newsletter -->
+                </div>
+                <!--/ row -->
+            </div>
+            <!--/ container -->
+
+           <!-- bottom footer -->
+            <div class="footer-bottom">
+                <!-- container -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 copyright">
+                            <!-- copyright -->
+                            <p class="nm copyright">&copy; Copyright 2014 by <a href="javascript:void(0);" class="">The Wildfyre Group</a>. All Rights Reserved.</p>
+                            <!--/ copyright -->
+                        </div>
+                        <div class="col-sm-6 text-right legal">
+                            <a href="javascript:void(0);" class="">Privacy Policy</a>
+                            <span class="ml5 mr5">&#8226;</span>
+                            <a href="javascript:void(0);" class="">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+                <!--/ container -->
+            </div>
+            <!--/ bottom footer -->
+        </footer>
+        <!--/ END Template Footer -->
+
+        <!-- START JAVASCRIPT SECTION (Load javascripts at bottom to reduce load time) -->
+        <!-- Library script : mandatory -->
+        <script type="text/javascript" src="/library/jquery/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/library/jquery/js/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="/library/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/library/core/js/core.min.js"></script>
+        <!--/ Library script -->
+
+        <!-- App and page level script -->
+        <script type="text/javascript" src="/plugins/sparkline/js/jquery.sparkline.min.js"></script><!-- will be use globaly as a summary on sidebar menu -->
+        <script type="text/javascript" src="/javascript/app.min.js"></script>
+        
+        
+        <script type="text/javascript" src="/plugins/owl/js/owl.carousel.min.js"></script>
+        
+        <script type="text/javascript" src="/javascript/pages/frontend/home.js"></script>
+        
+        <!--/ App and page level scrip -->
+        <!--/ END JAVASCRIPT SECTION -->
+    </body>
+    <!--/ END Body -->
+</html>
