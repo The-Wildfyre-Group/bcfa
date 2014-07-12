@@ -289,7 +289,7 @@
                                 <!-- tab-pane: password -->
                                 <div class="tab-pane" id="password">
                                     <!-- form password -->
-                                    <form class="panel form-horizontal form-bordered" name="form-password">
+									<%= form_for @user, :html => {:class => "panel form-horizontal form-bordered"} do |f| %>
                                         <div class="panel-body pt0 pb0">
                                             <div class="form-group header bgcolor-default">
                                                 <div class="col-md-12">
@@ -297,32 +297,33 @@
                                                     <p class="text-default nm">Change your password or recover your current one.</p>
                                                 </div>
                                             </div>
+											
                                             <div class="form-group">
                                                 <label class="col-sm-3 control-label">Current password</label>
                                                 <div class="col-sm-5">
-                                                    <input type="text" class="form-control" name="currentpass">
+													<%= f.password_field :current_password, label:false, placeholder:"", :class => "form-control" %>
                                                     <p class="help-block"><a href="javascript:void(0);">Forgot password?</a></p>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-3 control-label">New password</label>
                                                 <div class="col-sm-5">
-                                                    <input type="text" class="form-control" name="newpass">
+													<%= f.password_field :password, label:false, placeholder:"", :class => "form-control" %>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-3 control-label">Verify password</label>
                                                 <div class="col-sm-5">
-                                                    <input type="text" class="form-control" name="verifypass">
+                                                    <%= f.password_field :password_confirmation, label:false, placeholder:"", :class => "form-control" %>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="panel-footer">
                                             <button type="reset" class="btn btn-default">Reset</button>
-											<%#= f.submit "Save Changes", class: "btn btn-primary" %>
+											<%= f.submit "Save Changes", class: "btn btn-primary" %>
                                             
                                         </div>
-                                    <%# end %>
+                                    <% end %>
                                 </div>
                                 <!--/ tab-pane: password -->
                             </div>

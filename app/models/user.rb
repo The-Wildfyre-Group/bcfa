@@ -7,9 +7,12 @@ class User < ActiveRecord::Base
   validates :email, :presence => true
   #before_save { self.email = email.downcase }
   before_create { generate_token(:authentication_token) }
-  #after_update :password_changed?, :on => :update
+  after_update :password_changed?, :on => :update
   #before_save :encrypt_password
-  validate :check_access_code
+  validate :check_access_code, :on => :create
+ # before_update :set_old_password, :on => :update
+  #validate :check_old_password, :on => :update
+  
   
   # user detail
   has_one :user_detail
@@ -20,7 +23,7 @@ class User < ActiveRecord::Base
   
   ACCESS_CODE = ["charterme", "5678", "spa", "live", "blck", "dc", "cordis"]
   
-  attr_accessor :access_code
+  attr_accessor :access_code, :current_password, :old_password
   
   def check_access_code
     unless ACCESS_CODE.include? access_code
@@ -29,10 +32,29 @@ class User < ActiveRecord::Base
   end
   
   def password_changed?
-    if (provider.nil? || provider.try(:empty?))
-      if password_digest_changed?
-        # self.update_attributes(old_password: "example")
-         Emails.password_changed(self).deliver
+    if password_digest_changed?
+      # self.update_attributes(old_password: "example")
+       Email.password_changed(self).deliver
+    end
+  end
+  
+  def set_old_password
+    unless current_password.blank?
+      if self == self.authenticate(current_password)
+        logger.info "password is a match"
+        password = nil
+        password_confirmation = nil
+      else
+        logger.info "password is NOT a match"
+      end
+    end
+  end
+  
+  def check_old_password
+    unless password.blank?
+      unless self == self.authenticate(current_password)
+        errors.add(:current_password, "Error: Current Password is Incorrect.")
+        logger.info "Error: Current Password is Incorrect."
       end
     end
   end

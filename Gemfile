@@ -49,6 +49,9 @@ end
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 
+# viewing emails in the browser
+gem "letter_opener", :group => :development
+
 #for environment variables
 gem "figaro", github: 'laserlemon/figaro'
 
