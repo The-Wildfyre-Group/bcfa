@@ -1,0 +1,121 @@
+<!-- tab-pane: account -->
+<div class="tab-pane" id="account">
+    <!-- form account -->
+    <%= form_for @user, :html => {:class => "panel form-horizontal form-bordered"} do |f| %>
+	<%= f.fields_for :user_detail, @user_detail do |builder| %>
+        <div class="panel-body pt0 pb0">
+            <div class="form-group header bgcolor-default">
+                <div class="col-md-12">
+                    <h4 class="semibold text-primary mt0 mb5">Resume</h4>
+                    <p class="text-default nm">Change your basic account and language settings.</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Bio</label>
+                <div class="col-sm-8">
+					<%= builder.text_area :bio, class: "form-control", cols: 50, rows: 10, placeholder: "Describe about yourself." %>
+                    <p class="help-block"><small>About yourself in 160 characters or less.</small></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Education</label>
+                <div class="col-sm-6">
+                    <%= builder.text_field :undergraduate_school, class: "form-control", placeholder: "Undergraduate School" %>
+                    <br>
+                    <div class="row clearfix">
+                         <div class="col-md-8">
+                            <%= builder.text_field :undergraduate_degree, class: "form-control", placeholder: "Undergraduate Degree" %>
+                        </div>
+                         <div class="col-md-4">
+                            <%= builder.text_field :undergraduate_degree, class: "form-control", placeholder: "Year" %>
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="clearfix">
+                        <%= builder.text_field :graduate_school, class: "form-control", placeholder: "Graduate School" %>
+                        <br>
+                        <div class="row clearfix">
+                             <div class="col-md-8">
+                                <%= builder.text_field :graduate_degree, class: "form-control", placeholder: "Undergraduate Degree" %>
+                            </div>
+                             <div class="col-md-4">
+                                <%= builder.text_field :graduate_school, class: "form-control", placeholder: "Year" %>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="clearfix">
+                        <%= builder.text_field :graduate_school, class: "form-control", placeholder: "Graduate School" %>
+                        <br>
+                        <div class="row clearfix">
+                             <div class="col-md-8">
+                                <%= builder.text_field :graduate_degree, class: "form-control", placeholder: "Undergraduate Degree" %>
+                            </div>
+                             <div class="col-md-4">
+                                <%= builder.text_field :graduate_school, class: "form-control", placeholder: "Year" %>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+			
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Charterholder Since</label>
+               <div class="col-sm-3">
+                   <%= builder.text_field :year_of_charter, class: "form-control", placeholder: "Year" %>
+               </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Other<br>
+                    Certifications</label>
+                <div class="col-sm-8">
+                    <%= builder.text_field :certifications, class: "form-control", placeholder: "Certifications" %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">City</label>
+                <div class="col-sm-5">
+					<%= builder.select :city, User.cities_list.sort, prompt: "Select Location", :class => "form-control input-lg" %>
+                <!-- <select class="form-control" name="language">
+                        <option>Select Language...</option>
+                        <option value="eu">Basque - Euskara (beta)</option>
+                        <option value="ca">Catalan - català (beta)</option>
+                        <option value="sv">Swedish - Svenska</option>
+                        <option value="tr">Turkish - Türkçe</option>
+                        <option value="uk">Ukrainian - Українська мова (beta)</option>
+                    </select> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Industries</label>
+                <div class="col-sm-8">
+                    <%= builder.text_area :industries, rows: "2", class: "form-control", placeholder: "Industries" %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Skills</label>
+                <div class="col-sm-8">
+                    <%= builder.text_area :skills, rows: "10", class: "form-control", placeholder: "Skills" %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Interests</label>
+                <div class="col-sm-8">
+                    <%= builder.text_area :interests, rows: "10", class: "form-control", placeholder: "Interests" %>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button type="reset" class="btn btn-default">Reset</button>
+            <button type="submit" class="btn btn-primary">Save change</button>
+        </div>
+		<% end %>
+    <% end %>
+    <!--/ form account -->
+</div>
+<!--/ tab-pane: account -->
