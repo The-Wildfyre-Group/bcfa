@@ -23,7 +23,7 @@ gem "fog"
 #gems needed for Heroku
 # 3gem 'pg', group: :production
 #gems needed for Heroku
-# gem 'pg', group: :production
+gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 
 # Use jquery as the JavaScript library
@@ -48,6 +48,9 @@ end
 
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+
+# viewing emails in the browser
+gem "letter_opener", :group => :development
 
 #for environment variables
 gem "figaro", github: 'laserlemon/figaro'

@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       cookies.permanent[:authentication_token] = @user.authentication_token 
       redirect_to edit_user_path(@user)
     else
-      render text: "didn't work"
+      render text: @user.errors.full_messages
     end
   end
   
@@ -33,11 +33,21 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user_detail = @user.user_detail
-    if @user.update_attributes(user_params)
-      redirect_to @user
+    if !params[:user][:password]
+      @user_detail = @user.user_detail
+      if @user.update_attributes(user_params)
+        redirect_to @user
+      else
+        render 'edit'
+      end
     else
-      render 'edit'
+      if @user == @user.authenticate(params[:user][:current_password])
+        @user_detail = @user.user_detail
+        @user.update_attributes(user_params)
+        redirect_to @user
+      else
+        flash[:error] = "Current Password is not a match."
+      end
     end 
   end
   
@@ -49,7 +59,7 @@ class UsersController < ApplicationController
   protected
   
   def user_params
-   params.require(:user).permit(:prefix, :first_name, :middle_name, :last_name, :suffix, :email, :password, :password_confirmation, :access_code, {user_detail_attributes: [:id, :user_id, :instagram, :twitter, :facebook, :linkedin, :undergraduate_school, :graduate_school, :other_school, :undergraduate_degree, :graduate_degree, :other_degree, :year_of_charter, :certifications, :company, :title, :industries, :interests, :skills, :city, :state, :zipcode, :bio]},  {user_profile_pictures_attributes: [:id, :user_id, :photo]})  
+   params.require(:user).permit(:prefix, :first_name, :middle_name, :last_name, :suffix, :email, :password, :password_confirmation, :current_password, :access_code, {user_detail_attributes: [:id, :user_id, :instagram, :twitter, :facebook, :linkedin, :undergraduate_school, :graduate_school, :other_school, :undergraduate_degree, :graduate_degree, :other_degree, :year_of_charter, :certifications, :company, :title, :industries, :interests, :skills, :city, :state, :zipcode, :bio]},  {user_profile_pictures_attributes: [:id, :user_id, :photo]})  
   end
   
   def find_user
