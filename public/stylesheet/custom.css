@@ -28,6 +28,27 @@
 	background: url("http://mahfa.org/wp-content/uploads/2013/03/hd-header.jpg") no-repeat center top fixed;
 }
 
+#header.navbar .navbar-toolbar .navbar-nav>li.active>a {
+	color: #fff;
+	background: #00b6ad;
+}
+
+#header.navbar .navbar-toolbar .navbar-nav>li >a {
+	color: #333;
+}
+
+
+#header.navbar .navbar-header {
+background-color: #fff;
+height: 60px;
+float: left;
+}
+
+
+.backend #header.navbar .navbar-header > .navbar-brand > .logo-text {
+	background-image: url("../image/logo/logo-text-inverse.png");
+}
+
 
 
 article > section.panel-body h5 {

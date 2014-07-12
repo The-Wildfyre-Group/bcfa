@@ -20,9 +20,9 @@
                 </span>
             </a>
             <ul class="dropdown-menu" role="menu">
-             
                <li class="divider"></li>
-                <li><a href="<%= user_path(@user) %>"><span class="icon"><i class="ico-user-plus2"></i></span> My Profile</a></li>
+                <li><a href="<%= users_path(@user) %>"><span class="icon"><i class="ico-user-plus2"></i></span> BlackCFA Directory</a></li>
+                <li><a href="<%= user_path(@user) %>"><span class="icon"><i class="ico-user"></i></span> My Profile</a></li>
                 <li><a href="<%= edit_user_path(@user) %>"><span class="icon"><i class="ico-cog4"></i></span> Edit Profile</a></li>
                 <li class="divider"></li>
                 <li>
@@ -30,6 +30,7 @@
                     <span class="icon"><i class="ico-exit"></i></span> Log Out
                     <% end %>
                 </li>
+                
             </ul>
         </li>
         <!-- Profile dropdown -->
