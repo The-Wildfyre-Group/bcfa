@@ -55,19 +55,34 @@
          </div>
 		 <%= f.fields_for :user_detail, @user_detail do |builder| %>
          <div class="form-group">
+             <label class="col-sm-3 control-label">Title</label>
+             <div class="col-sm-6">
+                <%= builder.text_field :title, class: "form-control"  %>
+             </div>
+         </div>
+          
+          <div class="form-group">
              <label class="col-sm-3 control-label">Company</label>
              <div class="col-sm-6">
 				<%= builder.text_field :company, class: "form-control"  %>
                  
              </div>
          </div>
-         <div class="form-group">
-             <label class="col-sm-3 control-label">Title</label>
-             <div class="col-sm-6">
-				<%= builder.text_field :title, class: "form-control"  %>
-                 
-             </div>
-         </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">City</label>
+                <div class="col-sm-6">
+                    <%= builder.select(:city, ["Select Location", User.cities_list.sort, ], {}, {:class => 'form-control'}) %>
+                    <!-- <select class="form-control" name="language">
+                        <option>Select Language...</option>
+                        <option value="eu">Basque - Euskara (beta)</option>
+                        <option value="ca">Catalan - català (beta)</option>
+                        <option value="sv">Swedish - Svenska</option>
+                        <option value="tr">Turkish - Türkçe</option>
+                        <option value="uk">Ukrainian - Українська мова (beta)</option>
+                    </select> -->
+                </div>
+            </div>
+            
             <div class="form-group">
                 <label class="col-sm-3 control-label">Twitter</label>
                 <div class="col-sm-6">

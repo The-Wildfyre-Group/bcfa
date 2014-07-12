@@ -19,48 +19,116 @@
             </div>
             <div class="form-group">
                 <label class="col-sm-3 control-label">Education</label>
-                <div class="col-sm-6">
-                    <%= builder.text_field :undergraduate_school, class: "form-control", placeholder: "Undergraduate School" %>
-                    <br>
-                    <div class="row clearfix">
-                         <div class="col-md-8">
-                            <%= builder.text_field :undergraduate_degree, class: "form-control", placeholder: "Undergraduate Degree" %>
+                <div class="col-sm-8">
+                    <!-- panel group -->
+                    <div class="panel-group panel-group-compact" id="accordion2">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion2" href="#collapseOne1" class="collapsed">
+                                        <span class="plus mr5"></span> Undergraduate
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne1" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <%= builder.text_field :undergraduate_school, class: "form-control", placeholder: "College/University" %>
+                                    <br>
+                                    <div class="row clearfix">
+                                         <div class="col-md-12">
+                                            <%= builder.text_field :undergraduate_degree, class: "form-control", placeholder: "Study of Degree" %>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row clearfix">
+                                         <div class="col-md-4">
+                                            <%= builder.text_field :undergraduate_degree, class: "form-control", placeholder: "Year" %>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <select name="type" class="form-control">
+                                                <option value="">Degree</option>
+                                                <option value="1">BA</option>
+                                                <option value="2">BS</option>
+                                                <option value="2">BSE</option>
+                                                <option value="3">BBA</option>
+                                                <option value="3">BFA</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                         <div class="col-md-4">
-                            <%= builder.text_field :undergraduate_degree, class: "form-control", placeholder: "Year" %>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo2" class="collapsed">
+                                        <span class="plus mr5"></span> Graduate
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <%= builder.text_field :graduate_school, class: "form-control", placeholder: "College/University" %>
+                                    <br>
+                                    <div class="row clearfix">
+                                         <div class="col-md-12">
+                                            <%= builder.text_field :graduate_degree, class: "form-control", placeholder: "Study of Degree" %>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row clearfix">
+                                         <div class="col-md-4">
+                                            <%= builder.text_field :graduate_degree, class: "form-control", placeholder: "Year" %>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <select name="type" class="form-control">
+                                                <option value="">Degree</option>
+                                                <option value="1">PhD</option>
+                                                <option value="1">JD</option>
+                                                <option value="1">MD</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h5 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion2" href="#collapseThree3" class="collapsed">
+                                        <span class="plus mr5"></span> Doctorate
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseThree3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <%= builder.text_field :graduate_school, class: "form-control", placeholder: "College/University" %>
+                                    <br>
+                                    <div class="row clearfix">
+                                         <div class="col-md-12">
+                                            <%= builder.text_field :graduate_degree, class: "form-control", placeholder: "Study of Degree" %>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row clearfix">
+                                         <div class="col-md-4">
+                                            <%= builder.text_field :graduate_degree, class: "form-control", placeholder: "Year" %>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <select name="type" class="form-control">
+                                                <option value="">Degree</option>
+                                                <option value="1">MA</option>
+                                                <option value="2">MS</option>
+                                                <option value="2">MSE</option>
+                                                <option value="3">MFA</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <br>
-                    <hr>
-                    <br>
-                    <div class="clearfix">
-                        <%= builder.text_field :graduate_school, class: "form-control", placeholder: "Graduate School" %>
-                        <br>
-                        <div class="row clearfix">
-                             <div class="col-md-8">
-                                <%= builder.text_field :graduate_degree, class: "form-control", placeholder: "Undergraduate Degree" %>
-                            </div>
-                             <div class="col-md-4">
-                                <%= builder.text_field :graduate_school, class: "form-control", placeholder: "Year" %>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <hr>
-                    <br>
-                    <div class="clearfix">
-                        <%= builder.text_field :graduate_school, class: "form-control", placeholder: "Graduate School" %>
-                        <br>
-                        <div class="row clearfix">
-                             <div class="col-md-8">
-                                <%= builder.text_field :graduate_degree, class: "form-control", placeholder: "Undergraduate Degree" %>
-                            </div>
-                             <div class="col-md-4">
-                                <%= builder.text_field :graduate_school, class: "form-control", placeholder: "Year" %>
-                            </div>
-                        </div>
-                    </div>
-
+                    <!--/ panel group -->
                 </div>
             </div>
 			
@@ -75,20 +143,6 @@
                     Certifications</label>
                 <div class="col-sm-8">
                     <%= builder.text_field :certifications, class: "form-control", placeholder: "Certifications" %>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label">City</label>
-                <div class="col-sm-5">
-					<%= builder.select :city, User.cities_list.sort, prompt: "Select Location", :class => "form-control input-lg" %>
-                <!-- <select class="form-control" name="language">
-                        <option>Select Language...</option>
-                        <option value="eu">Basque - Euskara (beta)</option>
-                        <option value="ca">Catalan - català (beta)</option>
-                        <option value="sv">Swedish - Svenska</option>
-                        <option value="tr">Turkish - Türkçe</option>
-                        <option value="uk">Ukrainian - Українська мова (beta)</option>
-                    </select> -->
                 </div>
             </div>
             <div class="form-group">
