@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   before_create { generate_token(:authentication_token) }
   #after_update :password_changed?, :on => :update
   #before_save :encrypt_password
+  validate :check_access_code
   
   # user detail
   has_one :user_detail
@@ -17,7 +18,15 @@ class User < ActiveRecord::Base
   has_many :user_profile_pictures
   accepts_nested_attributes_for :user_profile_pictures, :reject_if => :all_blank, :allow_destroy => true
   
+  ACCESS_CODE = ["charterme", "5678", "spa", "live", "blck", "dc", "cordis"]
+  
   attr_accessor :access_code
+  
+  def check_access_code
+    unless ACCESS_CODE.include? access_code
+      errors.add(:access_code, "Error: Access Code is Incorrect.")
+    end
+  end
   
   def password_changed?
     if (provider.nil? || provider.try(:empty?))

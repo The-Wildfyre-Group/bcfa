@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       cookies.permanent[:authentication_token] = @user.authentication_token 
       redirect_to edit_user_path(@user)
     else
-      render text: "didn't work"
+      render text: @user.errors.full_messages
     end
   end
   
