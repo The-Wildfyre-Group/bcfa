@@ -14,7 +14,6 @@
 
  .jumbotron.jumbotron-bg7 {
 	background: url("http://i.huffpost.com/gen/1410042/thumbs/o-AFRICANAMERICAN-COUPLE-WITH-FINANCIAL-PLANNER-facebook.jpg") no-repeat center top fixed;
-	/*height: 800px;*/
 	min-height: 100%;
 }
 
@@ -44,12 +43,16 @@ height: 60px;
 float: left;
 }
 
+.btn-outliine {
+	background-color: transparent !important;
+	border-color: #cfd9db;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8);
+}
+
 
 .backend #header.navbar .navbar-header > .navbar-brand > .logo-text {
 	background-image: url("../image/logo/logo-text-inverse.png");
 }
-
-
 
 article > section.panel-body h5 {
 	line-height: 1.6;
