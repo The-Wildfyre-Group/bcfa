@@ -16,7 +16,9 @@
 .br-6 {border-radius: 6px;}
 .bs-888 {box-shadow: 1px 1px 1px #888; border-left: 1px solid #777; border-top: 1px solid #777;}
 
- .jumbotron.jumbotron-bg7 {
+.jumbotron h1.fs-xlrg {font-size: 60px !important;}
+
+.jumbotron.jumbotron-bg7 {
 	background: url("http://i.huffpost.com/gen/1410042/thumbs/o-AFRICANAMERICAN-COUPLE-WITH-FINANCIAL-PLANNER-facebook.jpg") no-repeat center top fixed;
 	min-height: 100%;
 }

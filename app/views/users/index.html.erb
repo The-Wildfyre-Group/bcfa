@@ -3,18 +3,49 @@
 <%= render 'header'%>
 
         
-        <section class="jumbotron jumbotron-bg3 nm" data-stellar-background-ratio="0.4" style="min-height:320px;">
-            <!-- pattern + overlay -->
-            <div class="overlay pattern pattern10"></div>
-            <!--/ pattern + overlay -->
-        </section>
+
 
         <!-- START Template Main -->
         <section id="main pt0" role="main">
             <!-- START Template Container -->
+
+            <!-- START jumbotron -->
+            <section class="jumbotron jumbotron-bg7 nm" data-stellar-background-ratio="0.4" style="min-height:360px;">
+                <!-- pattern + overlay -->
+                <div class="overlay pattern pattern2"></div>
+                <!--/ pattern + overlay -->
+                <div class="container" style="padding-top:8%;">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1 class="thin text-white mt0 mb5 fs-xlrg">
+                                <strong>24<%#= @users.count %></strong>
+                                BlackCFAs.</h1>
+                            <div class="row clearfix">
+                                <div class="col-md-9">
+                                    <p class="text-white mb15 fsize14">
+                                    We are aggressivey working to connect black CFAs worldwide. Please help us by inviting those in your personal and extended networks.
+                                    </p>
+                                    <br/>
+                                    <div class="col-md-3 row">
+                                        <a class="btn btn-default btn-outline text-white btn-lg">Invite a Black CFA</a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            
+                                
+                           
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--/ END jumbotron -->
+
             <!-- Page Header -->
             <div class="page-header page-header-block">
-                 <div class="page-header-section"><%= @users.count %>
+                 <div class="page-header-section">
                     <div class="toolbar">
                         <div class="col-md-4 col-md-offset-4">
                             <div class="has-icon">
