@@ -116,25 +116,55 @@
                         </div>
                         <!--/ Right side / bottom side -->
                         <div class="col-md-4">
-                            <div class="text-left">
+                            <div class="text-center">
 								<%= image_tag @user.avatar, class: "img-circle img-bordered", style: "margin-top: -100px; z-index: 999; position: relative;", width: "180px", height: "180px"  %>
-                                
                             </div>
 
                             <!-- START Widget Panel -->
 
                             <h3 class="text-left"><%= @user.full_name %></h3>
                             <h4 class="thin text-left"><%= @user.company_and_title %></h4>
-                            <h5><i class="ico-map-marker mr5 text-teal"></i> <%= @user.user_detail.try(:location_description) %></h5>
-                            <div class="pt15">
-                                <div class="panel-toolbar text-left">
-                                    <a class="btn ws1 btn-primary linkedin-blue" href="https://www.linkedin.com/profile/view?id=61383975&authType=NAME_SEARCH&authToken=ZG3w&locale=en_US&srchid=44154641404630328160&srchindex=1&srchtotal=1&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A44154641404630328160%2CVSRPtargetId%3A61383975%2CVSRPcmpt%3Aprimary" target="_blank">
-                                        <h5 class="nm">LinkedIn</h5>
-                                    </a>
-                                    <a class="btn ws1 btn-default" href="#" target="_blank">
-                                        <h5 class="nm">Contact Cordis</h5>
-                                    </a>
+                            <div class="pt15 col-md-10 col-md-offset-1">
+                                <!-- START panel -->
+                                <div class="panel panel-primary">
+                                    <!-- panel heading/header -->
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Contact Information</h3>
+                                    </div>
+                                    <!--/ panel heading/header -->
+                                    <!-- panel body with collapse capabale -->
+                                    <div class="panel-collapse pull out">
+                                        <div class="panel-body pl25">
+                                            <address>
+                                                <strong>Location</strong><br>
+                                                <h4><i class="ico-map-marker mr5"></i> 
+                                                    <%= @user.user_detail.try(:location_description) %></h4>
+                                            </address>
+
+                                            <address>
+                                                <strong>Phone and Email</strong><br>
+                                                <abbr title="Phone">P:</abbr> (123) 456-7890<br>
+                                                <abbr title="Email">E:</abbr> first.last@example.com
+                                            </address>
+
+                                            <address>
+                                                <strong>Website</strong><br>
+                                                <a href="mailto:#">first.last@example.com</a>
+                                            </address>
+
+                                            <address>
+                                                <strong>Social Media</strong><br>
+                                                <h4><i class="text-facebook ico-facebook4 mr5"></i> 
+                                                    Facbook</h4>
+                                                <h4><i class="text-twitter ico-twitter3 mr5"></i> Twitter</h4>
+                                                <h4><i class="text-instagram ico-instagram2 mr5"></i> Instagram</h4>
+                                                <h4><i class="text-linkedin ico-linkedin2 mr5"></i> LinkedIn</h4>
+                                            </address>
+                                        </div>
+                                    </div>
+                                    <!--/ panel body with collapse capabale -->
                                 </div>
+                                <!--/ END panel -->
                             </div>
                         </div>
                         <!--/ END Row -->

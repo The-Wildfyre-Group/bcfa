@@ -12,9 +12,14 @@
  *
  * --------------------------- */
 
+.text-twitter {color: #00aced;}
+.text-facebook {color: #3b5998;}
+.text-instagram {color: #517fa4;}
+
 .mt60 {margin-top: 60px !important;}
 .pt60 {padding-top: 60px !important;}
 .pb60 {padding-bottom: 60px;}
+.pl25 {padding-left: 25px;}
 
 .br-6 {border-radius: 6px;}
 .bs-888 {box-shadow: 1px 1px 1px #888; border-left: 1px solid #777; border-top: 1px solid #777;}
