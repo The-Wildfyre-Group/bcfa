@@ -114,43 +114,47 @@ LAST UPDATE: 23/06/2014
                                 </p>
                             </blockquote> -->
                         </div>
-                        <div class="col-md-4 col-md-offset-2" style="border: 1px solid #888; border-radius: 6px; padding: 20px 30px;">
-                            <h1 class="text-white mt0 mb5">Get Connected.</h1>
-                                <p class="text-white mb15 fsize12">
-                                    Connecting and empowering professionals that have achieved the CFA designation and those pursuing the CFA course of study.
-                                </p>
-
-                                <br>
-                           
-                            <!-- <div class="col-md-3 row">
-                                <a class="btn btn-default btn-outline text-white btn-lg">Learn More</a>
-                            </div> -->
-                            <!-- <div class="clearfix"></div> -->
-                            
-                            
-							<%= form_for User.new, url: users_path, html: {novalidate: true} do |f| %>
-                                <div class="form-group">
-									<%= f.text_field :email, class: "form-control input-lg", id: "signup_username", placeholder: "Email" %>
+                        <div class="col-md-4 np col-md-offset-2" style="border: 1px solid #252525; border-radius: 6px; background: rgba(0,0,0, .2);">
+                            <div class="panel nm bgcolor-transparent no-border">
+                                <div class="panel-body pr30 pl30">
+                                    <div class="row">
+                                        <img class="img-circle img-responsive col-md-3 mb5" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 50px; width: 80px;">
+                                        <h1 class="text-white mt0 mb5">BlackCFA.</h1>
+                                    </div>
+                                    <p class="text-white mb0 fsize12 pl5 pr5">
+                                        Connecting and empowering professionals that have achieved the CFA designation and those pursuing the CFA course of study.
+                                    </p>
+                                    <!-- <div class="col-md-3 row">
+                                        <a class="btn btn-default btn-outline text-white btn-lg">Learn More</a>
+                                    </div> -->
+                                    <!-- <div class="clearfix"></div> -->
                                 </div>
-                                <div class="form-group">
-                                    <%= f.password_field :password, class: "form-control input-lg", id: "signup_username", placeholder: "Password" %>
+                                <hr class="dark mb5 mt5">
+                                <div class="panel-body pr30 pl30">
+        							<%= form_for User.new, url: users_path, html: {novalidate: true} do |f| %>
+                                        <div class="form-group">
+        									<%= f.text_field :email, class: "form-control input-lg", id: "signup_username", placeholder: "Email" %>
+                                        </div>
+                                        <div class="form-group">
+                                            <%= f.password_field :password, class: "form-control input-lg", id: "signup_username", placeholder: "Password" %>
+                                        </div>
+                                        <!-- <div class="form-group">
+                                            <%#= f.password_field :password_confirmation, class: "form-control input-lg", id: "signup_username", placeholder: "Password Confirmation" %>
+                                        </div>
+                                        --> 
+                                        <div class="form-group">
+                                            <%= f.text_field :access_code, class: "form-control input-lg", id: "access_code", placeholder: "Access Code" %>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="help-block text-muted">Don't have an access code? <a href="#">How to get one.</a></span>
+                                        </div>
+        								<%= f.submit "Sign up for BlackCFA", class: "semibold btn btn-primary btn-3d btn-block btn-lg", style: "padding: 12px 16px;" %>
+                                        <div class="form-group pt15">
+                                            <span class="help-block text-muted">By clicking "Sign up for BlackCFA", you agree to our <a href="#">terms of service</a> and <a href="#">privacy policy</a>. We will send you account related emails occasionally.</span>
+                                        </div>
+        							<% end %>
                                 </div>
-                                <!-- <div class="form-group">
-                                    <%#= f.password_field :password_confirmation, class: "form-control input-lg", id: "signup_username", placeholder: "Password Confirmation" %>
-                                </div>
-                                --> 
-                                <div class="form-group">
-                                    <%= f.text_field :access_code, class: "form-control input-lg", id: "access_code", placeholder: "Access Code" %>
-                                </div>
-                                <div class="form-group">
-                                    <span class="help-block text-muted">Don't have an access code? <a href="#">How to get one.</a></span>
-                                </div>
-								<%= f.submit "Sign up for BlackCFA", class: "semibold btn btn-primary btn-3d btn-block btn-lg", style: "padding: 12px 16px;" %>
-                                <div class="form-group pt15">
-                                    <span class="help-block text-muted">By clicking "Sign up for BlackCFA", you agree to our <a href="#">terms of service</a> and <a href="#">privacy policy</a>. We will send you account related emails occasionally.</span>
-                                </div>
-	                                
-							<% end %>
+                            </div>
                            
                         </div>
                     </div>
