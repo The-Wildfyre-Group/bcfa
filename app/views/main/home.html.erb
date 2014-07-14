@@ -12,42 +12,7 @@ LAST UPDATE: 23/06/2014
 -->
 <html class="frontend">
     <!-- START Head -->
-    <head>
-        <!-- START META SECTION -->
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>BlackCFA</title>
-        <meta name="author" content="pampersdry.info">
-        <meta name="description" content="Adminre is a clean and flat backend and frontend theme build with twitter bootstrap 3.1.1">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../image/touch/apple-touch-icon-144x144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../image/touch/apple-touch-icon-114x114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../image/touch/apple-touch-icon-72x72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="../image/touch/apple-touch-icon-57x57-precomposed.png">
-        <link rel="shortcut icon" href="../image/favicon.ico">
-        <!--/ END META SECTION -->
-
-        <!-- START STYLESHEETS -->
-        <!-- Plugins stylesheet : optional -->
-        
-        
-        <link rel="stylesheet" href="../plugins/owl/css/owl.carousel.min.css">
-        
-        <!--/ Plugins stylesheet -->
-
-        <!-- Application stylesheet : mandatory -->
-        <link rel="stylesheet" href="/library/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/stylesheet/layout.css">
-        <link rel="stylesheet" href="/stylesheet/uielement.css">
-        <link rel="stylesheet" href="/stylesheet/custom.css">
-        <!--/ Application stylesheet -->
-        <!-- END STYLESHEETS -->
-
-        <!-- START JAVASCRIPT SECTION - Load only modernizr script here -->
-        <script src="../library/modernizr/js/modernizr.min.js"></script>
-        <!--/ END JAVASCRIPT SECTION -->
-    </head>
+    <%= render 'shared/frontend_head' %>
     <!--/ END Head -->
 
     <!-- START Body -->
@@ -113,62 +78,7 @@ LAST UPDATE: 23/06/2014
         <!--/ END Template Main -->
 
         <!-- START Template Footer -->
-        <footer id="footer" role="contentinfo" class="pt60 pb60">
-            <!-- container -->
-            <div class="container">
-                <!-- row -->
-                <div class="row">
-                    <!-- About -->
-                    <div class="col-md-7">
-                        <h5 class="mt0">About Us</h5>
-                        <p>BlackCFA was founded in July 2014. The orgnaization is dedicated dedicated to connecting, supporting, and empowering black professionals that have achieved the CFA designation and those pursuing the CFA course of study. Stay tuned, we've got big plans.</p>
-                    </div>
-                    <!--/ About -->
-
-                    <!-- Address + Social -->
-                    <div class="col-md-3">
-                        <h5 class="mt0">Contact Us</h5>
-                        <address>
-                            <strong>Black CFA</strong><br>
-                            Washington, DC 94107<br>
-                        </address>
-                    </div>
-                    <!--/ Address + Social -->
-
-                     <!-- Address + Social -->
-                    <div class="col-md-2">
-                        <h5 class="font-alt mt0">Stay Connected</h5>
-                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Facebook"><i class="ico-facebook2"></i></a>
-                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Twitter"><i class="ico-twitter2"></i></a>
-                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Google+"><i class="ico-google-plus2"></i></a>
-                    </div>
-                    <!--/ Address + Social -->
-                </div>
-                <!--/ row -->
-            </div>
-            <!--/ container -->
-
-           <!-- bottom footer -->
-            <div class="footer-bottom mt60">
-                <!-- container -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6 copyright">
-                            <!-- copyright -->
-                            <p class="nm copyright">&copy; Copyright 2014 by <a href="javascript:void(0);" class="">The Wildfyre Group</a>. All Rights Reserved.</p>
-                            <!--/ copyright -->
-                        </div>
-                        <div class="col-sm-6 text-right legal">
-                            <a href="javascript:void(0);" class="">Privacy Policy</a>
-                            <span class="ml5 mr5">&#8226;</span>
-                            <a href="javascript:void(0);" class="">Terms of Service</a>
-                        </div>
-                    </div>
-                </div>
-                <!--/ container -->
-            </div>
-            <!--/ bottom footer -->
-        </footer>
+        <%= render 'shared/frontend_footer' %>
         <!--/ END Template Footer -->
 
         <!-- START JAVASCRIPT SECTION (Load javascripts at bottom to reduce load time) -->

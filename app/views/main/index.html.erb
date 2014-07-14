@@ -101,7 +101,7 @@ LAST UPDATE: 23/06/2014
         <!-- START Template Main -->
         <section id="main" role="main">
             <!-- START jumbotron -->
-            <section class="jumbotron jumbotron-bg7 nm" data-stellar-background-ratio="0.4" style="min-height:486px;">
+            <section class="jumbotron jumbotron-bg7 nm" data-stellar-background-ratio="0.4" style="min-height:600px;">
                 <!-- pattern + overlay -->
                 <div class="overlay pattern pattern2"></div>
                 <!--/ pattern + overlay -->
@@ -122,7 +122,7 @@ LAST UPDATE: 23/06/2014
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 pt60">
                             
 								<%= form_for User.new, url: users_path, html: {novalidate: true} do |f| %>
                                 <div class="form-group">
@@ -131,16 +131,20 @@ LAST UPDATE: 23/06/2014
                                 <div class="form-group">
                                     <%= f.password_field :password, class: "form-control input-lg", id: "signup_username", placeholder: "Password" %>
                                 </div>
-                                <div class="form-group">
-                                    <%= f.password_field :password_confirmation, class: "form-control input-lg", id: "signup_username", placeholder: "Password Confirmation" %>
+                                <!-- <div class="form-group">
+                                    <%#= f.password_field :password_confirmation, class: "form-control input-lg", id: "signup_username", placeholder: "Password Confirmation" %>
                                 </div>
+                                --> 
                                 <div class="form-group">
                                     <%= f.text_field :access_code, class: "form-control input-lg", id: "access_code", placeholder: "Access Code" %>
                                 </div>
                                 <div class="form-group">
-                                    <span class="help-block text-muted">Use at least one lowercase letter, one numeral, and seven characters.</span>
+                                    <span class="help-block text-muted">Don't have an access code? <a href="#">How to get one.</a></span>
                                 </div>
-									<%= f.submit "Signup Now", class:"btn btn-success btn-block btn-lg" %>
+								<%= f.submit "Sign up for BlackCFA", class: "semibold btn btn-primary btn-3d btn-block btn-lg", style: "padding: 12px 16px;" %>
+                                <div class="form-group pt15">
+                                    <span class="help-block text-muted">By clicking "Sign up for BlackCFA", you agree to our <a href="#">terms of service</a> and <a href="#">privacy policy</a>. We will send you account related emails occasionally.</span>
+                                </div>
 	                                
 								<% end %>
                            
@@ -572,73 +576,10 @@ LAST UPDATE: 23/06/2014
         <!--/ END Template Main -->
 
         <!-- START Template Footer -->
-        <footer id="footer" role="contentinfo">
-            <!-- container -->
-            <div class="container">
-                <!-- row -->
-                <div class="row">
-                    <!-- About -->
-                    <div class="col-md-5">
-                        <div class="col-md-11 row">
-                            <h4 class="mt0">About Us</h4>
-                            <p>BlackCFA was founded in July 2014. The orgnaization is dedicated dedicated to connecting, supporting, and empowering black professionals that have achieved the CFA designation and those pursuing the CFA course of study. Stay tuned, we've got big plans.</p>
-                        </div>
-                    </div>
-                    <!--/ About -->
-
-                    <!-- Address + Social -->
-                    <div class="col-md-3">
-                        <h4 class="mt0">Contact Us</h4>
-                        <address>
-                            <strong>Black CFA</strong><br>
-                            Washington, DC 94107<br>
-                        </address>
-                        <h4 class="font-alt mt0">Stay Connected</h4>
-                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Facebook"><i class="ico-facebook2"></i></a>
-                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Twitter"><i class="ico-twitter2"></i></a>
-                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Google+"><i class="ico-google-plus2"></i></a>
-                    </div>
-                    <!--/ Address + Social -->
-
-                    <!-- Newsletter -->
-                    <div class="col-md-4">
-                        <h4 class="mt0">NewsLetter</h4>
-                        <form role="form">
-                            <div class="form-group">
-                                <p class="form-control-static">Subscribe to our newsletter and stay up to date with the latest news and deals!</p>
-                            </div>
-                       
-                            <button type="submit" class="btn btn-primary btn-block">Take Our BlackCFA Survey</button>
-                        </form>
-                    </div>
-                    <!--/ Newsletter -->
-                </div>
-                <!--/ row -->
-            </div>
-            <!--/ container -->
-
-           <!-- bottom footer -->
-            <div class="footer-bottom">
-                <!-- container -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6 copyright">
-                            <!-- copyright -->
-                            <p class="nm copyright">&copy; Copyright 2014 by <a href="javascript:void(0);" class="">The Wildfyre Group</a>. All Rights Reserved.</p>
-                            <!--/ copyright -->
-                        </div>
-                        <div class="col-sm-6 text-right legal">
-                            <a href="javascript:void(0);" class="">Privacy Policy</a>
-                            <span class="ml5 mr5">&#8226;</span>
-                            <a href="javascript:void(0);" class="">Terms of Service</a>
-                        </div>
-                    </div>
-                </div>
-                <!--/ container -->
-            </div>
-            <!--/ bottom footer -->
-        </footer>
+        <%= render 'shared/frontend_footer' %>
         <!--/ END Template Footer -->
+
+        
 
         <!-- START JAVASCRIPT SECTION (Load javascripts at bottom to reduce load time) -->
         <!-- Library script : mandatory -->

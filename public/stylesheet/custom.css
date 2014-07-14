@@ -12,6 +12,26 @@
  *
  * --------------------------- */
 
+
+.btn-primary.btn-3d {
+	color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #5bb75b;
+background-image: -moz-linear-gradient(top, #91c854, #5e8a2c);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#91c854), to(#5e8a2c));
+background-image: -webkit-linear-gradient(top, #91c854, #5e8a2c);
+background-image: -o-linear-gradient(top, #91c854, #5e8a2c);
+background-image: linear-gradient(to bottom, #91c854, #5e8a2c);
+background-repeat: repeat-x;
+border-color: #51a351 #51a351 #387038;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+
+}
+
+
+
+
 .pt30 {padding-top: 30px;}
 
 .text-twitter {color: #00aced;}
@@ -63,6 +83,14 @@ float: left;
 	background-color: transparent !important;
 	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8);
 	border-width: 2px !important;
+}
+
+.bd-dark-grey {
+	border-color: #aaa;
+}
+
+.fs14 {
+	font-size: 14px !important;
 }
 
 
