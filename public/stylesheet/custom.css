@@ -12,6 +12,8 @@
  *
  * --------------------------- */
 
+.pt30 {padding-top: 30px;}
+
 .text-twitter {color: #00aced;}
 .text-facebook {color: #3b5998;}
 .text-instagram {color: #517fa4;}
@@ -220,3 +222,22 @@ i.bg-white {background: #fff; padding: 5px; border-radius: 2px; border: 1px soli
 	border-top: 1px solid #e5e5e5;
 	border-left: 1px solid #eee;
 }
+
+.fileinput-preview.fileinput-exists.thumbnail {
+	
+}
+
+
+.fileinput-preview.fileinput-exists.thumbnail,
+.fileinput-new.thumbnail {
+	width: 100px;
+	height: 100px; 
+}
+
+.fileinput-preview.fileinput-exists.thumbnail img,
+.fileinput-new.thumbnail img {
+	width: 100%;
+	height: 100%; 
+}
+
+
