@@ -12,96 +12,17 @@ LAST UPDATE: 23/06/2014
 -->
 <html class="frontend">
     <!-- START Head -->
-    <head>
-        <!-- START META SECTION -->
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>BlackCFA</title>
-        <meta name="author" content="pampersdry.info">
-        <meta name="description" content="Adminre is a clean and flat backend and frontend theme build with twitter bootstrap 3.1.1">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../image/touch/apple-touch-icon-144x144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../image/touch/apple-touch-icon-114x114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../image/touch/apple-touch-icon-72x72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="../image/touch/apple-touch-icon-57x57-precomposed.png">
-        <link rel="shortcut icon" href="../image/favicon.ico">
-        <!--/ END META SECTION -->
-
-        <!-- START STYLESHEETS -->
-        <!-- Plugins stylesheet : optional -->
-        
-        
-        <link rel="stylesheet" href="../plugins/owl/css/owl.carousel.min.css">
-        
-        <!--/ Plugins stylesheet -->
-
-        <!-- Application stylesheet : mandatory -->
-        <link rel="stylesheet" href="/library/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/stylesheet/layout.css">
-        <link rel="stylesheet" href="/stylesheet/uielement.css">
-        <link rel="stylesheet" href="/stylesheet/custom.css">
-        <!--/ Application stylesheet -->
-        <!-- END STYLESHEETS -->
-
-        <!-- START JAVASCRIPT SECTION - Load only modernizr script here -->
-        <script src="../library/modernizr/js/modernizr.min.js"></script>
-        <!--/ END JAVASCRIPT SECTION -->
-    </head>
+    <%= render 'shared/frontend_head' %>
     <!--/ END Head -->
 
     <!-- START Body -->
     <body>
-        <!-- START Template Header -->
-        <header id="header" class="navbar navbar-fixed-top">
-            <div class="container">
-                <!-- START navbar header -->
-                <div class="navbar-header">
-                    <!-- Brand -->
-                    <a class="navbar-brand" href="/">
-                        <span class="logo-figure" style="margin-left:-4px;"></span>
-                        <span class="logo-text"></span>
-                    </a>
-                    <!--/ Brand -->
-                </div>
-                <!--/ END navbar header -->
-
-                <!-- START Toolbar -->
-                <div class="navbar-toolbar clearfix">
-                    <!-- START Left nav -->
-                    <ul class="nav navbar-nav">
-                        <!-- Navbar collapse: This menu will take position at the top of template header (mobile only). Make sure that only #header have the `position: relative`, or it may cause unwanted behavior -->
-                        <li class="navbar-main navbar-toggle">
-                            <a href="javascript:void(0);" data-toggle="collapse" data-target="#navbar-collapse">
-                                <span class="meta">
-                                    <span class="icon"><i class="ico-paragraph-justify3"></i></span>
-                                </span>
-                            </a>
-                        </li>
-                        <!--/ Navbar collapse -->
-                    </ul>
-                    <!--/ END Left nav -->
-
-                    <!-- START navbar form -->
-                    <div class="navbar-form navbar-left dropdown" id="dropdown-form">
-                        <form action="" role="search">
-                            <div class="has-icon">
-                                <input type="text" class="form-control" placeholder="Search this site...">
-                                <i class="ico-search form-control-icon"></i>
-                            </div>
-                        </form>
-                    </div>
-                    <%= render 'shared/navigation_visitor' %>
-                    <!--/ END nav collapse -->
-                </div>
-                <!--/ END Toolbar -->
-            </div>
-        </header>
-        <!--/ END Template Header --> 
+        
 
         <!-- START Template Main -->
         <section id="main" role="main">
             <!-- START jumbotron -->
-            <section class="jumbotron jumbotron-bg7 nm" data-stellar-background-ratio="0.4" style="min-height:960px;">
+            <section class="jumbotron jumbotron-bg7 nm" data-stellar-background-ratio="0.4" style="min-height:1005px;">
                 <!-- pattern + overlay -->
                 <div class="overlay pattern pattern2"></div>
                 <!--/ pattern + overlay -->
@@ -144,9 +65,12 @@ LAST UPDATE: 23/06/2014
                                         <div class="form-group">
                                             <%= f.text_field :access_code, class: "form-control input-lg", id: "access_code", placeholder: "Access Code" %>
                                         </div>
-                                        <div class="form-group">
-                                            <span class="help-block text-muted">Don't have an access code? <a href="#">How to get one.</a></span>
+                                        <div class="form-group mb0">
+                                            <span class="help-block text-muted mb0">Don't have an access code? <a href="#">How to get one.</a></span>
                                         </div>
+                                    </div>
+                                    <hr class="darker mb5 mt5">
+                                    <div class="panel-body pr30 pl30">
         								<%= f.submit "Sign up for BlackCFA", class: "semibold btn btn-primary btn-3d btn-block btn-lg", style: "padding: 12px 16px;" %>
                                         <div class="form-group pt15">
                                             <span class="help-block text-muted">By clicking "Sign up for BlackCFA", you agree to our <a href="#">terms of service</a> and <a href="#">privacy policy</a>. We will send you account related emails occasionally.</span>
@@ -161,17 +85,7 @@ LAST UPDATE: 23/06/2014
             </section>
             <!--/ END jumbotron -->
 
-            <!-- START Tweet Section -->
-            <section class="section bgcolor-primary">
-                <div class="container">
-                    <h4 class="text-center nm">
-                        <i class="ico-twitter2 mr5"></i>
-                        Black CFA is up and runnin', please check us out and give feedback.
-                        <small>23 Minute Ago</small>
-                    </h4>
-                </div>
-            </section>
-            <!--/ END Tweet Section -->
+           
 
             <!-- START To Top Scroller -->
             <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
