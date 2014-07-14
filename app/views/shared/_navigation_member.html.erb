@@ -20,7 +20,16 @@
                 </span>
             </a>
             <ul class="dropdown-menu" role="menu">
-               <li class="divider"></li>
+                <li class="pa15">
+                    <h5 class="semibold hidden-xs hidden-sm">
+                        <p class="nm">Follow Us!</p>
+                        <small class="text-muted">Stay connected @blackcfa.</small>
+                    </h5>
+                    <br>
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <div class="addthis_native_toolbox"></div>
+                </li>
+                <li class="divider"></li>
                 <li><a href="<%= users_path(@user) %>"><span class="icon"><i class="ico-user-plus2"></i></span> BlackCFA Directory</a></li>
                 <li><a href="<%= user_path(@user) %>"><span class="icon"><i class="ico-user"></i></span> My Profile</a></li>
                 <li><a href="<%= edit_user_path(@user) %>"><span class="icon"><i class="ico-cog4"></i></span> Edit Profile</a></li>
