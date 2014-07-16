@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "login" => "sessions#new", as: :login
   get "signup" => "users#new", as: :signup
   get "home" => "main#home", as: :home
+  resources :password_resets
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

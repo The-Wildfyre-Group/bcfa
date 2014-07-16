@@ -1,0 +1,12 @@
+
+  <%= form_tag password_resets_path, :method => :post do %>
+    Need to reset your password? <br/>
+          <span class="semi-bold text-success">We've got you covered.</span>
+
+        <h5 class="text-center muted">( Enter your e-mail address for instructions )</h5>
+    
+          <%= text_field_tag :email, params[:email], placeholder: "Enter you email ...", class: "form-control", type: "text" %>
+
+            <%= submit_tag "Send Reset Instructions", :class => "bold btn btn-primary btn-large btn-cons", type: "submit" %>
+
+    <% end %>

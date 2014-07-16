@@ -166,6 +166,19 @@ class User < ActiveRecord::Base
     [user_detail.try(:doctorate_degree),user_detail.try(:doctorate_major)].compact.join(delimiter) if user_detail.try(:doctorate_major).present?
   end
   
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
+  end
+  
+  def send_password_reset
+    generate_token(:reset_password_token)
+    self.reset_password_sent_at = Time.zone.now
+    save!
+    Email.password_reset(self).deliver
+  end
+  
   
   
   
