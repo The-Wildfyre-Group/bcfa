@@ -36,23 +36,24 @@
                                     <br>
                                     <div class="row clearfix">
                                          <div class="col-md-12">
-                                            <%= builder.text_field :undergraduate_degree, class: "form-control", placeholder: "Study of Degree" %>
+                                            <%= builder.text_field :undergraduate_major, class: "form-control", placeholder: "Study of Degree" %>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="row clearfix">
                                          <div class="col-md-4">
-                                            <%= builder.text_field :undergraduate_degree, class: "form-control", placeholder: "Year" %>
+                                            <%= builder.text_field :undergraduate_year, class: "form-control", placeholder: "Year" %>
                                         </div>
                                         <div class="col-md-4">
-                                            <select name="type" class="form-control">
+											<%= builder.select(:undergraduate_degree, ["BA", "BS", "BSE", "BBA", "BFA"], {prompt: "Degree"}, {:class => "form-control"})%>
+                                            <!-- <select name="type" class="form-control">
                                                 <option value="">Degree</option>
                                                 <option value="1">BA</option>
                                                 <option value="2">BS</option>
                                                 <option value="2">BSE</option>
                                                 <option value="3">BBA</option>
                                                 <option value="3">BFA</option>
-                                            </select>
+                                            </select> -->
                                         </div>
                                     </div>
                                 </div>
@@ -72,21 +73,22 @@
                                     <br>
                                     <div class="row clearfix">
                                          <div class="col-md-12">
-                                            <%= builder.text_field :graduate_degree, class: "form-control", placeholder: "Study of Degree" %>
+                                            <%= builder.text_field :graduate_major, class: "form-control", placeholder: "Study of Degree" %>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="row clearfix">
                                          <div class="col-md-4">
-                                            <%= builder.text_field :graduate_degree, class: "form-control", placeholder: "Year" %>
+                                            <%= builder.text_field :graduate_year, class: "form-control", placeholder: "Year" %>
                                         </div>
                                         <div class="col-md-4">
-                                            <select name="type" class="form-control">
+										<%= builder.select(:graduate_degree, ["PhD", "JD", "MD"], {prompt: "Degree"}, {:class => "form-control"})%>
+                                            <!-- <select name="type" class="form-control">
                                                 <option value="">Degree</option>
                                                 <option value="1">PhD</option>
                                                 <option value="1">JD</option>
                                                 <option value="1">MD</option>
-                                            </select>
+                                            </select> -->
                                         </div>
                                     </div>
                                 </div>
@@ -102,26 +104,27 @@
                             </div>
                             <div id="collapseThree3" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <%= builder.text_field :graduate_school, class: "form-control", placeholder: "College/University" %>
+                                    <%= builder.text_field :doctorate_school, class: "form-control", placeholder: "College/University" %>
                                     <br>
                                     <div class="row clearfix">
                                          <div class="col-md-12">
-                                            <%= builder.text_field :graduate_degree, class: "form-control", placeholder: "Study of Degree" %>
+                                            <%= builder.text_field :doctorate_major, class: "form-control", placeholder: "Study of Degree" %>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="row clearfix">
                                          <div class="col-md-4">
-                                            <%= builder.text_field :graduate_degree, class: "form-control", placeholder: "Year" %>
+                                            <%= builder.text_field :doctorate_year, class: "form-control", placeholder: "Year" %>
                                         </div>
                                         <div class="col-md-4">
-                                            <select name="type" class="form-control">
+											<%= builder.select(:doctorate_degree, ["MA", "MS", "MSE", "MFA"], {prompt: "Degree"}, {:class => "form-control"})%>
+                                            <!-- <select name="type" class="form-control">
                                                 <option value="">Degree</option>
                                                 <option value="1">MA</option>
                                                 <option value="2">MS</option>
                                                 <option value="2">MSE</option>
                                                 <option value="3">MFA</option>
-                                            </select>
+                                            </select> -->
                                         </div>
                                     </div>
                                 </div>

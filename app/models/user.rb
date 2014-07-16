@@ -127,6 +127,45 @@ class User < ActiveRecord::Base
     end
   end
   
+  def undergraduate_alma_mater
+    [user_detail.try(:undergraduate_school), undergraduate_formatted_year].compact.join(' ') if user_detail.undergraduate_school.present?
+  end
+  
+  def graduate_alma_mater
+    [user_detail.try(:graduate_school), graduate_formatted_year].compact.join(' ') if user_detail.graduate_school.present?
+  end
+  
+  def doctorate_alma_mater
+    [user_detail.try(:doctorate_school), doctorate_formatted_year].compact.join(' ') if user_detail.doctorate_school.present?
+  end
+  
+  def undergraduate_formatted_year
+    "'#{user_detail.try(:undergraduate_year).to_s.last(2)}" if user_detail.undergraduate_year.present?
+  end
+  
+  def graduate_formatted_year
+    "'#{user_detail.try(:graduate_year).to_s.last(2)}" if user_detail.graduate_year.present?
+  end
+  
+  def doctorate_formatted_year
+    "'#{user_detail.try(:doctorate_year).to_s.last(2)}" if user_detail.doctorate_year.present?
+  end
+  
+  def undergratuate_degree_and_major
+    delimiter = user_detail.try(:undergraduate_degree).present? ? ", " : ""
+    [user_detail.try(:undergraduate_degree),user_detail.try(:undergraduate_major)].compact.join(delimiter) if user_detail.try(:undergraduate_major).present?
+  end
+  
+  def graduate_degree_and_major
+    delimiter = user_detail.try(:graduate_degree).present? ? ", " : ""
+    [user_detail.try(:graduate_degree),user_detail.try(:graduate_major)].compact.join(delimiter) if user_detail.try(:graduate_major).present?
+  end
+  
+  def doctorate_degree_and_major
+    delimiter = user_detail.try(:doctorate_degree).present? ? ", " : ""
+    [user_detail.try(:doctorate_degree),user_detail.try(:doctorate_major)].compact.join(delimiter) if user_detail.try(:doctorate_major).present?
+  end
+  
   
   
   

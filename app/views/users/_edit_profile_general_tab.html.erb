@@ -80,15 +80,7 @@
             <div class="form-group">
                 <label class="col-sm-3 control-label">City</label>
                 <div class="col-sm-6">
-                    <%= builder.select(:city, ["Select Location", User.cities_list.sort, ], {}, {:class => 'form-control'}) %>
-                    <!-- <select class="form-control" name="language">
-                        <option>Select Language...</option>
-                        <option value="eu">Basque - Euskara (beta)</option>
-                        <option value="ca">Catalan - català (beta)</option>
-                        <option value="sv">Swedish - Svenska</option>
-                        <option value="tr">Turkish - Türkçe</option>
-                        <option value="uk">Ukrainian - Українська мова (beta)</option>
-                    </select> -->
+					<%= builder.select(:city, User.cities_list.sort, {prompt: "Select Location"}, {:class => "form-control"})%>
                 </div>
             </div>
             
