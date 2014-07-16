@@ -55,9 +55,6 @@ gem "letter_opener", :group => :development
 #for environment variables
 gem "figaro", github: 'laserlemon/figaro'
 
-# viewing emails in the browser
-gem "letter_opener", :group => :development
-
 # Use unicorn as the app server
 # gem 'unicorn'
 
