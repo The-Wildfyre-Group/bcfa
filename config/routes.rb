@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   get "signup" => "users#new", as: :signup
   get "home" => "main#home", as: :home
   resources :password_resets, only: %w(new create edit update)
+  
+  # errors
+  get '/404', to: 'errors#not_found'
+  get '/422' => 'errors#server_error'
+  get '/500' => 'errors#server_error'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
