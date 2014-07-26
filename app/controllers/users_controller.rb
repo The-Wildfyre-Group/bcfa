@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: %w[index show edit update destroy]
+  before_action :authenticate_charter_rights!, only: %w[edit update destroy]
   before_action :find_user, only: %w[show edit update destroy]
   
   def index 
