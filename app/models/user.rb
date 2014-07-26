@@ -120,10 +120,10 @@ class User < ActiveRecord::Base
   end
   
   def avatar
-    unless user_profile_pictures.blank?
-      user_profile_pictures.last.try(:photo)
+    if user_profile_pictures.last.try(:id).blank?
+      "http://www.imcslc.ca/imc/includes/themes/imc/images/layout/img_placeholder_avatar.jpg"
     else
-      "http://www.clker.com/cliparts/A/Y/O/m/o/N/placeholder-md.png"
+      user_profile_pictures.last.photo
     end
   end
   
