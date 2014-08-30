@@ -17,9 +17,8 @@ LAST UPDATE: 23/06/2014
 
     <!-- START Body -->
     <body>
-
         <!-- START Template Header -->
-        <header id="header" class="navbar navbar-fixed-top">
+        <header id="header" class="navbar">
             <div class="container">
                 <!-- START navbar header -->
                 <div class="navbar-header">
@@ -68,81 +67,36 @@ LAST UPDATE: 23/06/2014
         <!-- START Template Main -->
         <section id="main" role="main">
             <!-- START jumbotron -->
-            <section class="jumbotron jumbotron-bg7 nm" data-stellar-background-ratio="0.4" style="min-height:1200px;">
+            <section class="jumbotron jumbotron-bg7 nm" data-stellar-background-ratio="0.4" style="min-height:965px;">
                 <!-- pattern + overlay -->
                 <div class="overlay pattern pattern2"></div>
                 <!--/ pattern + overlay -->
-                <div class="container" style="padding-top:18%;">
+                <div class="container" style="padding-top:30%;">
                     <div class="row">
-                        <div class="col-md-6">
-                            <img class="img-circle mb5 mr10 ml5 pull-left mt10" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 37px; width: 37px;">
-                            <h2 class="text-white mb5 pull-left mt10">BlackCFA.</h2>
-                            <h2 class="text-white mb5 pull-left mt15">Connecting Our Community.</h2>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="center">
+                                <img class="img-circle mb5 mr10 ml5 pull-left mt10" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 150px; width: 150px; opacity: .5">
+                            </div>
+                            <h1 class="text-center mb10 mt20 text-white gf_droid">Connecting our community, <u>everywhere</u>.</h1>
+                            <h4 class="mute text-center mb40 mt0 text-muted gf_droid">
+                                28,850 members. 12-14% average returns.*
+                            </h4>
                             <div class="clearfix"></div>
-                            <p class="text-muted mb0 pl5 pr5">
-                                Connecting and empowering professionals that have achieved the CFA designation and those pursuing the CFA course of study. Connecting and empowering black professionals that have achieved the CFA designation and those pursuing the CFA course of study. Get engaged, join us.
-                            </p>
-                        </div>
-                        <div class="col-md-4 np col-md-offset-2 p" style="border: 1px solid #222; border-radius: 6px; background: rgba(0,0,0, .2); border-left: 1px solid #444;
-                        border-top: 1px solid #444;">
-                            <div class="panel nm bgcolor-transparent no-border">
-                                <div class="center panel-body" style="background: #fff; padding: 5px 20px 3px 20px; border-radius: 0 0 6px 6px; margin-top: -1px; border: 2px solid #ccc; border-top: none; box-shadow: 1px 1px 1px #444;">
-                                    <img class="img-circle mb5 mr5 pull-left" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 30px; width: 30px;">
-                                    <h4 class="mt5 mb5 bold pull-left" style="color: #333;">
-                                        BlackCFA
-                                    </h4>
-                                </div>
-                                <div class="panel-body pr30 pl30">
-                                    <!-- <img class="img-circle mb5 mr10 ml5 pull-left mt10" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 37px; width: 37px;">
-                                             -->
-                                    <h3 class="text-center text-white mb5 mt0 thin">
-                                        Join our Community.
-                                    </h3>
-                                    <div class="clearfix"></div>
-                                    <p class="text-muted mb0 pr5 ml10">
-                                        Connecting and empowering professionals that have achieved the CFA designation and those pursuing the CFA course of study.
-                                    </p>
-                                    <!-- <div class="col-md-3 row">
-                                        <a class="btn btn-default btn-outline text-white btn-lg">Learn More</a>
-                                    </div> -->
-                                    <!-- <div class="clearfix"></div> -->
-                                </div>
-                                <hr class="dark nm" />
-                                <div class="panel-body pr30 pl30 pb0">
-                                    <%= form_for User.new, url: users_path, html: {novalidate: true} do |f| %>
-                                        <div class="form-group">
-                                            <%= f.text_field :email, class: "form-control", id: "signup_username", placeholder: "Email" %>
-                                        </div>
-                                        <div class="form-group">
-                                            <%= f.password_field :password, class: "form-control", id: "signup_username", placeholder: "Password" %>
-                                        </div>
-                                         <div class="form-group">
-                                            <select class="form-control">
-                                                <option>L1 Candidate</option>
-                                                <option>L2 Candidate</option>
-                                                <option>L3 Candidate</option>
-                                                <option>Charterholder</option>
-                                            </select>
-                                        </div>
-                                        <!-- <div class="form-group">
-                                            <%#= f.password_field :password_confirmation, class: "form-control input-lg", id: "signup_username", placeholder: "Password Confirmation" %>
-                                        </div>
-                                        --> 
-                                        <!-- <div class="form-group">
-                                            <%#= f.text_field :access_code, class: "form-control input-lg", id: "access_code", placeholder: "Access Code" %>
-                                        </div> -->
-                                        <!-- <div class="form-group mb0">
-                                            <span class="help-block text-muted mb0">Don't have an access code? <a href="#">How to get one.</a></span>
-                                        </div> -->
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button class="btn btn-lg btn-primary btn-block" style="padding: 20px 15px; border-radius: 2px;">Sign Up</button>
                                     </div>
-                                    <div class="panel-footer pr30 pl30" style="border-top: 2px solid #ccc; box-shadow: 1px 1px 1px #777;">
-                                        <%= f.submit "Sign up for BlackCFA", class: "mt10 semibold btn btn-primary btn-3d btn-block", style: "padding: 12px 16px; font-size: 18px;" %>
-                                        <div class="form-group pt10">
-                                            <span class="help-block text-muted fs10">By clicking "Sign up for BlackCFA", you agree to our <a href="#">terms of service</a> and <a href="#">privacy policy</a>. We will send you account related emails occasionally.</span>
-                                        </div>
-                                    <% end %>
+                                    <div class="col-md-6">
+                                        <button class="btn btn-lg btn-transparent btn-block col-md-6" style="padding: 20px 15px; border-radius: 2px;">Learn More</button>
+                                    </div>
                                 </div>
                                 </div>
+                            </div>
+                            <p class="text-muted text-center mb20 mt20 text-white">
+                                Interested in Partnering --  <a href="#"><u>List jobs with us</u></a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -151,7 +105,7 @@ LAST UPDATE: 23/06/2014
 
 
             <!-- START Call To Action Section -->
-            <!-- <section class="section bgcolor-primary cta_bs">
+            <section class="section bgcolor-primary cta_bs">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8">
@@ -167,14 +121,14 @@ LAST UPDATE: 23/06/2014
                         </div>
                     </div>
                 </div>
-            </section> -->
+            </section>
             <!-- END Call To Action Section -->
 
            
             <!-- START Layerslider -->
             <section id="layerslider" style="width:100%;height:700px;">
                 <!-- pattern + overlay -->
-                <div class="pattern pattern9"></div>
+                <div class="pattern pattern5"></div>
                 
                 <!-- Slide #1 -->
                 <div class="ls-slide" data-ls="transition2d:1; slidedelay:8000;">
@@ -183,7 +137,7 @@ LAST UPDATE: 23/06/2014
                     <!--/ slide background -->
 
                     <!-- Layer #1 -->
-                    <img class="ls-l" style="top:120px;left:78%;" src="../image/layerslider/layer/iphone-5s.png" data-ls="delayin:1000; easingin:easeOutElastic;">
+                   <!--  <img class="ls-l" style="top:120px;left:78%;" src="../image/layerslider/layer/iphone-5s.png" data-ls="delayin:1000; easingin:easeOutElastic;"> -->
                     <!--/ Layer #1 -->
 
                     <!-- Layer #2 -->
@@ -249,7 +203,7 @@ LAST UPDATE: 23/06/2014
                     <!--/ Layer #5 -->
 
                     <!-- Layer #6 -->
-                    <img class="ls-l" style="top:150px;left:250px;" src="../image/layerslider/layer/iphone-5s.png" data-ls="delayin:2000; easingin:easeOutElastic;">
+                   <!--  <img class="ls-l" style="top:150px;left:250px;" src="../image/layerslider/layer/iphone-5s.png" data-ls="delayin:2000; easingin:easeOutElastic;"> -->
                     <!--/ Layer #6 -->
                 </div>
                 <!-- Slide #2 -->
@@ -261,7 +215,7 @@ LAST UPDATE: 23/06/2014
                     <!--/ slide background -->
 
                     <!-- Layer #1 -->
-                    <img class="ls-l" style="top:120px;left:68%;" src="../image/layerslider/layer/people2.png" data-ls="delayin:1000; easingin:easeOutElastic;">
+                   <!--  <img class="ls-l" style="top:120px;left:68%;" src="../image/layerslider/layer/people2.png" data-ls="delayin:1000; easingin:easeOutElastic;"> -->
                     <!--/ Layer #1 -->
 
                     <!-- Layer #2 -->

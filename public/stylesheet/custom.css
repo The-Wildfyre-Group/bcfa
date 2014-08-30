@@ -81,11 +81,7 @@
 .text-facebook {color: #3b5998;}
 .text-instagram {color: #517fa4;}
 
-.mt60 {margin-top: 60px !important;}
-.pt60 {padding-top: 60px !important;}
-.pb60 {padding-bottom: 60px;}
-.pl25 {padding-left: 25px;}
-.ml10 {margin-left: 10px !important;}
+
 
 .br-6 {border-radius: 6px;}
 .bs-888 {box-shadow: 1px 1px 1px #888; border-left: 1px solid #777; border-top: 1px solid #777;}
@@ -107,22 +103,7 @@
 	background: url("http://mahfa.org/wp-content/uploads/2013/03/hd-header.jpg") no-repeat center top fixed;
 }
 
-#header.navbar .navbar-toolbar .navbar-nav>li.active>a {
-	color: #fff;
-	background: #00b6ad;
-}
 
-#header.navbar .navbar-toolbar .navbar-nav>li >a {
-	color: #555;
-	font-size: 14px;
-}
-
-
-#header.navbar .navbar-header {
-background-color: #fff;
-height: 60px;
-float: left;
-}
 
 .btn-outline {
 	background-color: transparent !important;
@@ -296,6 +277,134 @@ i.bg-white {background: #fff; padding: 5px; border-radius: 2px; border: 1px soli
 	border-left: 1px solid #eee;
 }
 
+
+
+
+.addthis_button_twitter_follow_native.at300b {
+	max-width: 150px;
+}
+
+/************************ HEADER *****************/
+
+#header.navbar.navbar-fixed-top ~ #main {
+	padding-top: 0;
+}
+
+#header.navbar {
+	position: relative;
+	z-index: 1030;
+	width: 100%;
+	background-color: #333;
+	border-width: 0px;
+	border-radius: 0px;
+	margin: 0px;
+	/*-webkit-box-shadow: 0px 3px 1px -3px rgba(0, 0, 0, 0.52);
+	box-shadow: 0px 3px 1px -3px rgba(0, 0, 0, 0.52);*/
+	-webkit-transition: -webkit-transform 0.2s ease;
+	-moz-transition: -moz-transform 0.2s ease;
+	-o-transition: -o-transform 0.2s ease;
+	transition: -webkit-transform 0.2s ease,-moz-transform 0.2s ease,-o-transform 0.2s ease,transform 0.2s ease;
+}
+
+#header.navbar {
+height: 70px;
+}
+
+#header.navbar .navbar-toolbar .navbar-nav > li > a {
+padding: 0px 20px;
+height: 70px;
+line-height: 70px;
+text-shadow: none;
+}
+
+#header.navbar .navbar-toolbar .navbar-nav>li.active>a {
+	
+}
+
+#header.navbar .navbar-toolbar .navbar-nav>li >a {
+	color: #eee;
+	font-size: 18px;
+	font-family: 'Source Sans Pro';
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
+#header.navbar .navbar-toolbar .navbar-nav > li > a > .meta > .text {
+	color: #ccc;
+	font-size: 14px;
+	font-family: 'Muli';
+	font-weight: 400;
+	letter-spacing: ;
+	line-height: 65px;
+}
+
+#header.navbar .navbar-toolbar .navbar-nav > li > a > .btn {
+	color: #888;
+	font-size: 12px;
+	font-family: 'Muli';
+	font-weight: 600;
+	word-spacing: -1px;
+
+}
+
+#header.navbar .navbar-toolbar .navbar-nav > li > a > .btn.btn-transparent {
+	border-width: 2px;
+	border-color: #666;
+	width: 90px;
+}
+
+
+#header.navbar .navbar-header {
+	background-color: #fff;
+	height: 60px;
+	float: left;
+}
+
+/************************ Google Fonts *****************/
+
+.gf_droid {font-family: 'Droid Serif';}
+.gf_montserrat {font-family: 'Montserrat';}
+.gf_oswald {font-family: 'oswald';}
+.gf_source_sans_pro {font-family: 'Source Sans Pro';}
+.gf_merriweather {font-family: 'Merriweather';}
+.gf_pt_sans {font-family: 'PT Sans';}
+.gf_muli {font-family: 'Muli';}
+
+.fs10 {font-size: 10px;}
+
+.pob0 {margin-bottom: 0;}
+
+.lh-22 {line-height: 22px;}
+.mb20 {margin-bottom: 20px;}
+.mt20 {margin-top: 20px;}
+
+
+/************************ Buttons *****************/
+
+
+.btn-transparent {background: transparent; border: 2px solid #888;}
+
+
+/************************ Positioning **************/
+.center {display: table; margin-right: auto; margin-left: auto;}
+
+.npr {padding-right: 0 !important;}
+
+.mt60 {margin-top: 60px !important;}
+.mb40 {margin-bottom: 40px !important;}
+.ml10 {margin-left: 10px !important;}
+
+
+.pt60 {padding-top: 60px !important;}
+.pb60 {padding-bottom: 60px;}
+.pl25 {padding-left: 25px;}
+
+/*style="border: 1px solid #252525; border-radius: 6px; background: rgba(0,0,0, .2);"*/
+
+
+.inline {display: inline;}
+/************************ Form/Input Elements **************/
+
 .fileinput-preview.fileinput-exists.thumbnail {
 	
 }
@@ -314,38 +423,6 @@ i.bg-white {background: #fff; padding: 5px; border-radius: 2px; border: 1px soli
 }
 
 
-.addthis_button_twitter_follow_native.at300b {
-	max-width: 150px;
-}
+/************************ Sliser **************/
+#layerslider {background: url(http://i.huffpost.com/gen/1410042/thumbs/o-AFRICANAMERICAN-COUPLE-WITH-FINANCIAL-PLANNER-facebook.jpg);}
 
-
-#header.navbar.navbar-fixed-top ~ #main {
-	padding-top: 0;
-}
-
-#header.navbar {
-	position: relative;
-	z-index: 1030;
-	width: 100%;
-	background-color: rgba(0,0,0, .95);
-	border-width: 0px;
-	border-radius: 0px;
-	margin: 0px;
-	-webkit-box-shadow: 0px 3px 1px -3px rgba(0, 0, 0, 0.52);
-	box-shadow: 0px 3px 1px -3px rgba(0, 0, 0, 0.52);
-	-webkit-transition: -webkit-transform 0.2s ease;
-	-moz-transition: -moz-transform 0.2s ease;
-	-o-transition: -o-transform 0.2s ease;
-	transition: -webkit-transform 0.2s ease,-moz-transform 0.2s ease,-o-transform 0.2s ease,transform 0.2s ease;
-}
-
-.gf_droid {font-family: 'Droid Serif';}
-.gf_montserrat {font-family: 'monteserrat';}
-.gf_oswald {font-family: 'oswald';}
-
-.fs10 {font-size: 10px;}
-
-.pob0 {margin-bottom: 0;}
-
-.center {display: table; margin-right: auto; margin-left: auto;}
-/*style="border: 1px solid #252525; border-radius: 6px; background: rgba(0,0,0, .2);"*/
