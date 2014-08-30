@@ -17,31 +17,86 @@ LAST UPDATE: 23/06/2014
 
     <!-- START Body -->
     <body>
-        
+
+        <!-- START Template Header -->
+        <header id="header" class="navbar navbar-fixed-top">
+            <div class="container">
+                <!-- START navbar header -->
+                <div class="navbar-header">
+                    <!-- Brand -->
+                    <a class="navbar-brand" href="/">
+                        <span class="logo-figure" style="margin-left:-4px;"></span>
+                        <span class="logo-text"></span>
+                    </a>
+                    <!--/ Brand -->
+                </div>
+                <!--/ END navbar header -->
+
+                <!-- START Toolbar -->
+                <div class="navbar-toolbar clearfix">
+                    <!-- START Left nav -->
+                    <ul class="nav navbar-nav">
+                        <!-- Navbar collapse: This menu will take position at the top of template header (mobile only). Make sure that only #header have the `position: relative`, or it may cause unwanted behavior -->
+                        <li class="navbar-main navbar-toggle">
+                            <a href="javascript:void(0);" data-toggle="collapse" data-target="#navbar-collapse">
+                                <span class="meta">
+                                    <span class="icon"><i class="ico-paragraph-justify3"></i></span>
+                                </span>
+                            </a>
+                        </li>
+                        <!--/ Navbar collapse -->
+                    </ul>
+                    <!--/ END Left nav -->
+
+                    <!-- START navbar form -->
+                    <div class="navbar-form navbar-left dropdown" id="dropdown-form">
+                        <form action="" role="search">
+                            <div class="has-icon">
+                                <input type="text" class="form-control" placeholder="Search this site...">
+                                <i class="ico-search form-control-icon"></i>
+                            </div>
+                        </form>
+                    </div>
+                    <%= render 'shared/navigation_visitor' %>
+                    <!--/ END nav collapse -->
+                </div>
+                <!--/ END Toolbar -->
+            </div>
+        </header>
+        <!--/ END Template Header --> 
 
         <!-- START Template Main -->
         <section id="main" role="main">
             <!-- START jumbotron -->
-            <section class="jumbotron jumbotron-bg7 nm" data-stellar-background-ratio="0.4" style="min-height:1005px;">
+            <section class="jumbotron jumbotron-bg7 nm" data-stellar-background-ratio="0.4" style="min-height:1200px;">
                 <!-- pattern + overlay -->
                 <div class="overlay pattern pattern2"></div>
                 <!--/ pattern + overlay -->
-                <div class="container" style="padding-top:8%;">
+                <div class="container" style="padding-top:18%;">
                     <div class="row">
-                        <div class="col-md-6 ">
-                           <!--  <blockquote>
-                                <p class="text-white mb15 fsize12">
-                                    Connecting and empowering black professionals that have achieved the CFA designation and those pursuing the CFA course of study. Get engaged, join us.
-                                </p>
-                            </blockquote> -->
+                        <div class="col-md-6">
+                            <img class="img-circle mb5 mr10 ml5 pull-left mt10" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 37px; width: 37px;">
+                            <h2 class="text-white mb5 pull-left mt10">BlackCFA.</h2>
+                            <h2 class="text-white mb5 pull-left mt15">Connecting Our Community.</h2>
+                            <div class="clearfix"></div>
+                            <p class="text-muted mb0 pl5 pr5">
+                                Connecting and empowering professionals that have achieved the CFA designation and those pursuing the CFA course of study. Connecting and empowering black professionals that have achieved the CFA designation and those pursuing the CFA course of study. Get engaged, join us.
+                            </p>
                         </div>
-                        <div class="col-md-4 np col-md-offset-2" style="border: 1px solid #252525; border-radius: 6px; background: rgba(0,0,0, .2);">
+                        <div class="col-md-4 np col-md-offset-2 p" style="border: 1px solid #333; border-radius: 6px; background: rgba(0,0,0, .2);">
                             <div class="panel nm bgcolor-transparent no-border">
+                                <div class="center" style="background: #fff; padding: 5px 20px; border-radius: 0 0 6px 6px; margin-top: -1px;">
+                                    <img class="img-circle mb5 mr10 pull-left" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 30px; width: 30px;">
+                                    <h3 class="nm mb5 pull-left" style="color: #333;">BlackCFA</h3>
+                                </div>
                                 <div class="panel-body pr30 pl30">
-                                    <img class="img-circle mb5 mr10 ml5 pull-left mt10" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 57px; width: 57px;">
-                                    <h1 class="text-white mb5 pull-left mt15">BlackCFA.</h1>
+                                    <!-- <img class="img-circle mb5 mr10 ml5 pull-left mt10" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 37px; width: 37px;">
+                                             -->
+                                    <h3 class="text-center text-white mb5 mt10 thin">
+                                        Join our Community.
+                                    </h3>
                                     <div class="clearfix"></div>
-                                    <p class="text-muted mb0 fsize12 pl5 pr5">
+                                    <p class="text-muted mb0 pr5 ml10">
                                         Connecting and empowering professionals that have achieved the CFA designation and those pursuing the CFA course of study.
                                     </p>
                                     <!-- <div class="col-md-3 row">
@@ -49,43 +104,476 @@ LAST UPDATE: 23/06/2014
                                     </div> -->
                                     <!-- <div class="clearfix"></div> -->
                                 </div>
-                                <hr class="dark mb5 mt5">
-                                <div class="panel-body pr30 pl30">
-        							<%= form_for User.new, url: users_path, html: {novalidate: true} do |f| %>
+                                <hr class="dark nm" />
+                                <div class="panel-body pr30 pl30 pb0">
+                                    <%= form_for User.new, url: users_path, html: {novalidate: true} do |f| %>
                                         <div class="form-group">
-        									<%= f.text_field :email, class: "form-control input-lg", id: "signup_username", placeholder: "Email" %>
+                                            <%= f.text_field :email, class: "form-control", id: "signup_username", placeholder: "Email" %>
                                         </div>
                                         <div class="form-group">
-                                            <%= f.password_field :password, class: "form-control input-lg", id: "signup_username", placeholder: "Password" %>
+                                            <%= f.password_field :password, class: "form-control", id: "signup_username", placeholder: "Password" %>
+                                        </div>
+                                         <div class="form-group">
+                                            <select class="form-control">
+                                                <option>L1 Candidate</option>
+                                                <option>L2 Candidate</option>
+                                                <option>L3 Candidate</option>
+                                                <option>Charterholder</option>
+                                            </select>
                                         </div>
                                         <!-- <div class="form-group">
                                             <%#= f.password_field :password_confirmation, class: "form-control input-lg", id: "signup_username", placeholder: "Password Confirmation" %>
                                         </div>
                                         --> 
-                                        <div class="form-group">
-                                            <%= f.text_field :access_code, class: "form-control input-lg", id: "access_code", placeholder: "Access Code" %>
-                                        </div>
-                                        <div class="form-group mb0">
+                                        <!-- <div class="form-group">
+                                            <%#= f.text_field :access_code, class: "form-control input-lg", id: "access_code", placeholder: "Access Code" %>
+                                        </div> -->
+                                        <!-- <div class="form-group mb0">
                                             <span class="help-block text-muted mb0">Don't have an access code? <a href="#">How to get one.</a></span>
-                                        </div>
+                                        </div> -->
                                     </div>
-                                    <hr class="darker mb5 mt5">
-                                    <div class="panel-body pr30 pl30">
-        								<%= f.submit "Sign up for BlackCFA", class: "semibold btn btn-primary btn-3d btn-block btn-lg", style: "padding: 12px 16px;" %>
-                                        <div class="form-group pt15">
-                                            <span class="help-block text-muted">By clicking "Sign up for BlackCFA", you agree to our <a href="#">terms of service</a> and <a href="#">privacy policy</a>. We will send you account related emails occasionally.</span>
+                                    <div class="panel-footer pr30 pl30">
+                                        <%= f.submit "Sign up for BlackCFA", class: "mt10 semibold btn btn-primary btn-3d btn-block", style: "padding: 12px 16px; font-size: 18px;" %>
+                                        <div class="form-group pt10">
+                                            <span class="help-block text-muted fs10">By clicking "Sign up for BlackCFA", you agree to our <a href="#">terms of service</a> and <a href="#">privacy policy</a>. We will send you account related emails occasionally.</span>
                                         </div>
-        							<% end %>
+                                    <% end %>
                                 </div>
-                            </div>
-                           
+                                </div>
                         </div>
                     </div>
                 </div>
             </section>
             <!--/ END jumbotron -->
 
+
+            <!-- START Call To Action Section -->
+            <!-- <section class="section bgcolor-primary cta_bs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h3 class="font-alt text-white mt5">Are you planning to pursue the CFA Designation?</h3>
+                            </div>
+                        <div class="col-sm-3">
+                            <div class="col-md-6">
+                                <a href="javascript:void(0);" class="btn btn-outline btn-default btn-lg text-white pull-right semibold">I'm Interested</a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="javascript:void(0);" class="btn btn-outline btn-default btn-lg text-white pull-left semibold">I'm ready to start</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <!-- END Call To Action Section -->
+
            
+            <!-- START Layerslider -->
+            <section id="layerslider" style="width:100%;height:700px;">
+                <!-- pattern + overlay -->
+                <div class="pattern pattern9"></div>
+                
+                <!-- Slide #1 -->
+                <div class="ls-slide" data-ls="transition2d:1; slidedelay:8000;">
+                    <!-- slide background -->
+                    <!-- <img src="../image/layerslider/bg1.png" class="ls-bg"> -->
+                    <!--/ slide background -->
+
+                    <!-- Layer #1 -->
+                    <img class="ls-l" style="top:120px;left:78%;" src="../image/layerslider/layer/iphone-5s.png" data-ls="delayin:1000; easingin:easeOutElastic;">
+                    <!--/ Layer #1 -->
+
+                    <!-- Layer #2 -->
+                    <h1 class="ls-l font-alt" style="top:140px;left:150px;" data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;">
+                        <u>Join</u> or <u>Partner</u> with <span class="text-primary"> BlackCFA</span> 
+                    </h1>
+                    <!--/ Layer #2 -->
+
+                    <!-- Layer #3 -->
+                    <h4 class="ls-l font-alt thin text-default" style="top:200px;left:150px;width:550px;" data-ls="offsetxin:0; durationin:2000; delayin:2000; easingin:easeOutElastic; rotatexin:90; transformoriginin:50% top 0; offsetxout:-400;">
+                        Adminre is a clean and flat backend and frontend theme build with Twitter bootstrap 3.1.1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    </h4>
+                    <!--/ Layer #3 -->
+
+                    <!-- Layer #4 -->
+                   <!--  <ul class="ls-l font-alt semibold text-default" style="top:290px;left:130px;width:550px;" data-ls="offsetxin:0; durationin:2000; delayin:2500; easingin:easeOutElastic; rotatexin:90; transformoriginin:50% top 0; offsetxout:-400;">
+                        <li>One of the most exclusive network of investment professional in the world.</li>
+                        <li>Largest network work of </li>
+                        <li>Largest network work of </li>
+                        <li>Largest network work of </li>
+                        <li>Largest network work of </li>
+                    </ul> -->
+                    <!--/ Layer #4 -->
+
+                    <!-- Layer #5 -->
+                    <a href="javascript:void(0);" class="ls-l btn btn-lg btn-primary" style="top:400px; left:150px;" data-ls="offsetxin:0; durationin:2000; delayin:3000; easingin:easeOutElastic; rotatexin:90; transformoriginin:50% top 0; offsetxout:-400;">
+                        Purchase Now <i class="ico-angle-right ml5"></i>
+                    </a>
+                    <!--/ Layer #5 -->
+                </div>
+                <!-- Slide #1 -->
+
+                <!-- Slide #2 -->
+                <div class="ls-slide" data-ls="transition2d:1; slidedelay:8000;">
+                    <!-- slide background -->
+                    <!-- <img src="../image/layerslider/bg2.png" class="ls-bg" alt="Slide background"> -->
+                    <!--/ slide background -->
+                    
+                    <!-- Layer #1 -->
+                    <h4 class="ls-l font-alt thin text-default text-right semibold" style="top:150px;left:65%;width:550px;" data-ls="easingin:easeOutElastic; delayin:0;">
+                        Fully Responsive &amp; Clean Design
+                    </h4>
+                    <!--/ Layer #1 -->
+
+                    <!-- Layer #2 -->
+                    <h1 class="ls-l font-alt text-right" style="top:180px;left:65%;width:550px;" data-ls="easingin:easeOutElastic; delayin:500;">
+                        <span class="text-primary"><u>Find</u></span> Black CFAs Worldwide. 
+                    </h1>
+                    <!--/ Layer #2 -->
+
+                    <!-- Layer #3 -->
+                    <h4 class="ls-l font-alt thin text-default text-right" style="top:240px;left:68%;width:475px;" data-ls="easingin:easeOutElastic; delayin:1000;">
+                        We are dedicated to increasing the connectivity of CFAs of color worldwide. Our organization is focused on strengthening the employment opportunities, resources, and emerging areas of interest for our mem
+                    </h4>
+                    <!--/ Layer #3 -->
+
+                    <!-- Layer #5 -->
+                    <p class="ls-l text-default text-right" style="top:360px;left:65%;width:550px;" data-ls="easingin:easeOutElastic; delayin:1500;">
+                        <a href="javascript:void(0);" class="btn btn-lg btn-primary">
+                            Learn More <i class="ico-angle-right ml5"></i>
+                        </a>
+                    </p>
+                    <!--/ Layer #5 -->
+
+                    <!-- Layer #6 -->
+                    <img class="ls-l" style="top:150px;left:250px;" src="../image/layerslider/layer/iphone-5s.png" data-ls="delayin:2000; easingin:easeOutElastic;">
+                    <!--/ Layer #6 -->
+                </div>
+                <!-- Slide #2 -->
+
+                <!-- Slide #3 -->
+                <div class="ls-slide" data-ls="transition2d:1; slidedelay:8000;">
+                    <!-- slide background -->
+                    <!-- <img src="../image/layerslider/bg1.png" class="ls-bg"> -->
+                    <!--/ slide background -->
+
+                    <!-- Layer #1 -->
+                    <img class="ls-l" style="top:120px;left:68%;" src="../image/layerslider/layer/people2.png" data-ls="delayin:1000; easingin:easeOutElastic;">
+                    <!--/ Layer #1 -->
+
+                    <!-- Layer #2 -->
+                    <h1 class="ls-l font-alt" style="top:140px;left:150px;" data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;">
+                        <u>Join</u> or <u>Partner</u> with <span class="text-primary"> BlackCFA</span> 
+                    </h1>
+                    <!--/ Layer #2 -->
+
+                    <!-- Layer #3 -->
+                    <h4 class="ls-l font-alt thin text-default" style="top:200px;left:150px;width:550px;" data-ls="offsetxin:0; durationin:2000; delayin:2000; easingin:easeOutElastic; rotatexin:90; transformoriginin:50% top 0; offsetxout:-400;">
+                        Adminre is a clean and flat backend and frontend theme build with Twitter bootstrap 3.1.1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    </h4>
+                    <!--/ Layer #3 -->
+
+                    <!-- Layer #4 -->
+                   <!--  <ul class="ls-l font-alt semibold text-default" style="top:290px;left:130px;width:550px;" data-ls="offsetxin:0; durationin:2000; delayin:2500; easingin:easeOutElastic; rotatexin:90; transformoriginin:50% top 0; offsetxout:-400;">
+                        <li>One of the most exclusive network of investment professional in the world.</li>
+                        <li>Largest network work of </li>
+                        <li>Largest network work of </li>
+                        <li>Largest network work of </li>
+                        <li>Largest network work of </li>
+                    </ul> -->
+                    <!--/ Layer #4 -->
+
+                    <!-- Layer #5 -->
+                    <a href="javascript:void(0);" class="ls-l btn btn-lg btn-primary" style="top:400px; left:150px;" data-ls="offsetxin:0; durationin:2000; delayin:3000; easingin:easeOutElastic; rotatexin:90; transformoriginin:50% top 0; offsetxout:-400;">
+                        Purchase Now <i class="ico-angle-right ml5"></i>
+                    </a>
+                    <!--/ Layer #5 -->
+                </div>
+                <!-- Slide #3 -->
+            </section>
+            <!--/ END Layerslider -->
+
+
+            <!-- START Call To Action Section -->
+            <section class="section bgcolor-default cta_bs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!-- <h4 class="font-alt mt5">What Can?</h4> -->
+                            <a href="javascript:void(0);" class="mr10 btn btn-outline btn-default pull-left semibold">Employment Opportunities</a>
+                            <a href="javascript:void(0);" class="mr10 btn btn-outline btn-default pull-left semibold">Online Networking</a>
+                            <a href="javascript:void(0);" class="mr10 btn btn-outline btn-default pull-left semibold">Continued Education</a>
+                            <a href="javascript:void(0);" class="mr10 btn btn-outline btn-default pull-left semibold">Mentorship</a>
+                            <a href="javascript:void(0);" class="mr10 btn btn-outline btn-default pull-left semibold">Continued Education</a>
+                            <a href="javascript:void(0);" class="mr10 btn btn-outline btn-default pull-left semibold">Message Boards</a>
+                            
+                        </div>
+                    </div><!-- row -->
+                </div><!-- container -->
+            </section>
+            <!-- END Call To Action Section -->
+
+            <section class="section bgcolor-white pt60 white pattern1">
+                <!-- pattern + overlay -->
+                <div class="container pt60">
+                <!--/ Header -->
+                    <!-- START row -->
+                    <div class="table-layout">
+                        <div class="col-md-4">
+                            <div class="table-layout animation" data-toggle="waypoints" data-showanim="fadeInRight" data-trigger-once="true">
+                                <div class="col-xs-2 valign-top"><img src="../image/icons/responsivewebdesign.png" width="100%" alt=""></div>
+                                <div class="col-xs-19 pl15">
+                                    <h4 class="font-alt">Create a Professional Profile</h4>
+                                    <p class="nm">Create a professional profile and in minutes begin connecting with peers in our global community.</p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="table-layout animation" data-toggle="waypoints" data-showanim="fadeInRight" data-trigger-once="true">
+                                <div class="col-xs-2 valign-top"><img src="../image/icons/targetaudience.png" width="100%" alt=""></div>
+                                <div class="col-xs-10 pl15">
+                                    <h4 class="font-alt">Network Online</h4>
+                                    <p class="nm">Connect with like-minded professionals around the globe that share your career aspirations and interest.</p>
+                                </div>
+                            </div>
+                             <div class="table-layout animation" data-toggle="waypoints" data-showanim="fadeInRight" data-trigger-once="true">
+                                <div class="col-xs-2 valign-top"><img src="../image/icons/targetaudience.png" width="100%" alt=""></div>
+                                <div class="col-xs-10 pl15">
+                                    <h4 class="font-alt">Network Online</h4>
+                                    <p class="nm">Connect with like-minded professionals around the globe that share your career aspirations and interest.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 pt15 text-center animation" data-toggle="waypoints" data-showanim="flipInY" data-trigger-once="true" data-offset="40%">
+                            <img src="../image/mockup/iphone-5s.png">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="table-layout text-right animation" data-toggle="waypoints" data-showanim="fadeInLeft" data-trigger-once="true">
+                                <div class="col-xs-10 pr15">
+                                    <h4 class="font-alt">Post and Apply for Jobs</h4>
+                                    <p class="nm">We are actively seeking corporate partnerships and professional alliances to create job opportunities for our members.</p>
+                                </div>
+                                <div class="col-xs-2 valign-top"><img src="../image/icons/marketresearch.png" width="99%" alt=""></div>
+                            </div>
+                            <br>
+                            <div class="table-layout text-right animation" data-toggle="waypoints" data-showanim="fadeInLeft" data-trigger-once="true">
+                                <div class="col-xs-10 pr15">
+                                    <h4 class="font-alt">Give Back and Contribute</h4>
+                                    <p class="nm">Help us encourage and mentor aspiring finance professionals of color and create a first-class professional association. </p>
+                                </div>
+                                <div class="col-xs-2 valign-top"><img src="../image/icons/pagequality.png" width="100%" alt=""></div>
+                            </div>
+                             <div class="table-layout text-right animation" data-toggle="waypoints" data-showanim="fadeInLeft" data-trigger-once="true">
+                                <div class="col-xs-10 pr15">
+                                    <h4 class="font-alt">Give Back and Contribute</h4>
+                                    <p class="nm">Help us encourage and mentor aspiring finance professionals of color and create a first-class professional association. </p>
+                                </div>
+                                <div class="col-xs-2 valign-top"><img src="../image/icons/pagequality.png" width="100%" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ END row -->
+                </div>
+            </section>
+            <!--/ END Features Section -->
+
+
+            <!-- START Recent Blog Section -->
+            <section class="section bgcolor-white pt60">
+                <div class="container pt60">
+                    <!-- START row -->
+                    <div class="row">
+                        <!-- Header -->
+                        <div class="col-md-12">
+                            <div class="section-header section-header-bordered mb5">
+                                <h3 class="section-title">
+                                    <p class="font-alt nm">Coming Soon</p>
+                                </h3>
+                            </div>
+                            <!--/ Header -->
+                        </div>
+                        <!--/ Header -->
+                    </div>
+                    <!--/ END row -->
+
+                    <!-- START row -->
+                    <div class="row">
+                        <!-- Blog post #1 -->
+                        <div class="col-sm-4 post">
+                            <article class="panel overflow-hidden">
+                                <!-- Thumbnail -->
+                                <header class="thumbnail">
+                                    <!-- media -->
+                                    <div class="media">
+                                        <!-- indicator -->
+                                        <div class="indicator"><span class="spinner"></span></div>
+                                        <!--/ indicator -->
+                                        <!-- toolbar overlay -->
+                                        <div class="overlay">
+                                            <div class="toolbar">
+                                                <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
+                                            </div>
+                                        </div>
+                                        <!--/ toolbar overlay -->
+                                        <img data-toggle="unveil" src="../image/background/blog/placeholder.jpg" data-src="../image/background/blog/blog1.jpg" alt="Photo" height="160px">
+                                    </div>
+                                    <!--/ media -->
+                                </header>
+                                <!--/ Thumbnail -->
+                                <!-- Content -->
+                                <section class="panel-body">
+                                    <!-- heading -->
+                                    <h4 class="font-alt mt0 ellipsis"><a href="javascript:void(0);" class="text-default">Lorem ipsum dolor sit amet</a></h4>
+                                    <!--/ heading -->
+                                    <!-- meta -->
+                                    <p class="meta nm">
+                                        <a href="javascript:void(0);">June, 2014</a><!-- date -->
+                                        <span class="text-muted mr5 ml5">&#8226;</span>
+                                        <span class="text-muted">By </span><a href="javascript:void(0);">Mark Adams</a><!-- author -->
+                                    </p>
+                                    <!--/ meta -->
+                                </section>
+                                <!--/ Content -->
+                            </article>
+                        </div>
+                        <!--/ Blog post #1 -->
+
+                        <!-- Blog post #2 -->
+                        <div class="col-sm-4 post">
+                            <article class="panel overflow-hidden">
+                                <!-- Thumbnail -->
+                                <header class="thumbnail">
+                                    <!-- media -->
+                                    <div class="media">
+                                        <!-- indicator -->
+                                        <div class="indicator"><span class="spinner"></span></div>
+                                        <!--/ indicator -->
+                                        <!-- toolbar overlay -->
+                                        <div class="overlay">
+                                            <div class="toolbar">
+                                                <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
+                                            </div>
+                                        </div>
+                                        <!--/ toolbar overlay -->
+                                        <img data-toggle="unveil" src="../image/background/blog/placeholder.jpg" data-src="../image/background/blog/blog2.jpg" alt="Photo" height="160px">
+                                    </div>
+                                    <!--/ media -->
+                                </header>
+                                <!--/ Thumbnail -->
+                                <!-- Content -->
+                                <section class="panel-body">
+                                    <!-- heading -->
+                                    <h4 class="font-alt mt0 ellipsis"><a href="javascript:void(0);" class="text-default">Duis aute irure dolor in reprehenderit in voluptate.</a></h4>
+                                    <!--/ heading -->
+                                    <!-- meta -->
+                                    <p class="meta nm">
+                                        <a href="javascript:void(0);">June, 2014</a><!-- date -->
+                                        <span class="text-muted mr5 ml5">&#8226;</span>
+                                        <span class="text-muted">By </span><a href="javascript:void(0);">Jenna Howard</a><!-- author -->
+                                    </p>
+                                    <!--/ meta -->
+                                </section>
+                                <!--/ Content -->
+                            </article>
+                        </div>
+                        <!--/ Blog post #2 -->
+
+                        <!-- Blog post #3 -->
+                        <div class="col-sm-4 post">
+                            <article class="panel overflow-hidden nm">
+                                <!-- Thumbnail -->
+                                <header class="thumbnail">
+                                    <!-- media -->
+                                    <div class="media">
+                                        <!-- indicator -->
+                                        <div class="indicator"><span class="spinner"></span></div>
+                                        <!--/ indicator -->
+                                        <!-- toolbar overlay -->
+                                        <div class="overlay">
+                                            <div class="toolbar">
+                                                <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
+                                            </div>
+                                        </div>
+                                        <!--/ toolbar overlay -->
+                                        <img data-toggle="unveil" src="../image/background/blog/placeholder.jpg" data-src="../image/background/blog/blog3.jpg" alt="Photo" height="160px">
+                                    </div>
+                                    <!--/ media -->
+                                </header>
+                                <!--/ Thumbnail -->
+                                <!-- Content -->
+                                <section class="panel-body">
+                                    <!-- heading -->
+                                    <h4 class="font-alt mt0 ellipsis"><a href="javascript:void(0);" class="text-default">Vivamus nibh dolor, nonummy ac, feugiat non, lobortis quis, pede.</a></h4>
+                                    <!--/ heading -->
+                                    <!-- meta -->
+                                    <p class="meta nm">
+                                        <a href="javascript:void(0);">Apr, 2014</a><!-- date -->
+                                        <span class="text-muted mr5 ml5">&#8226;</span>
+                                        <span class="text-muted">By </span><a href="javascript:void(0);">Glenna Espi</a><!-- author -->
+                                    </p>
+                                    <!--/ meta -->
+                                </section>
+                                <!--/ Content -->
+                            </article>
+                        </div>
+                        <!--/ Blog post #3 -->
+                    </div>
+                    <!--/ END row -->
+                </div>
+            </section>
+            <!--/ END Recent Blog Section -->
+
+            <!-- START Lovely Client -->
+            <section class="section bgcolor-white">
+                <div class="container">
+                    <!-- Header -->
+                    <div class="section-header section-header-bordered mb15">
+                        <h3 class="section-title">
+                            <p class="font-alt nm">Lovely Client</p>
+                        </h3>
+                    </div>
+                    <!--/ Header -->
+                    <!-- carousel -->
+                    <div class="owl-carousel" id="lovely-client">
+                        <!-- client #1 -->
+                        <div class="item text-center">
+                            <a href="javascript:void(0);"><img src="../image/client/aztec.png" alt="Aztec Logo"></a>
+                        </div>
+                        <!--/ client #1 -->
+                        <!-- client #2 -->
+                        <div class="item text-center">
+                            <a href="javascript:void(0);"><img src="../image/client/cisco.png" alt="Cisco Logo"></a>
+                        </div>
+                        <!--/ client #2 -->
+                        <!-- client #3 -->
+                        <div class="item text-center">
+                            <a href="javascript:void(0);"><img src="../image/client/cocacola.png" alt="Cocacola Logo"></a>
+                        </div>
+                        <!--/ client #3 -->
+                        <!-- client #4 -->
+                        <div class="item text-center">
+                            <a href="javascript:void(0);"><img src="../image/client/everyday.png" alt="Everyday Logo"></a>
+                        </div>
+                        <!--/ client #4 -->
+                        <!-- client #5 -->
+                        <div class="item text-center">
+                            <a href="javascript:void(0);"><img src="../image/client/hp.png" alt="HP Logo"></a>
+                        </div>
+                        <!--/ client #5 -->
+                        <!-- client #6 -->
+                        <div class="item text-center">
+                            <a href="javascript:void(0);"><img src="../image/client/natural.png" alt="Natural Logo"></a>
+                        </div>
+                        <!--/ client #6 -->
+                        <!-- client #7 -->
+                        <div class="item text-center">
+                            <a href="javascript:void(0);"><img src="../image/client/shell.png" alt="Shell Logo"></a>
+                        </div>
+                        <!--/ client #7 -->
+                    </div>
+                    <!--/ carousel -->
+                </div>
+            </section>
+            <!--/ END Lovely Client -->
 
             <!-- START To Top Scroller -->
             <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
@@ -94,27 +582,105 @@ LAST UPDATE: 23/06/2014
         <!--/ END Template Main -->
 
         <!-- START Template Footer -->
-        <%= render 'shared/frontend_footer' %>
-        <!--/ END Template Footer -->
+        <footer id="footer" role="contentinfo">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <!-- About -->
+                    <div class="col-md-4">
+                        <h4 class="font-alt mt0">About Us</h4>
+                        <p>Adminre is a clean and flat backend and frontend theme build with Twitter bootstrap 3.1.1</p>
+                        <p> Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                        <a href="javascript:void(0);" class="text-primary">Learn More</a>
+                    </div>
+                    <!--/ About -->
 
-        
+                    <!-- Address + Social -->
+                    <div class="col-md-4">
+                        <h4 class="font-alt mt0">Address</h4>
+                        <address>
+                            <strong>Twitter, Inc.</strong><br>
+                            795 Folsom Ave, Suite 600<br>
+                            San Francisco, CA 94107<br>
+                            <abbr title="Phone">P:</abbr> (123) 456-7890
+                        </address>
+                        <h4 class="font-alt mt0">Stay Connect</h4>
+                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Facebook"><i class="ico-facebook2"></i></a>
+                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Twitter"><i class="ico-twitter2"></i></a>
+                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Vimeo"><i class="ico-vimeo"></i></a>
+                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Flickr"><i class="ico-flickr2"></i></a>
+                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Google+"><i class="ico-google-plus2"></i></a>
+                        <a href="javascript:void(0);" class="text-muted mr15" data-toggle="tooltip" title="Instagram"><i class="ico-instagram2"></i></a>
+                    </div>
+                    <!--/ Address + Social -->
+
+                    <!-- Newsletter -->
+                    <div class="col-md-4">
+                        <h4 class="font-alt mt0">Join our Mailing List</h4>
+                        <form role="form">
+                            <div class="form-group">
+                                <p class="form-control-static">Subscribe to our newsletter and stay up to date with the latest news and deals!</p>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="newsletter_email" placeholder="Enter email">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Subscribe Now</button>
+                        </form>
+                    </div>
+                    <!--/ Newsletter -->
+                </div>
+                <!--/ row -->
+            </div>
+            <!--/ container -->
+
+            <!-- bottom footer -->
+            <div class="footer-bottom">
+                <!-- container -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- copyright -->
+                            <p class="nm text-muted">&copy; Copyright 2014 by <a href="javascript:void(0);" class="text-white">Wildfyre Group</a>. All Rights Reserved.</p>
+                            <!--/ copyright -->
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <a href="javascript:void(0);" class="">Privacy Policy</a>
+                            <span class="ml5 mr5">&#8226;</span>
+                            <a href="javascript:void(0);" class="">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+                <!--/ container -->
+            </div>
+            <!--/ bottom footer -->
+        </footer>
+        <!--/ END Template Footer -->
 
         <!-- START JAVASCRIPT SECTION (Load javascripts at bottom to reduce load time) -->
         <!-- Library script : mandatory -->
-        <script type="text/javascript" src="/library/jquery/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/library/jquery/js/jquery-migrate.min.js"></script>
-        <script type="text/javascript" src="/library/bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/library/core/js/core.min.js"></script>
+        <script type="text/javascript" src="../library/jquery/js/jquery.min.js"></script>
+        <script type="text/javascript" src="../library/jquery/js/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="../library/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../library/core/js/core.min.js"></script>
         <!--/ Library script -->
 
         <!-- App and page level script -->
-        <script type="text/javascript" src="/plugins/sparkline/js/jquery.sparkline.min.js"></script><!-- will be use globaly as a summary on sidebar menu -->
-        <script type="text/javascript" src="/javascript/app.min.js"></script>
+        <script type="text/javascript" src="../plugins/sparkline/js/jquery.sparkline.min.js"></script><!-- will be use globaly as a summary on sidebar menu -->
+        <script type="text/javascript" src="../javascript/app.min.js"></script>
         
         
-        <script type="text/javascript" src="/plugins/owl/js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="../plugins/owl/js/owl.carousel.min.js"></script>
         
-        <script type="text/javascript" src="/javascript/pages/frontend/home.js"></script>
+        <script type="text/javascript" src="../plugins/layerslider/js/greensock.min.js"></script>
+        
+        <script type="text/javascript" src="../plugins/layerslider/js/transitions.min.js"></script>
+        
+        <script type="text/javascript" src="../plugins/layerslider/js/layerslider.min.js"></script>
+        
+        <script type="text/javascript" src="../javascript/pages/frontend/home.js"></script>
         
         <!--/ App and page level scrip -->
         <!--/ END JAVASCRIPT SECTION -->
