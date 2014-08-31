@@ -379,6 +379,8 @@ text-shadow: none;
 .mt20 {margin-top: 20px;}
 
 
+.h7 {font-size: 11px;}
+
 /************************ Buttons *****************/
 
 
@@ -423,6 +425,44 @@ text-shadow: none;
 }
 
 
-/************************ Sliser **************/
-#layerslider {background: url(http://i.huffpost.com/gen/1410042/thumbs/o-AFRICANAMERICAN-COUPLE-WITH-FINANCIAL-PLANNER-facebook.jpg);}
+/************************ Slider **************/
+#layerslider {
+	background: url(http://nyulypgriot.files.wordpress.com/2013/11/black_blo_caro_page-bg_34059.jpg) left center  no-repeat;
+ 	background-size: 100%; }
+
+#footer {
+	height: 900px;
+	background: url(http://today.ucf.edu/files/2014/08/panels_w-screen_black.jpg) center center;
+	background-size: 100%;
+}
+
+
+
+/************************ Mini Thumbnails  **************/
+
+.owl-carousel .thumbnail > .media > img {
+	max-height: 126px;
+	overflow: hidden;
+}
+
+.owl-carousel .item .thumbnail {
+	border-radius: 3px 3px 0 0;
+	padding-bottom: 10px;
+	box-shadow: 1px 1px 1px #ccc;
+	border-left: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+}
+
+.owl-carousel .item .thumbnail img {border-radius: 3px 3px 0 0;}
+
+.owl-carousel .owl-item .item {
+	margin-bottom: 10px;
+} 
+
+
+
+
+
+
+
 
