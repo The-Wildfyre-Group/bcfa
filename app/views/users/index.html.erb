@@ -1,51 +1,21 @@
 <%= render 'shared/backend_head' %>
 
-<%= render 'header'%>
+    <body>
 
-        
-
+        <%= render 'shared/header_member' %>
 
         <!-- START Template Main -->
-        <section id="main pt0" role="main">
+        <section id="main" role="main">
             <!-- START Template Container -->
 
-            <!-- START jumbotron -->
-            <section class="jumbotron jumbotron-bg7 nm" data-stellar-background-ratio="0.4" style="min-height:360px;">
-                <!-- pattern + overlay -->
-                <div class="overlay pattern pattern2"></div>
-                <!--/ pattern + overlay -->
-                <div class="container" style="padding-top:8%;">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h1 class="thin text-white mt0 mb5 fs-xlrg">
-                                <strong><%= @users.count %></strong>
-                                BlackCFAs.</h1>
-                            <div class="row clearfix">
-                                <div class="col-md-9">
-                                    <p class="text-white mb15 fsize14">
-                                    We are aggressivey working to connect black CFAs worldwide. Please help us by inviting those in your personal and extended networks.
-                                    </p>
-                                    <br/>
-                                    <div class="col-md-3 row">
-                                        <a class="btn btn-default btn-outline text-white btn-lg">Invite a Black CFA</a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            
-                                
-                           
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--/ END jumbotron -->
+            <%= render 'user_index_header'%>
 
             <!-- Page Header -->
-            <div class="page-header page-header-block">
+            <div class="page-header page-header-block pt40 pb60" style="margin-bottom: 2px; box-shadow: 3px 3px 3px #ccc;">
                  <div class="page-header-section">
+                    <h4 class="text-center bold">
+                        <span class="ico-search text-primary mr5"></span> Search Our Members
+                    </h4>
                     <div class="toolbar">
                         <div class="col-md-4 col-md-offset-4">
                             <div class="has-icon">
@@ -58,38 +28,118 @@
             </div>
             <!-- Page Header -->
 
-            <div class="container pt60">
+            <section id="members" class="section" style="min-height: 800px; position: relative; background: #fff;">
+                <div class="overlay light pattern pattern13"></div>
+            <!-- START Template Container -->
 
-                <!-- START Row -->
-                <div class="row" id="shuffle-grid">
-					
-					<% @users.each do |user| %>
-                    <div class="col-sm-6 col-md-4 shuffle">
-                        <div class="panel widget">
-                            <div class="table-layout nm">
-                                <div class="col-xs-4 text-center"><img class="img-responsive" src="<%= user.avatar %>" width="100%"></div>
-                                <div class="col-xs-8 valign-middle">
-                                    <div class="panel-body">
-                                        <h5 class="semibold mt0 mb5"><a href="user_profile.html"><%= user.full_name %></a></h5>
-                                        <p class="ellipsis text-muted mb5"><i class="ico-envelop mr5"></i> <%= user.email %></p>
-                                        <p class="text-muted nm"><i class="ico-location2 mr5"></i> <%= user.user_detail.try(:location_description) %></p>
-                                    </div>
-                                </div>
+                <div class="container">
+
+                    <!-- START Row -->
+                    <div class="row" id="shuffle-grid">
+    					
+    					<% @users.each do |user| %>
+                            <!-- user widget -->
+                            <div class="col-sm-2 post">
+                                <article class="panel overflow-hidden">
+                                    <!-- Thumbnail -->
+                                    <header class="thumbnail">
+                                        <!-- media -->
+                                        <div class="media">
+                                            <!-- indicator -->
+                                            <div class="indicator"><span class="spinner"></span></div>
+                                            <!--/ indicator -->
+                                            <!-- toolbar overlay -->
+                                            <div class="overlay">
+                                                <div class="toolbar">
+                                                    <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
+                                                </div>
+                                            </div>
+                                            <!--/ toolbar overlay -->
+                                            <img data-toggle="" src="<%= user.avatar %>" alt="Photo" height="auto" width="100%">
+                                        </div>
+                                        <!--/ media -->
+                                    </header>
+                                    <!--/ Thumbnail -->
+                                    <!-- Content -->
+                                    <section class="panel-body text-center">
+                                        <!-- heading -->
+                                        <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default"><%= user.full_name %></a></h6>
+                                        <h6 class="h7 font-al nm ellipsis lh22">
+                                            <a href="javascript:void(0);" class="text-primary gf_muli">
+                                                <span class="ico ico-location4"></span> 
+                                                <%= user.user_detail.try(:location_description) %>
+                                            </a>
+                                        </h6>
+                                        <!--/ heading -->
+                                        <hr class="mt5 mb10"/>
+                                        <!-- meta -->
+                                        <p class="meta nm text-center">
+                                            <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
+                                            <a href="#" class="">
+                                                <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
+                                            </a>
+                                            <a href="#" class="">
+                                                <img src="image/social/email_circle-128.png" height="40" alt=""/><%#= user.email %>
+                                            </a>
+                                            <button class="btn btn-block btn-inverse btn-xs mt10">
+                                                <span class="ico-profile mr5"></span> Full Profile
+                                            </button>
+                                        </p>
+                                        <!--/ meta -->
+                                    </section>
+                                    <!--/ Content -->
+                                </article>
                             </div>
+                            <!--/ User Widget -->
+    					<% end %>
+                    </div>
+                    <!--/ END Row -->
+                </div>
+                <!--/ END Template Container -->
+
+                <!-- START To Top Scroller -->
+                <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
+                <!--/ END To Top Scroller -->
+            </section>
+
+            <!-- bottom footer -->
+            <div class="footer-bottom" style="height: 200px; background: #222; padding: 30px 20px 20px; z-index: 99999; border: 1px solid #333;">
+                <!-- copyright -->
+               <div class="container" style="border-top: 5px solid #444; border-bottom: 1px solid #333; padding-top: 15px;">
+                    <div class="row">
+                        <div class="col-sm-8 gf_montserrat thin">
+                             <h5 class="text-muted thin gf_muli mt5 mb5">
+                                <span class="ico-share22 mr5 text-success"></span>
+                                <span class="mr5">Like Us.</span> 
+                                <span class="mr5">Share Us.<span class="mr5">
+                                Follow Us.
+                            </h5>
+                             <ul class="inline-li social_64 ml0 pl0 mt15">
+                                <li><img src="../image/social/youtube_circle-128.png"/></li>
+                                <li><img src="../image/social/twitter_circle-128.png"/></li>
+                                <li><img src="../image/social/slideshare_circle-128.png"/></li>
+                                <li><img src="../image/social/linkedin_circle-128.png"/></li>
+                                <li><img src="../image/social/instagram_circle-128.png"/></li>
+                                <li><img src="../image/social/facebook_circle-128.png"/></li>
+                            </ul>
+                            <!--/ copyright -->
+                        </div>
+                         <div class="col-sm-4 gf_montserrat text-right">
+                            <p class="text-muted bold mb5">BLACKCFA</p>
+                            <!-- copyright -->
+                            <ul class="unstyled gf_muli">
+                                <li>Our Team</li>
+                                <li>Partnerships</li>
+                                <li>Contact Us</li>
+                                <li>Terms and Policies</li>
+                            </ul>
+                            <!--/ copyright -->
                         </div>
                     </div>
-					<% end %>
-					
-					
                 </div>
-                <!--/ END Row -->
+                <!--/ container -->
             </div>
-            <!--/ END Template Container -->
-
-            <!-- START To Top Scroller -->
-            <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
-            <!--/ END To Top Scroller -->
-
+            <!--/ bottom footer -->
         </section>
         <!--/ END Template Main -->
 

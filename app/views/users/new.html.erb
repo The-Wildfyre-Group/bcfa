@@ -1,119 +1,259 @@
-<%= render 'shared/backend_head' %>
+<!DOCTYPE html>
+<!-- 
+TEMPLATE NAME : Adminre frontend
+VERSION : 1.2.0
+AUTHOR : JohnPozy
+AUTHOR URL : http://themeforest.net/user/JohnPozy
+EMAIL : pampersdry@gmail.com
+LAST UPDATE: 23/06/2014
+
+** A license must be purchased in order to legally use this template for your project **
+** PLEASE SUPPORT ME. YOUR SUPPORT ENSURE THE CONTINUITY OF THIS PROJECT **
+-->
+<html class="frontend">
+    <!-- START Head -->
+    <%= render 'shared/frontend_head' %>
+    <!--/ END Head -->
 
     <!-- START Body -->
     <body>
-        <!-- START Template Main -->
-        <section id="main" role="main">
 
-         <section class="jumbotron jumbotron-bg1 nm" data-stellar-background-ratio="0.4" style="min-height:1400px;">
-            <!-- pattern + overlay -->
+        <!-- START Template Header -->
+        <header id="header" class="navbar">
+            <div class="container">
+                <!-- START navbar header -->
+                <div class="navbar-header">
+                    <!-- Brand -->
+                    <a class="navbar-brand" href="/">
+                        <span class="logo-figure" style="margin-left:-4px;"></span>
+                        <span class="logo-text"></span>
+                    </a>
+                    <!--/ Brand -->
+                </div>
+                <!--/ END navbar header -->
 
+                <!-- START Toolbar -->
+                <div class="navbar-toolbar clearfix">
+                    <!-- START Left nav -->
+                    <ul class="nav navbar-nav">
+                        <!-- Navbar collapse: This menu will take position at the top of template header (mobile only). Make sure that only #header have the `position: relative`, or it may cause unwanted behavior -->
+                        <li class="navbar-main navbar-toggle">
+                            <a href="javascript:void(0);" data-toggle="collapse" data-target="#navbar-collapse">
+                                <span class="meta">
+                                    <span class="icon"><i class="ico-paragraph-justify3"></i></span>
+                                </span>
+                            </a>
+                        </li>
+                        <!--/ Navbar collapse -->
+                    </ul>
+                    <!--/ END Left nav -->
 
-
-            <!-- START Register Content -->
-            <section class="section">
-            <!-- pattern + overlay -->
-            <div class="overlay pattern pattern2"></div>
-
-            <!-- START Template Container -->
-            <section class="container">
-                <!-- START row -->
-                <div class="row">
-                    <div class="col-lg-4 col-lg-offset-4">
-                        <!-- Brand -->
-                        <div class="text-center" style="margin-bottom:20px;">
-                            <span class="logo-figure inverse"></span>
-                            <span class="logo-text inverse"></span>
-                            <h3 class="semibold text-white mt-5">Create a new account.</h3>
-                        </div>
-                        <!--/ Brand -->
-
-                        <%= form_for User.new, :html => {:class => "panel nm"} do |f| %><!-- Register form -->
-                        <form class="panel" name="form-register" action="">
-                           <div class="panel-body">
-                                <!-- Social button -->
-                                <ul class="list-table">
-                                    <li><button type="button" class="btn btn-block btn-facebook">Connect with <i class="ico-facebook2 ml5"></i></button></li>
-                                    <li><button type="button" class="btn btn-block btn-twitter">Connect with <i class="ico-twitter2 ml5"></i></button></li>
-                                </ul>
-                                <!-- Social button -->
-                            </div>
-                            <hr class="nm">
-                            <div class="panel-body">
-                                <div class="form-group">
-                                    <label class="control-label">Email</label>
-                                    <div class="has-icon pull-left">
-                                         <%= f.text_field :email, class: "form-control", id: "signup_username", placeholder: "" do %>
-                                             <input type="text" class="form-control" name="username" data-parsley-required>
-                                            <i class="ico-user2 form-control-icon"></i>
-                                        <% end %>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">Password</label>
-                                    <div class="has-icon pull-left">
-                                        <%= f.password_field :password, class: "form-control", id: "signup_username", placeholder: "" do %>
-                                            <input type="password" class="form-control" name="password" data-parsley-required>
-                                            <i class="ico-key2 form-control-icon"></i>
-                                        <% end %>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">Retype Password</label>
-                                    <div class="has-icon pull-left">
-                                        <%= f.password_field :password_confirmation, class: "form-control", id: "signup_username", placeholder: "" do %>
-                                            <input type="password" class="form-control" name="retype-password" data-parsley-equalto="input[name=password]">
-                                            <i class="ico-asterisk form-control-icon"></i>
-                                        <% end %>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="nm">
-                            <div class="panel-body">
-                                <p class="semibold text-muted">Please enter the access code.</p>
-                                <div class="form-group">
-                                    <label class="control-label">Access Code</label>
-                                    <div class="has-icon pull-left">
-                                        <%= f.password_field :access_code, class: "form-control", id: "access_code", placeholder: "" do %>
-                                            <input type="email" class="form-control" name="email" placeholder="you@mail.com">
-                                            <i class="ico-envelop form-control-icon"></i>
-                                        <% end %>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="checkbox custom-checkbox">  
-                                        <input type="checkbox" name="agree" id="agree" value="1">  
-                                        <label for="agree" class="text-muted">&nbsp;&nbsp;I agree to the <a class="semibold text-muted" href="javascript:void(0);">
-                                            <u>Term Of Services</u></a>
-                                        </label>   
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel-footer">
-                                <%= button_tag(type: 'submit', class: "btn btn-block btn-success") do %>
-                                    <span class="semibold">Sign up</span>
-                                <% end %>
+                    <!-- START navbar form -->
+                    <div class="navbar-form navbar-left dropdown" id="dropdown-form">
+                        <form action="" role="search">
+                            <div class="has-icon">
+                                <input type="text" class="form-control" placeholder="Search this site...">
+                                <i class="ico-search form-control-icon"></i>
                             </div>
                         </form>
-                        <!-- Register form -->
-                        <% end %>
+                    </div>
+                    <%= render 'shared/navigation_visitor' %>
+                    <!--/ END nav collapse -->
+                </div>
+                <!--/ END Toolbar -->
+            </div>
+        </header>
+        <!--/ END Template Header --> 
 
-
-                        <hr><!-- horizontal line -->
-
-                        <p class="text-center">
-                            <span class="text-white">Already have an account? <a class="semibold ml5" href="<%= login_path %>">Login in to your Account.</a></span>
-                        </p>
+        <!-- START Template Main -->
+        <section id="main" role="main">
+            <!-- START jumbotron -->
+            <section class="jumbotron jumbotron-bg2 nm" data-stellar-background-ratio="0.4" style="min-height:900px;">
+                <!-- pattern + overlay -->
+                <div class="overlay pattern pattern2"></div>
+                <!--/ pattern + overlay -->
+                <div class="container" style="padding-top:10%;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- <img class="img-circle mb5 mr10 ml5 pull-left mt10" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 37px; width: 37px;">
+                            <h1 class="text-white mb5 pull-left mt10">BlackCFA.</h1>
+                            <h2 class="text-white mb5 pull-left mt15">Connecting Our Community.</h2>
+                            <div class="clearfix"></div>
+                            <p class="text-muted mb0 pl5 pr5">
+                                Connecting and empowering professionals that have achieved the CFA designation and those pursuing the CFA course of study. Connecting and empowering black professionals that have achieved the CFA designation and those pursuing the CFA course of study. Get engaged, join us.
+                            </p> -->
+                        </div>
+                        <div class="col-md-4 np col-md-offset-2 p" style="border: 1px solid #222; border-radius: 6px; background: rgba(0,0,0, .2); border-left: 1px solid #444;
+                        border-top: 1px solid #444;">
+                            <div class="panel nm bgcolor-transparent no-border">
+                                <div class="center panel-body" style="background: #fff; padding: 5px 20px 3px 20px; border-radius: 0 0 6px 6px; margin-top: -1px; border: 2px solid #ccc; border-top: none; box-shadow: 1px 1px 1px #444;">
+                                    <img class="img-circle mb5 mr5 pull-left" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 20px; width: 20px;">
+                                    <h5 class="lh-22 nm bold pull-left" style="color: #333;">
+                                        BlackCFA
+                                    </h5>
+                                </div>
+                                <div class="panel-body pr30 pl30">
+                                    <!-- <img class="img-circle mb5 mr10 ml5 pull-left mt10" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 37px; width: 37px;">
+                                             -->
+                                    <h3 class="text-center text-white mb5 mt0 thin">
+                                        Join our Community.
+                                    </h3>
+                                    <div class="clearfix"></div>
+                                    <p class="text-muted mb0 pr5 ml10 text-center">
+                                        Don't forget to Like Us.
+                                    </p>
+                                    <!-- <div class="col-md-3 row">
+                                        <a class="btn btn-default btn-outline text-white btn-lg">Learn More</a>
+                                    </div> -->
+                                    <!-- <div class="clearfix"></div> -->
+                                </div>
+                                <hr class="dark nm" />
+                                <div class="panel-body pr30 pl30 pb0">
+                                    
+                                    <%= form_for User.new, url: users_path, html: {novalidate: true} do |f| %>
+                                        <div class="form-group">
+                                            <%= f.text_field :email, class: "form-control", id: "signup_username", placeholder: "Email" %>
+                                        </div>
+                                        <div class="form-group">
+                                            <%= f.password_field :password, class: "form-control", id: "signup_username", placeholder: "Password" %>
+                                        </div>
+                                         <div class="form-group">
+                                            <select class="form-control">
+                                                <option>L1 Candidate</option>
+                                                <option>L2 Candidate</option>
+                                                <option>L3 Candidate</option>
+                                                <option>Charterholder</option>
+                                            </select>
+                                        </div>
+                                        <!-- <div class="form-group">
+                                            <%#= f.password_field :password_confirmation, class: "form-control input-lg", id: "signup_username", placeholder: "Password Confirmation" %>
+                                        </div>
+                                        --> 
+                                        <!-- <div class="form-group">
+                                            <%#= f.text_field :access_code, class: "form-control input-lg", id: "access_code", placeholder: "Access Code" %>
+                                        </div> -->
+                                        <!-- <div class="form-group mb0">
+                                            <span class="help-block text-muted mb0">Don't have an access code? <a href="#">How to get one.</a></span>
+                                        </div> -->
+                                    </div>
+                                    <div class="panel-footer pr30 pl30" style="border-top: 2px solid #ccc; box-shadow: 1px 1px 1px #777;">
+                                        <%= f.submit "Sign up for BlackCFA", class: "mt10 semibold btn btn-primary btn-3d btn-block", style: "padding: 12px 16px; font-size: 18px;" %>
+                                        <div class="form-group pt10">
+                                            <span class="help-block text-muted fs10">By clicking "Sign up for BlackCFA", you agree to our <a href="#">terms of service</a> and <a href="#">privacy policy</a>. We will send you account related emails occasionally.</span>
+                                        </div>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!--/ END row -->
             </section>
-            
-            <!--/ END Register Content -->
+            <!--/ END jumbotron -->
 
-            <!-- START To Top Scroller -->
-            <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
-            <!--/ END To Top Scroller -->
+            <!-- START Template Footer -->
+            <footer id="footer" role="contentinfo" style="border-top: 10px solid #222; border:">
+            
+                <!-- pattern + overlay -->
+                <!-- <div class="overlay pattern pattern0"></div> -->
+                <!--/ pattern + overlay -->
+
+                <!-- container -->
+                <div class="container">
+                    <!-- row -->
+                    <div class="row pb60 pt40">
+                        <!-- About -->
+                        <div class="col-md-8">
+                        </div>
+                        <!--/ About -->
+                        <div class="col-md-4">
+                            <img class="img-circle mb5 mr5 pull-left" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 20px; width: 20px;">
+                            <h4 class="mt0 gf_montserrat">BlackCFA</h4>
+                            <form role="form">
+                                <div class="form-group">
+                                    <p class="form-control-static">Connecting and empowering professionals that have achieved the CFA designation and those pursuing the CFA course of study.</p>
+                                </div>
+                            </form>
+                        </div>
+                        <!--/ Newsletter -->
+                    </div>
+                    <!--/ row -->
+                </div>
+                <!--/ container -->
+
+                <!-- bottom footer -->
+                <div class="footer-bottom" style="position: absolute; bottom: 0; background: #222; padding: 30px 20px 20px; z-index: 99999; border: 1px solid #333;">
+                    <!-- copyright -->
+                   <div class="container" style="border-top: 5px solid #444; border-bottom: 1px solid #333; padding-top: 15px;">
+                        <div class="row">
+                            <div class="col-sm-8 gf_montserrat thin">
+                                 <h5 class="text-muted thin gf_muli mt5 mb5">
+                                    <span class="ico-share22 mr10 text-success"></span>
+                                    <span class="mr5">Like Us.</span> 
+                                    <span class="mr5">Share Us.<span class="mr5">
+                                    Follow Us.
+                                </h5>
+                                 <ul class="inline-li social_64 ml0 pl0 mt15">
+                                    <li><img src="image/social/youtube_circle-128.png"/></li>
+                                    <li><img src="image/social/twitter_circle-128.png"/></li>
+                                    <li><img src="image/social/slideshare_circle-128.png"/></li>
+                                    <li><img src="image/social/linkedin_circle-128.png"/></li>
+                                    <li><img src="image/social/instagram_circle-128.png"/></li>
+                                    <li><img src="image/social/facebook_circle-128.png"/></li>
+                                </ul>
+                                <!--/ copyright -->
+                            </div>
+                             <div class="col-sm-4 gf_montserrat text-right">
+                                <p class="text-muted bold mb5">BLACKCFA</p>
+                                <!-- copyright -->
+                                <ul class="unstyled gf_muli">
+                                    <li>Our Team</li>
+                                    <li>Partnerships</li>
+                                    <li>Contact Us</li>
+                                    <li>Terms and Policies</li>
+                                    
+                                </ul>
+                                <!--/ copyright -->
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ container -->
+                </div>
+                <!--/ bottom footer -->
+            </footer>
+            <!--/ END Template Footer -->
+            
         </section>
-        <!--/ END Template Main -->
+           
+
+        <!-- START JAVASCRIPT SECTION (Load javascripts at bottom to reduce load time) -->
+        <!-- Library script : mandatory -->
+        <script type="text/javascript" src="../library/jquery/js/jquery.min.js"></script>
+        <script type="text/javascript" src="../library/jquery/js/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="../library/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../library/core/js/core.min.js"></script>
+        <!--/ Library script -->
+
+        <!-- App and page level script -->
+        <script type="text/javascript" src="../plugins/sparkline/js/jquery.sparkline.min.js"></script><!-- will be use globaly as a summary on sidebar menu -->
+        <script type="text/javascript" src="../javascript/app.min.js"></script>
+        
+        
+        <script type="text/javascript" src="../plugins/owl/js/owl.carousel.min.js"></script>
+        
+        <script type="text/javascript" src="../plugins/layerslider/js/greensock.min.js"></script>
+        
+        <script type="text/javascript" src="../plugins/layerslider/js/transitions.min.js"></script>
+        
+        <script type="text/javascript" src="../plugins/layerslider/js/layerslider.min.js"></script>
+        
+        <script type="text/javascript" src="../javascript/pages/frontend/home.js"></script>
+        
+        <!--/ App and page level scrip -->
+        <!--/ END JAVASCRIPT SECTION -->
+    </body>
+    <!--/ END Body -->
+</html>
+
+
+
 

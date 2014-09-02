@@ -1,0 +1,60 @@
+ <!-- START jumbotron -->
+<section class="jumbotron nm pt30 pb30" data-stellar-background-ratio="0.4">
+    <!-- pattern + overlay -->
+    <div class="overlay pattern pattern10"></div>
+    <!--/ pattern + overlay -->
+     <div class="container">
+        <div class="col-md-10 col-md-offset-1">
+        <div class="row">
+            <div class="col-md-7">
+                <!-- figure with progress -->
+                <ul class="list-table">
+                    <li style="width:130px;">
+                        <%= image_tag @user.avatar, class: "img-circle img-bordered", width: "110px", height: "110px" %>
+                    </li>
+                    <li class="text-left">
+                        <div class="pull-left">
+                            <h3 class="semibold ellipsis mt0"><%= @user.full_name %></h5>
+                            <div style="">
+                                <p class="text-muted clearfix nm">
+                                    <span class="mr5">Washinton, DC </span>
+                                    <span class="mr5">&#8226;</span>
+                                    <span class="mr5">Wildfyre</span>
+                                    <span class="mr5">&#8226;</span>
+                                    <span class="mr5">Ruby on Rails Developer</span>
+                                </p>
+                            </div>
+                        </div>
+                       <div class="pull-left mt10">
+                            <a href="<%= user_path(@user) %>" class="btn btn-xs btn-primary">
+                                <span class="ico-user7 mr5"></span>
+                                View Profile
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <!--/ figure with progress -->
+            </div>
+            <div class="col-md-5">
+                <!-- follower stats -->
+                <ul class="nav nav-section nav-justified mt25">
+                    <li>
+                        <div class="section">
+                            <h5 class="nm semibold">2010</h5>
+                            <p class="nm text-muted">Charter Holder Since</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="section">
+                            <h5 class="nm semibold">Howard University</h5>
+                            <p class="nm text-muted">Alum</p>
+                        </div>
+                    </li>
+                </ul>
+                <!--/ follower stats -->
+            </div>
+        </div>
+        </div>
+    </div>
+ </section>
+<!--/ END jumbotron -->
