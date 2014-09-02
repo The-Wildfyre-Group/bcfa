@@ -12,10 +12,16 @@ class CreateUserDetails < ActiveRecord::Migration
       ## Education
       t.string :undergraduate_school
       t.string :graduate_school
-      t.string :other_school
+      t.string :doctorate_school
       t.string :undergraduate_degree
       t.string :graduate_degree
-      t.string :other_degree
+      t.string :doctorate_degree
+      t.string :undergraduate_major
+      t.string :graduate_major
+      t.string :doctorate_major
+      t.integer :undergraduate_year
+      t.integer :graduate_year
+      t.integer :doctorate_year
       
       ## Charter
       t.integer :year_of_charter
@@ -27,6 +33,7 @@ class CreateUserDetails < ActiveRecord::Migration
       t.string :company
       t.string :title
       t.string :industries
+      t.string :website
       
       ## Interests & Skills
       t.string :interests
@@ -39,6 +46,8 @@ class CreateUserDetails < ActiveRecord::Migration
       
       t.text :bio 
       
+      #contact
+      t.string :phone_number
       
 
       t.timestamps

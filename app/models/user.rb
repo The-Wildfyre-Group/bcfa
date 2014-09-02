@@ -120,11 +120,63 @@ class User < ActiveRecord::Base
   end
   
   def avatar
-    unless user_profile_pictures.blank?
-      user_profile_pictures.last.try(:photo)
+    if user_profile_pictures.last.try(:id).blank?
+      "http://www.imcslc.ca/imc/includes/themes/imc/images/layout/img_placeholder_avatar.jpg"
     else
-      "http://www.clker.com/cliparts/A/Y/O/m/o/N/placeholder-md.png"
+      user_profile_pictures.last.photo
     end
+  end
+  
+  def undergraduate_alma_mater
+    [user_detail.try(:undergraduate_school), undergraduate_formatted_year].compact.join(' ') if user_detail.undergraduate_school.present?
+  end
+  
+  def graduate_alma_mater
+    [user_detail.try(:graduate_school), graduate_formatted_year].compact.join(' ') if user_detail.graduate_school.present?
+  end
+  
+  def doctorate_alma_mater
+    [user_detail.try(:doctorate_school), doctorate_formatted_year].compact.join(' ') if user_detail.doctorate_school.present?
+  end
+  
+  def undergraduate_formatted_year
+    "'#{user_detail.try(:undergraduate_year).to_s.last(2)}" if user_detail.undergraduate_year.present?
+  end
+  
+  def graduate_formatted_year
+    "'#{user_detail.try(:graduate_year).to_s.last(2)}" if user_detail.graduate_year.present?
+  end
+  
+  def doctorate_formatted_year
+    "'#{user_detail.try(:doctorate_year).to_s.last(2)}" if user_detail.doctorate_year.present?
+  end
+  
+  def undergratuate_degree_and_major
+    delimiter = user_detail.try(:undergraduate_degree).present? ? ", " : ""
+    [user_detail.try(:undergraduate_degree),user_detail.try(:undergraduate_major)].compact.join(delimiter) if user_detail.try(:undergraduate_major).present?
+  end
+  
+  def graduate_degree_and_major
+    delimiter = user_detail.try(:graduate_degree).present? ? ", " : ""
+    [user_detail.try(:graduate_degree),user_detail.try(:graduate_major)].compact.join(delimiter) if user_detail.try(:graduate_major).present?
+  end
+  
+  def doctorate_degree_and_major
+    delimiter = user_detail.try(:doctorate_degree).present? ? ", " : ""
+    [user_detail.try(:doctorate_degree),user_detail.try(:doctorate_major)].compact.join(delimiter) if user_detail.try(:doctorate_major).present?
+  end
+  
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
+  end
+  
+  def send_password_reset
+    generate_token(:reset_password_token)
+    self.reset_password_sent_at = Time.zone.now
+    save!
+    Email.password_reset(self).deliver
   end
   
   

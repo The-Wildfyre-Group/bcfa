@@ -39,17 +39,17 @@
                                                 <tr>
                                                     <td width="50%"><h5 class="bold">Alma Mater</h5></td>
                                                     <td>
-                                                        <h5 class="nm"><a href="#"><%= @user.user_detail.try(:graduate_school) %></a></h5>
-                                                        <h5 class="nm"><a href="#"><%= @user.user_detail.try(:undergraduate_school) %></a></h5>
-        												<h5 class="nm"><a href="#"><%= @user.user_detail.try(:other_school) %></a></h5>
+                                                        <h5 class="nm"><a href="#"><%= @user.undergraduate_alma_mater %></a></h5>
+                                                        <h5 class="nm"><a href="#"><%= @user.graduate_alma_mater %></a></h5>
+                                                        <h5 class="nm"><a href="#"><%= @user.doctorate_alma_mater %></a></h5>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td width="50%"><h5 class="bold">Degree(s)</h5></td>
                                                     <td>
-                                                        <h5 class="nm"><a href="#"><%= @user.user_detail.try(:graduate_degree) %></a></h5>
-                                                        <h5 class="nm"><a href="#"><%= @user.user_detail.try(:undergraduate_degree) %></a></h5>
-        												<h5 class="nm"><a href="#"><%= @user.user_detail.try(:other_degree) %></a></h5>
+                                                        <h5 class="nm"><a href="#"><%= @user.undergratuate_degree_and_major %></a></h5>
+                                                        <h5 class="nm"><a href="#"><%= @user.graduate_degree_and_major %></a></h5>
+                                                        <h5 class="nm"><a href="#"><%= @user.doctorate_degree_and_major %></a></h5>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -110,6 +110,7 @@
                                     <!--/ panel ribbon -->
                                 </div>
                             </div>
+                            
                             <!--/ Right side / bottom side -->
                             <div class="col-md-3">
                                 <!-- START Widget Panel -->
@@ -124,38 +125,49 @@
                                         <!-- panel body with collapse capabale -->
                                         <div class="panel-collapse pull out">
                                             <div class="panel-body pl25">
-                                               <!--  <address>
+                                                <!-- <address>
                                                     <strong>Location</strong><br>
                                                     <h4><i class="ico-map-marker mr5"></i> 
                                                         <%= @user.user_detail.try(:location_description) %></h4>
-                                                </address>-->
+                                                </address> -->
                                                 <address>
                                                     <strong>Phone and Email</strong><br>
-                                                    <abbr title="Phone">P:</abbr> (123) 456-7890<br>
-                                                    <abbr title="Email">E:</abbr> first.last@example.com
+                                                    <abbr title="Phone">P:</abbr> <%= number_to_phone(@user.user_detail.try(:phone_number), area_code: true) %><br>
+                                                    <%= mail_to @user.email do%>
+                                                    <abbr title="Email">E:</abbr> <%= @user.email %>
+                                                    <% end %>
                                                 </address>
 
                                                 <address>
                                                     <strong>Website</strong><br>
-                                                    <a href="mailto:#">first.last@example.com</a>
+                                                    <%= link_to @user.user_detail.try(:website) do %>
+                                                    <a href="mailto:#"><%= @user.user_detail.try(:website) %></a>
+                                                    <% end %>
                                                 </address>
 
                                                 <address>
                                                     <strong>Social Media</strong><br>
-                                                    <h5>
-                                                        <i class="text-facebook ico-facebook4 mr5"></i> 
-                                                        Facbook
-                                                    </h5>
-                                                    <h5>
-                                                        <i class="text-twitter ico-twitter3 mr5"></i>
-                                                         Twitter
-                                                     </h5>
-                                                    <h5>
-                                                        <i class="text-instagram ico-instagram2 mr5"></i> Instagram
-                                                    </h5>
-                                                    <h5>
-                                                        <i class="text-linkedin ico-linkedin2 mr5"></i> LinkedIn
-                                                    </h5>
+                                                    <%= link_to @user.user_detail.try(:facebook) do %>
+                                                        <h4>
+                                                            <i class="text-facebook ico-facebook4 mr5"></i> 
+                                                            Facebook
+                                                        </h4>
+                                                    <% end %>
+                                                    <%= link_to @user.user_detail.try(:twitter) do %>   
+                                                        <h4>
+                                                            <i class="text-twitter ico-twitter3 mr5"></i> Twitter
+                                                        </h4>
+                                                    <% end %>
+                                                    <%= link_to @user.user_detail.try(:instagram) do %>
+                                                        <h4>
+                                                            <i class="text-instagram ico-instagram2 mr5"></i> Instagram
+                                                        </h4>
+                                                    <% end %>
+                                                    <%= link_to @user.user_detail.try(:linkedin) do %>
+                                                        <h4>
+                                                            <i class="text-linkedin ico-linkedin2 mr5"></i> LinkedIn
+                                                        </h4>
+                                                    <% end %>
                                                 </address>
                                             </div>
                                         </div>

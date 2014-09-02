@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710054159) do
+ActiveRecord::Schema.define(version: 20140726205213) do
 
   create_table "user_details", force: true do |t|
     t.integer  "user_id"
@@ -21,21 +21,29 @@ ActiveRecord::Schema.define(version: 20140710054159) do
     t.string   "twitter"
     t.string   "undergraduate_school"
     t.string   "graduate_school"
-    t.string   "other_school"
+    t.string   "doctorate_school"
     t.string   "undergraduate_degree"
     t.string   "graduate_degree"
-    t.string   "other_degree"
+    t.string   "doctorate_degree"
+    t.string   "undergraduate_major"
+    t.string   "graduate_major"
+    t.string   "doctorate_major"
+    t.integer  "undergraduate_year"
+    t.integer  "graduate_year"
+    t.integer  "doctorate_year"
     t.integer  "year_of_charter"
     t.string   "certifications"
     t.string   "company"
     t.string   "title"
     t.string   "industries"
+    t.string   "website"
     t.string   "interests"
     t.string   "skills"
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
     t.text     "bio"
+    t.string   "phone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -65,6 +73,7 @@ ActiveRecord::Schema.define(version: 20140710054159) do
     t.integer  "invitation_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true, using: :btree

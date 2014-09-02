@@ -25,4 +25,15 @@ class ApplicationController < ActionController::Base
   
   helper_method :new_user, :current_user
   
+  def authenticate_user!
+    redirect_to signup_path, alert: "Not authorized" if current_user.nil?
+  end
+  
+  def authenticate_charter_rights!
+    authenticate_user!
+    unless current_user.admin? or current_user == User.find(params[:id])
+      redirect_to user_path(current_user)
+    end
+  end
+  
 end

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: %w[index show edit update destroy]
+  before_action :authenticate_charter_rights!, only: %w[edit update destroy]
   before_action :find_user, only: %w[show edit update destroy]
   
   def index 
@@ -13,7 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      #UserDetail.create(user_id: @user.id)
+      UserDetail.create(user_id: @user.id)
       cookies.permanent[:authentication_token] = @user.authentication_token 
       redirect_to edit_user_path(@user)
     else
@@ -59,7 +61,7 @@ class UsersController < ApplicationController
   protected
   
   def user_params
-   params.require(:user).permit(:prefix, :first_name, :middle_name, :last_name, :suffix, :email, :password, :password_confirmation, :current_password, :access_code, {user_detail_attributes: [:id, :user_id, :instagram, :twitter, :facebook, :linkedin, :undergraduate_school, :graduate_school, :other_school, :undergraduate_degree, :graduate_degree, :other_degree, :year_of_charter, :certifications, :company, :title, :industries, :interests, :skills, :city, :state, :zipcode, :bio]},  {user_profile_pictures_attributes: [:id, :user_id, :photo]})  
+   params.require(:user).permit(:prefix, :first_name, :middle_name, :last_name, :suffix, :email, :password, :password_confirmation, :current_password, :access_code, {user_detail_attributes: [:id, :user_id, :instagram, :twitter, :facebook, :linkedin, :undergraduate_school, :graduate_school, :doctorate_school, :undergraduate_major, :graduate_major, :doctorate_major, :undergraduate_year, :graduate_year, :doctorate_year, :undergraduate_degree, :graduate_degree, :doctorate_degree, :year_of_charter, :certifications, :company, :title, :website, :industries, :interests, :skills, :city, :state, :zipcode, :bio]},  {user_profile_pictures_attributes: [:id, :user_id, :photo]})  
   end
   
   def find_user
