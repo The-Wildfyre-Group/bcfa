@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   before_create { generate_token(:authentication_token) }
   after_update :password_changed?, :on => :update
   #before_save :encrypt_password
-  validate :check_access_code, :on => :create
+  # validate :check_access_code, :on => :create
  # before_update :set_old_password, :on => :update
   #validate :check_old_password, :on => :update
   

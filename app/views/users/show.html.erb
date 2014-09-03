@@ -16,7 +16,6 @@
                     <div class="col-md-10 col-md-offset-1">
                         <!-- START Row -->
                         <div class="row">
-                            <!-- Left Side / Top side -->
                             <div class="col-md-9">
                                 <div class="widget panel">
                                     <!-- panel body -->
@@ -36,14 +35,6 @@
                                         <table class="table border-bottom-thick">
                                             <thead></thead>
                                             <tbody>
-                                                <tr>
-                                                    <td width="50%"><h5 class="bold">Alma Mater</h5></td>
-                                                    <td>
-                                                        <h5 class="nm"><a href="#"><%= @user.undergraduate_alma_mater %></a></h5>
-                                                        <h5 class="nm"><a href="#"><%= @user.graduate_alma_mater %></a></h5>
-                                                        <h5 class="nm"><a href="#"><%= @user.doctorate_alma_mater %></a></h5>
-                                                    </td>
-                                                </tr>
                                                 <tr>
                                                     <td width="50%"><h5 class="bold">Degree(s)</h5></td>
                                                     <td>
@@ -132,9 +123,11 @@
                                                 </address> -->
                                                 <address>
                                                     <strong>Phone and Email</strong><br>
-                                                    <abbr title="Phone">P:</abbr> <%= number_to_phone(@user.user_detail.try(:phone_number), area_code: true) %><br>
-                                                    <%= mail_to @user.email do%>
-                                                    <abbr title="Email">E:</abbr> <%= @user.email %>
+                                                    <abbr title="Phone">P:</abbr> 
+                                                    <%= number_to_phone(@user.user_detail.try(:phone_number), area_code: true) %><br>
+                                                    <%= mail_to @user.email do %>
+                                                    <abbr title="Email">E:</abbr> 
+                                                    <%#= @user.email %>
                                                     <% end %>
                                                 </address>
 
