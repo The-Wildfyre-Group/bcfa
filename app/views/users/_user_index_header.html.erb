@@ -10,9 +10,9 @@
             <div class="center">
                 <img class="img-circle mb5 mr10 ml5 pull-left mt10" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 150px; width: 150px; opacity: .5">
                 </div>
-                <h1 class="text-center mb10 mt20 text-white gf_droid">Connecting our community, <u>everywhere</u>.</h1>
+                <h1 class="text-center mb10 mt20 text-white gf_droid">Connecting our community <u>everywhere</u>.</h1>
                 <h3 class="mute text-center mb40 mt0 text-muted gf_droid">
-                    334 members worldwide.
+                    <%= @users.count %> members worldwide.
                 </h3>
 
                 <div class="col-md-12">
@@ -20,40 +20,35 @@
                 <ul class="nav nav-section nav-justified">
                     <li>
                         <div class="section">
-                            <h4 class="nm semibold">312</h4>
+                            <h4 class="nm semibold"><%= @users.count %></h4>
                             <p class="nm text-primary">Members</p>
                         </div>
                     </li>
                     <li>
                         <div class="section">
-                            <h4 class="nm semibold">112</h4>
-                            <p class="nm text-primary">Charterholding Members</p>
+                            <h4 class="nm semibold"><%= @charterholders.count %></h4>
+                            <p class="nm text-primary">Charterholders</p>
                         </div>
                     </li>
                     <li>
                         <div class="section">
-                            <h4 class="nm semibold">92</h4>
+                            <h4 class="nm semibold"><%= @level_3_candidates.count %></h4>
                             <p class="nm text-primary">L3 Candidates</p>
                         </div>
                     </li>
                     <li>
                         <div class="section">
-                            <h4 class="nm semibold">142</h4>
+                            <h4 class="nm semibold"><%= @level_2_candidates.count %></h4>
                             <p class="nm text-primary">L2 Candidates</p>
                         </div>
                     </li>
                     <li>
                        <div class="section">
-                            <h4 class="nm semibold">212</h4>
+                            <h4 class="nm semibold"><%= @level_1_candidates.count %></h4>
                             <p class="nm text-primary">L1 Candidates</p>
                         </div>
                     </li>
-                    <li>
-                       <div class="section">
-                            <h4 class="nm semibold">112</h=4>
-                            <p class="nm text-primary">Sitting for L1</p>
-                        </div>
-                    </li>
+                
                 </ul>
                 <!--/ follower stats -->
             </div>

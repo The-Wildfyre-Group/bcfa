@@ -75,15 +75,22 @@
                                         <!-- meta -->
                                         <p class="meta nm text-center">
                                             <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
-                                            <a href="#" class="">
-                                                <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
-                                            </a>
+					                        <% unless user.user_detail.linkedin.blank? %>
+												<%= link_to user.linkedin, target: "_blank" do %>
+	                                                <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
+													<% end %>
+											<% else %>
+	                                                <img src="http://www.almaskorotana.co.uk/images/socmedlinkedin.png" height="40" alt=""/>
+											<% end %>
+											
                                             <a href="#" class="">
                                                 <img src="image/social/email_circle-128.png" height="40" alt=""/><%#= user.email %>
                                             </a>
+											<%= link_to user_path(user), target: "_blank" do %>
                                             <button class="btn btn-block btn-inverse btn-xs mt10">
                                                 <span class="ico-profile mr5"></span> Full Profile
                                             </button>
+											<% end %>
                                         </p>
                                         <!--/ meta -->
                                     </section>
