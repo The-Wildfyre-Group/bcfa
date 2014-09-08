@@ -79,20 +79,22 @@
                                             </tbody>
                                         </table>
                                         <!--/ table -->
-
-                                        <div class="well well-minimal nm">
-                                            <!-- START Twitter Widget -->
-                                            <div class="panel-toolbar-wrapper transparent">
-                                                <div class="panel-toolbar">
-                                                    <h4 class="semibold nm text-linkedin"><i class="bg-white ico-linkedin mr5"></i>LinkedIn</h4>
-                                                </div>
-                                                <div class="panel-toolbar text-right">
-                                                    <a class="btn ws1 btn-primary linkedin-blue" href="https://www.linkedin.com/profile/view?id=61383975&authType=NAME_SEARCH&authToken=ZG3w&locale=en_US&srchid=44154641404630328160&srchindex=1&srchtotal=1&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A44154641404630328160%2CVSRPtargetId%3A61383975%2CVSRPcmpt%3Aprimary" target="_blank">
-                                                        <h5 class="nm">View LinkedIn Profile</h5>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+										
+                                       <% unless @user.user_detail.linkedin.blank? %>
+	                                        <div class="well well-minimal nm">
+	                                            <!-- START Twitter Widget -->
+	                                            <div class="panel-toolbar-wrapper transparent">
+	                                                <div class="panel-toolbar">
+	                                                    <h4 class="semibold nm text-linkedin"><i class="bg-white ico-linkedin mr5"></i>LinkedIn</h4>
+	                                                </div>
+	                                                <div class="panel-toolbar text-right">
+	                                                    <a class="btn ws1 btn-primary linkedin-blue" href="<%= @user.linkedin %>" target="_blank">
+	                                                        <h5 class="nm">View LinkedIn Profile</h5>
+	                                                    </a>
+	                                                </div>
+	                                            </div>
+	                                        </div>
+										<% end %>
                                         <!--/ END Bio -->
                                     </div>
                                     <!--/ panel body -->
@@ -137,31 +139,43 @@
                                                     <a href="mailto:#"><%= @user.user_detail.try(:website) %></a>
                                                     <% end %>
                                                 </address>
-
+                                                 
+												<% if @user.user_detail.social_media? %> 
                                                 <address>
                                                     <strong>Social Media</strong><br>
-                                                    <%= link_to @user.user_detail.try(:facebook) do %>
-                                                        <h4>
-                                                            <i class="text-facebook ico-facebook4 mr5"></i> 
-                                                            Facebook
-                                                        </h4>
-                                                    <% end %>
-                                                    <%= link_to @user.user_detail.try(:twitter) do %>   
-                                                        <h4>
-                                                            <i class="text-twitter ico-twitter3 mr5"></i> Twitter
-                                                        </h4>
-                                                    <% end %>
-                                                    <%= link_to @user.user_detail.try(:instagram) do %>
-                                                        <h4>
-                                                            <i class="text-instagram ico-instagram2 mr5"></i> Instagram
-                                                        </h4>
-                                                    <% end %>
-                                                    <%= link_to @user.user_detail.try(:linkedin) do %>
-                                                        <h4>
-                                                            <i class="text-linkedin ico-linkedin2 mr5"></i> LinkedIn
-                                                        </h4>
-                                                    <% end %>
+													<% unless @user.user_detail.try(:facebook).blank? %>
+		                                                <%= link_to @user.user_detail.try(:facebook) do %>
+		                                                    <h4>
+		                                                        <i class="text-facebook ico-facebook4 mr5"></i> 
+		                                                        Facebook
+		                                                    </h4>
+		                                                <% end %>
+													<% end %>
+													
+													<% unless @user.user_detail.try(:twitter).blank? %>
+	                                                    <%= link_to @user.user_detail.try(:twitter) do %>   
+	                                                        <h4>
+	                                                            <i class="text-twitter ico-twitter3 mr5"></i> Twitter
+	                                                        </h4>
+	                                                    <% end %>
+													<% end %>
+													
+													<% unless @user.user_detail.try(:instagram).blank? %>
+	                                                    <%= link_to @user.user_detail.try(:instagram) do %>
+	                                                        <h4>
+	                                                            <i class="text-instagram ico-instagram2 mr5"></i> Instagram
+	                                                        </h4>
+	                                                    <% end %>
+													<% end %>
+													<% unless @user.user_detail.try(:linkedin).blank? %>
+	                                                    <%= link_to @user.user_detail.try(:linkedin) do %>
+	                                                        <h4>
+	                                                            <i class="text-linkedin ico-linkedin2 mr5"></i> LinkedIn
+	                                                        </h4>
+	                                                    <% end %>
+													<% end %>
                                                 </address>
+												<% end %>
                                             </div>
                                         </div>
                                     <!--/ panel body with collapse capabale -->
