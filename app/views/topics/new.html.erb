@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!-- 
+TEMPLATE NAME : Adminre backend
+VERSION : 1.2.0
+AUTHOR : JohnPozy
+AUTHOR URL : http://themeforest.net/user/JohnPozy
+EMAIL : pampersdry@gmail.com
+LAST UPDATE: 23/06/2014
+
+** A license must be purchased in order to legally use this template for your project **
+** PLEASE SUPPORT ME. YOUR SUPPORT ENSURE THE CONTINUITY OF THIS PROJECT **
+-->
+<html class="backend">
+    <%= render 'shared/backend_head' %>
+    <%#= render 'shared/header' %>
+
+    <!-- START Body -->
+    <body>
+    	<!-- START Template Main -->
+      <section id="main" role="main">
+      	<%#= render 'shared/navigation_member_secondary' %>
+
+
+        <!-- START Template Container -->
+      	<div class="container-fluid">
+			    <div class="container">
+			      <!-- panel heading -->
+			      <div class="panel-heading">
+			        <h3 class="semibold pull-left text-default">New Forum Topic or Question</h3>
+			        <!-- panel toolbar -->
+			        <div class="panel-toolbar">
+			         
+			        </div>
+			      </div>
+			      <!--/ panel heading -->
+			    </div>
+
+			    <!-- START row -->
+	        <div class="row">
+						<!-- START Table layout -->
+				   	<div class="table-layout container pt30">
+		        	
+		        	<!-- message list-->
+				     	<div class="col-lg-3 valign-top panel panel-minimal pr30 npl">
+				        <!-- panel heading -->
+				        <div class="panel-heading">
+				          <!-- panel toolbar -->
+				          <div class="panel-toolbar">
+				            <div class="input-group">
+				              <div class="has-icon">
+				                  <input type="text" class="form-control" placeholder="Search Groups...">
+				                  <i class="ico-search form-control-icon"></i>
+				              </div>
+				              <div class="input-group-btn">
+				                <button type="button" class="btn btn-default">Search</button>
+				                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+				                <ul class="dropdown-menu pull-right" role="menu">
+				                    <li class="dropdown-header">Filter :</li>
+				                    <li><a href="javascript:void(0);"><i class="icon ico-download22"></i>Inbox</a></li>
+				                    <li><a href="javascript:void(0);"><i class="icon ico-upload22"></i>Outbox</a></li>
+				                    <li><a href="javascript:void(0);"><i class="icon ico-remove4"></i>Trash</a></li>
+				                    <li class="divider"></li>
+				                    <li><a href="javascript:void(0);"><i class="icon ico-briefcase2"></i>Others</a></li>
+				                </ul>
+				              </div>
+				            </div>
+				          </div>
+				        </div>
+				        <!--/ panel heading -->
+
+					    	<hr class="mt10 mb10"><!-- horizontal line -->
+					    
+						    <!-- panel body -->
+						    <div class="panel-body">
+						        <!-- message list -->
+						        <div class="media-list">
+									
+									
+									<% @posts.take(6).each do |post| %>
+						                <a href="<%= "/topics/#{post.topic_id}##{post.id}" %>" class="media">
+						                <span class="pull-left">
+						                    <img src="<%= post.user.avatar %>" class="media-object img-circle" alt="" width="50px" height="50px;">
+						                </span>
+						                <span class="media-body">
+						                    <span class="media-heading"><%= post.user.full_name_or_level %></span>
+						                    <span class="media-text ellipsis nm"><%= truncate post.content, length: 50%></span>
+						                    <!-- meta icon -->
+						                    <span class="media-meta"><i class="ico-star6"></i></span>
+						                    <span class="media-meta"><i class="ico-attachment"></i></span>
+						                    <span class="media-meta pull-right"><%= distance_of_time_in_words_to_now post.created_at %></span>
+						                    <!--/ meta icon -->
+						                </span>
+										</a>
+						           	
+									      
+									<% end %>
+									
+									
+						        </div>
+						        <!-- message list -->
+						    </div>
+						    <!--/ panel body -->
+				      </div>
+				      <!--/ message list -->
+
+				      <!-- content -->
+				      <div class="col-lg-8">
+	              <!-- START panel -->
+	              <div class="panel panel-default">
+                  <!-- panel heading/header -->
+                  <div class="panel-heading">
+                      <h3 class="panel-title">General</h3>
+                  </div>
+                  <!--/ panel heading/header -->
+                  <!-- panel body -->
+                  <div class="panel-body">
+                    <div class="form-horizontal form-bordered" action="">
+		                  <h4 class="text-primary mt0">New Forum topic or Question</h4>
+		                  <p class="pb10">Individual form controls automatically receive some global styling. All textual for optimum spacing.</p>
+
+											<!-- NEW FORUM FORM -->
+	              			<%= form_for @topic do |f| %>
+
+		              			<% if params[:forum] %>
+		              				<%= f.hidden_field :forum_id, value: params[:forum] %>
+				                    <div class="form-group">
+			                        <label class="col-sm-3 control-label">Quick Description</label>
+			                        <div class="col-sm-9">
+			                            <%= f.text_field :name, :class => 'form-control' %>
+			                            <%= f.hidden_field :user_id, value: current_user.id %>
+			                        </div>
+				                    </div>
+
+				                    <%= f.fields_for :posts do |post| %>
+				                     	<div class="form-group">
+			                        	<label class="col-sm-3 control-label">More Info</label>
+			                        	<div class="col-sm-9">
+				                    			<%= post.text_area :content, :size => "80x20", :class => 'form-control', rows: '10', placeholder: "Use this field to provide additional information..." %>
+				                    			<%= post.hidden_field :user_id, value: current_user.id %>
+				                        </div>
+				                      </div>
+				                    <% end %>
+
+				                    <div class="panel-footer">
+				                      <div class="form-group no-border">
+				                        <div class="col-sm-6 col-sm-offset-3">
+				                        	<%= f.submit "Post Topic or Question", :class => 'btn btn-primary btn-lg btn-block pull-right ws2' %>
+				                        </div>
+				                      </div> 
+				                    </div>
+		            				<% end %>
+		            			<% end %>
+            				<!-- NEW FORUM FORM -->
+						</div>
+              		</div>    
+                </div>
+                <!--/ END row -->
+              </div>
+            </div>
+            <!--/ END Template Container -->
+          </div>
+        </div>
+
+      	<!-- START To Top Scroller -->
+      	<a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="	bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
+      	<!--/ END To Top Scroller -->
+
+    	</section>
+    	<!--/ END Template Main -->
+
+        
+    </body>
+    <!--/ END Body -->
+
+<%= render 'shared/js' %>
+</html>
+
+
+
+
+

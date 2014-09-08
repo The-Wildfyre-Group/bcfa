@@ -1,0 +1,195 @@
+<%= render 'shared/backend_head' %>
+<%#= render 'shared/header' %>
+
+<!-- START Template Header -->
+<!-- START Template Main -->
+<section id="main" role="main">
+  <!-- START Template Container -->
+  <%#= render 'shared/navigation_member_secondary' %>
+  <div class="container-fluid">
+      <div class="container">
+
+        <!-- panel heading -->
+        <div class="panel-heading">
+          <h3 class="semibold pull-left text-default">Forums / <small><%= @forum.name  %></small></h3>
+            <!-- panel toolbar -->
+            <div class="panel-toolbar">
+                 <%= link_to "/topics/new?forum=#{@forum.id}" do %>
+                   <button type="button" class="mt10 btn btn-primary pull-right" data-toggle="modal" data-target="#ModalComposeMessage">
+                      <i class="ico-pencil5"></i> 
+                      <span class="semibold">New Topic</span>
+                  </button>
+                  <% end %>
+            </div>
+        </div>
+        <!--/ panel heading -->
+      </div>
+
+      <!-- START Table layout -->
+      <div class="table-layout container pt30">
+        <!-- message list-->
+        <div class="col-lg-3 valign-top panel panel-minimal pr30 npl">
+          <!-- panel heading -->
+          <div class="panel-heading">
+              <!-- panel toolbar -->
+              <div class="panel-toolbar">
+                  <div class="input-group">
+                      <div class="has-icon">
+                          <input type="text" class="form-control" placeholder="Filter message...">
+                          <i class="ico-search form-control-icon"></i>
+                      </div>
+                      <div class="input-group-btn">
+                          <button type="button" class="btn btn-default">Search</button>
+                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                          <ul class="dropdown-menu pull-right" role="menu">
+                              <li class="dropdown-header">Filter :</li>
+                              <li><a href="javascript:void(0);"><i class="icon ico-download22"></i>Inbox</a></li>
+                              <li><a href="javascript:void(0);"><i class="icon ico-upload22"></i>Outbox</a></li>
+                              <li><a href="javascript:void(0);"><i class="icon ico-remove4"></i>Trash</a></li>
+                              <li class="divider"></li>
+                              <li><a href="javascript:void(0);"><i class="icon ico-briefcase2"></i>Others</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!--/ panel heading -->
+
+    <hr class="mt10 mb10"><!-- horizontal line -->
+    
+    <!-- panel body -->
+    <div class="panel-body">
+        <!-- message list -->
+        <div class="media-list">
+			
+			<% @posts.take(6).each do |post| %>
+			
+	            <a href="<%= "/topics/#{post.topic_id}##{post.id}" %>" class="media">
+	                <span class="pull-left">
+	                    <img src="<%= post.user.avatar %>" class="media-object img-circle" alt="" width="50px" height="50px;">
+	                </span>
+	                <span class="media-body">
+	                      <span class="media-heading"><%= post.user.full_name_or_level %></span>
+	                    <span class="media-text ellipsis nm"><%= truncate post.content, length: 50%></span>
+	                    <!-- meta icon -->
+	                    <span class="media-meta"><i class="ico-star6"></i></span>
+	                    <span class="media-meta"><i class="ico-attachment"></i></span>
+	                    <span class="media-meta pull-right"><%= distance_of_time_in_words_to_now post.created_at %></span>
+	                    <!--/ meta icon -->
+	                </span>
+	            </a>
+			<% end %>
+
+           
+        </div>
+        <!-- message list -->
+    </div>
+    <!--/ panel body -->
+              
+          </div>
+          <!--/ message list -->
+
+          <!-- content -->
+          <div class="col-lg-8 valign-top panel panel-default">
+              <!-- panel toolbar wrapper -->
+              <div class="panel-toolbar-wrapper pl0 pt5 pb5">
+                  <!-- panel toolbar -->
+                  <div class="panel-toolbar pl10">
+                      <div class="btn-group">
+                          <button type="button" class="btn btn-default pull-left ws2">
+                            <i class="ico-arrow-left mr5"></i>
+                            Back to All Forums 
+                          </button>
+                      </div>
+                  </div>
+                  <div class="panel-toolbar text-right">
+					  <%= link_to topic_path(@topics.first.id) do %>
+                    <button type="button" class="btn btn-default pull-right">
+                      <span class="bold mr5">Next: </span>
+                      <span class="text-primary mr5"><%= @topics.first.name %></span>
+                      <i class="ico-arrow-right ml5"></i>
+                    </button>
+					<% end %>
+                  </div>
+                  <!--/ panel toolbar -->
+              </div>
+              <!--/ panel toolbar wrapper -->
+
+              <!-- email list -->
+              <div class="table-responsive nm">
+                  <table class="table table-hover table-email" id="table-email">
+                      <thead>
+                        <th width="1%"></th>
+                        <th width="1%"></th>
+                        <th width="50%">Topic or Question</th>
+                        <th width="5%">Posts</th>
+                        <th width="5%">Views</th>
+                        <th width="20%">Activity</th>
+                      </thead>
+                      <tbody>
+                        <% @topics.each do |topic| %>
+                          <tr>
+                            <td width="2%">
+                              <div class="checkbox custom-checkbox nm">  
+                                  <input type="checkbox" id="customcheckbox1" value="1" data-toggle="selectrow" data-target="tr">  
+                                  <label for="customcheckbox1"></label>   
+                              </div>
+                            </td>
+                            <td width="2%">
+                              <span class="checkbox checkbox-icon icon-star">  
+                                <input type="checkbox" id="checkboxicon1" value="1">  
+                                <label for="checkboxicon1"></label>   
+                              </span>
+                            </td>
+                            <td class="meta">
+                                <h5 class="semibold mb0">
+                                  <%= link_to h(topic.name), topic_path(topic.id) %>
+                                </h5>
+                                <p class="date small mt5"><em>Created 8/15/2014</em></p>
+                            </td>
+                            <td class="text-center semibold"><%= [topic.posts.count - 1,0].max %></td>
+                            <td class="text-center semibold"><%= topic.visit.total_visits %></td>
+                            <td>
+                             <small>
+                              <span class="semibold">
+                                <%= link_to topic.user.full_name_or_level, "/users/#{topic.last_poster_id}" %>
+                              </span>
+                                <br/>
+                              <span class="text-muted regular mt0">
+                                <em><%= distance_of_time_in_words_to_now topic.last_post_at %> ago <!-- by --> 
+									<%#= link_to user_path(User.find(topic.last_poster_id)) do %>
+									<%#= topic.user.full_name_or_level  %>
+									<%# end %>
+                                </em> 
+                              </span>
+                              
+                             </small>
+                            </td>
+                        </tr>
+                        <% end %>
+                      </tbody>
+                  </table>
+              </div>
+              <!--/ email list -->
+          </div>
+          <!--/ content -->
+        </div>
+        <!--/ END Table layout -->
+    </div>
+    <!--/ END Template Container -->
+
+    <!-- START To Top Scroller -->
+    <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
+    <!--/ END To Top Scroller -->
+
+</section>
+<!--/ END Template Main -->
+
+<%#= link_to "New Forum", new_forum_path %>
+<%#= link_to "Show", forum %>
+<%#= link_to "Edit", edit_forum_path(forum) %>
+<%#= link_to "Destroy", forum, :confirm => 'Are you sure?', :method => :delete %>
+
+<%#= link_to "Show", topic %>
+<%#= link_to "Edit", edit_topic_path(topic) %>
+<%#= link_to "Destroy", topic, :confirm => 'Are you sure?', :method => :delete %>
