@@ -5,10 +5,18 @@ Rails.application.routes.draw do
   resources :users do
     # resources :user_profile_pictures
   end
+  
+  resources :forums
+  resources :topics
+  resources :posts
+  
   resources :sessions
   get "login" => "sessions#new", as: :login
   get "signup" => "users#new", as: :signup
   get "home" => "users#index", as: :home
+  
+  get "charterholders" => "users#charterholders", as: :charterholders
+  
   resources :password_resets, only: %w(new create edit update)
   
   # errors
