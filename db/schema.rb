@@ -11,7 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140726205213) do
+ActiveRecord::Schema.define(version: 20140908022459) do
+
+  create_table "forums", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", force: true do |t|
+    t.integer  "topic_id"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "topics", force: true do |t|
+    t.integer  "forum_id"
+    t.string   "name"
+    t.integer  "last_poster_id"
+    t.datetime "last_post_at"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_details", force: true do |t|
     t.integer  "user_id"
@@ -74,10 +99,38 @@ ActiveRecord::Schema.define(version: 20140726205213) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin"
+    t.string   "level"
+    t.boolean  "verified"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "visit_details", force: true do |t|
+    t.integer  "visit_id",   null: false
+    t.string   "ip_address"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "visit_details", ["visit_id"], name: "index_visit_details_on_visit_id", using: :btree
+
+  create_table "visits", force: true do |t|
+    t.integer  "visitable_id",   null: false
+    t.string   "visitable_type", null: false
+    t.integer  "total_visits"
+    t.integer  "unique_visits"
+    t.string   "controller",     null: false
+    t.string   "action",         null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "visits", ["action"], name: "index_visits_on_action", using: :btree
+  add_index "visits", ["controller"], name: "index_visits_on_controller", using: :btree
+  add_index "visits", ["visitable_id"], name: "index_visits_on_visitable_id", using: :btree
+  add_index "visits", ["visitable_type"], name: "index_visits_on_visitable_type", using: :btree
 
 end
