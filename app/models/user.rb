@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   #validates :first_name, :presence => true, length: {minimum: 2, maximum: 20}
   #validates :last_name, :presence => true, length: {minimum: 2, maximum: 20}
   validates :email, :presence => true
+  validates :level, :presence => true
   #before_save { self.email = email.downcase }
   before_create { generate_token(:authentication_token) }
   after_update :password_changed?, :on => :update
@@ -80,6 +81,10 @@ class User < ActiveRecord::Base
   
   def full_name
     [prefix_with_period, first_name.try(:capitalize), middle_initial_with_period, last_name_if, suffix, certification_suffixes ].compact.join(' ')
+  end
+  
+  def full_name_or_level
+    full_name.blank? ? level : full_name
   end
   
   def last_name_if
@@ -177,6 +182,18 @@ class User < ActiveRecord::Base
     self.reset_password_sent_at = Time.zone.now
     save!
     Email.password_reset(self).deliver
+  end
+  
+  def linkedin
+    http = "http://"
+    https = "https://"
+    unless user_detail.linkedin.blank?
+      if (user_detail.linkedin[0..7] == https) or (user_detail.linkedin[0..6] == http)
+        user_detail.linkedin
+      else
+        "#{http}#{user_detail.linkedin}"
+      end
+    end
   end
   
   
