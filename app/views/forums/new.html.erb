@@ -1,4 +1,82 @@
-<%= form_for @forum do |f| %>
-<%= f.text_field :name %>
-<%= f.submit %>
-<% end %>
+<!DOCTYPE html>
+<!-- 
+TEMPLATE NAME : Adminre backend
+VERSION : 1.2.0
+AUTHOR : JohnPozy
+AUTHOR URL : http://themeforest.net/user/JohnPozy
+EMAIL : pampersdry@gmail.com
+LAST UPDATE: 23/06/2014
+
+** A license must be purchased in order to legally use this template for your project **
+** PLEASE SUPPORT ME. YOUR SUPPORT ENSURE THE CONTINUITY OF THIS PROJECT **
+-->
+<html class="backend">
+  <%= render 'shared/backend_head' %>
+  <%#= render 'shared/header' %>
+
+  <!-- START Body -->
+  <body>
+  	<!-- START Template Main -->
+    <section id="main" role="main">
+    	<%#= render 'shared/navigation_member_secondary' %>
+
+      
+
+		  <!-- START row -->
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+        	<br/>
+        	<br/>
+        	<br/>
+
+    	    <!-- panel heading -->
+		      <div class="panel-heading">
+		        <h3 class="semibold text-default text-center">New Forum Topic or Question</h3>
+		        <!-- panel toolbar -->
+		        <div class="panel-toolbar">
+		         
+		        </div>
+		      </div>
+		      <!--/ panel heading -->
+
+
+          <!-- START panel -->
+          <div class="panel panel-default">
+            <!-- panel heading/header -->
+            <div class="panel-heading">
+              <h3 class="panel-title">General</h3>
+            </div>
+            <!--/ panel heading/header -->
+            <%= form_for @forum do |f| %>
+            	<!-- panel body -->
+	            <div class="panel-body">
+	              <form class="form-horizontal form-bordered" action="">
+	                <div class="form-group">
+	                  <label class="col-sm-3 control-label">Forum Name</label>
+	                  <div class="col-sm-9">
+                      <%= f.text_field :name, class: "form-control", type: "text" %>
+                      <br/>
+                      <%= f.submit "SUBMIT", class: "btn btn-primary btn-large pull-right p-t-20" %>
+											<% end %>
+	                  </div>
+	                </div>
+	              </form>
+	            </div>
+	            <!-- panel body -->
+          </div>
+          <!--/ END form panel -->
+        </div>
+      </div>
+      <!--/ END row -->
+       
+    	<!-- START To Top Scroller -->
+    	<a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="	bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
+    	<!--/ END To Top Scroller -->
+
+  	</section>
+  	<!--/ END Template Main -->
+  </body>
+  <!--/ END Body -->
+<%= render 'shared/js' %>
+</html>
