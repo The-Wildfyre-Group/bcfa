@@ -12,8 +12,9 @@
  *
  * --------------------------- */
 
-.npl {padding-left: 0 !important;}
+h1, h2 {font-family: 'Muli';}
 
+.npl {padding-left: 0 !important;}
 
 .white.pattern1 {
 	background-image: url("../image/pattern/blizzard.png");
@@ -76,6 +77,9 @@
 
 .pt30 {padding-top: 30px;}
 .pr30 {padding-right: 30px;}
+.pr40 {padding-right: 40px;}
+.pr50 {padding-right: 50px;}
+.pr60 {padding-right: 60px;}
 .pl30 {padding-left: 30px;}
 
 .text-twitter {color: #00aced;}
