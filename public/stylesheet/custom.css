@@ -14,6 +14,8 @@
 
 h1, h2 {font-family: 'Muli';}
 
+
+
 .npl {padding-left: 0 !important;}
 
 .white.pattern1 {
@@ -285,10 +287,11 @@ i.bg-white {background: #fff; padding: 5px; border-radius: 2px; border: 1px soli
 	border-color: #cfd9db;
 	border-bottom-width: 1px;
 	border-radius: 3px;
+	border: none;
 	-webkit-box-shadow: none;
-	box-shadow: 1px 1px 1px #eee;
-	border-top: 1px solid #e5e5e5;
-	border-left: 1px solid #eee;
+	box-shadow: 1px 1px 1px #bbb;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #bbb;
 }
 
 
@@ -641,12 +644,12 @@ ul.unstyled li {list-style: none;}
 
 /************************ Members  **************/
 
-#members .panel {border: none; border-radius: 3px; box-shadow: 1px 1px 1px #666;}
-#members .thumbnail img
-#members .thumbnail .media,
-#members .thumbnail .overlay {border-radius: 3px;}
+.members .panel {border: none; border-radius: 3px; box-shadow: 1px 1px 1px #666;}
+.members .thumbnail img
+.members .thumbnail .media,
+.members .thumbnail .overlay {border-radius: 3px;}
 
-#members .btn-inverse {
+.members .btn-inverse {
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#7d7e7d), to(#0e0e0e));
  
  background-image: -webkit-linear-gradient(top, #7d7e7d, #0e0e0e);
@@ -702,6 +705,20 @@ ul.unstyled li {list-style: none;}
 
 
 /************************ Navar  **************/
+
+
+
+.panel.white .panel-body {background: #fff;}
+
+
+
+
+
+
+
+
+
+
 
 
 
