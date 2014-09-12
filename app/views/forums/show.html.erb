@@ -56,9 +56,9 @@
                     <span class="media-heading"><%= post.user.full_name_or_level %></span>
                     <span class="media-text ellipsis nm"><%= truncate post.content, length: 50%></span>
                     <!-- meta icon -->
-                    <span class="media-meta"><i class="ico-star6"></i></span>
-                    <span class="media-meta"><i class="ico-attachment"></i></span>
-                    <span class="media-meta pull-right"><%= distance_of_time_in_words_to_now post.created_at %></span>
+                    <!-- <span class="media-meta"><i class="ico-star6"></i></span>
+                    <span class="media-meta"><i class="ico-attachment"></i></span> -->
+                    <span class="media-meta pull-left"><%= distance_of_time_in_words_to_now post.created_at %></span>
                     <!--/ meta icon -->
 	                </span>
   	            </a>
@@ -100,11 +100,11 @@
               <!--/ panel toolbar wrapper -->
 
               <!-- email list -->
-              <div class="table-responsive nm">
+              <div class="table-responsive">
                   <table class="table table-hover table-email" id="table-email">
                       <thead>
-                        <th width="1%"></th>
-                        <th width="1%"></th>
+                       <!--  <th width="1%"></th>
+                        <th width="1%"></th> -->
                         <th width="50%">Topic or Question</th>
                         <th width="5%">Posts</th>
                         <th width="5%">Views</th>
@@ -113,18 +113,18 @@
                       <tbody>
                         <% @topics.each do |topic| %>
                           <tr>
-                            <td width="2%">
-                              <div class="checkbox custom-checkbox nm">  
-                                  <input type="checkbox" id="customcheckbox1" value="1" data-toggle="selectrow" data-target="tr">  
-                                  <label for="customcheckbox1"></label>   
-                              </div>
+                           <!--  <td width="2%">
+                            <div class="checkbox custom-checkbox nm">  
+                                <input type="checkbox" id="customcheckbox1" value="1" data-toggle="selectrow" data-target="tr">  
+                                <label for="customcheckbox1"></label>   
+                            </div>
                             </td>
                             <td width="2%">
                               <span class="checkbox checkbox-icon icon-star">  
                                 <input type="checkbox" id="checkboxicon1" value="1">  
                                 <label for="checkboxicon1"></label>   
                               </span>
-                            </td>
+                            </td> -->
                             <td class="meta">
                                 <h5 class="semibold mb0">
                                   <%= link_to h(topic.name), topic_path(topic.id) %>
