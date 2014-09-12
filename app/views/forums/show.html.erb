@@ -1,7 +1,10 @@
 <%= render 'shared/backend_head' %>
 <%#= render 'shared/header' %>
 
-<!-- START Template Header -->
+ <%= render 'shared/header_member' %>
+ <!-- START Template Header -->
+
+
 <!-- START Template Main -->
 <section id="main" role="main">
   <!-- START Template Container -->
@@ -35,8 +38,8 @@
               <div class="panel-toolbar">
                   <div class="input-group">
                       <div class="has-icon">
-                          <input type="text" class="form-control" placeholder="Filter message...">
-                          <i class="ico-search form-control-icon"></i>
+                        <input type="text" class="form-control" placeholder="Filter message...">
+                        <i class="ico-search form-control-icon"></i>
                       </div>
                       <div class="input-group-btn">
                           <button type="button" class="btn btn-default">Search</button>
@@ -103,6 +106,7 @@
                       </div>
                   </div>
                   <div class="panel-toolbar text-right">
+            <% if @topics.any? %>
 					  <%= link_to topic_path(@topics.first.id) do %>
                     <button type="button" class="btn btn-default pull-right">
                       <span class="bold mr5">Next: </span>
@@ -110,6 +114,7 @@
                       <i class="ico-arrow-right ml5"></i>
                     </button>
 					<% end %>
+          <% end %>
                   </div>
                   <!--/ panel toolbar -->
               </div>

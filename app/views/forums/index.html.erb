@@ -2,6 +2,10 @@
 <%#= render 'shared/header' %>
 
 <!-- START Template Header -->
+        
+
+         <%= render 'shared/header_member' %>
+
          <!-- START Template Main -->
         <section id="main" role="main">
             <!-- START Template Container -->
@@ -26,160 +30,141 @@
                 <!-- START Table layout -->
                 <div class="table-layout container">
                     <!-- message list-->
-                    <div class="col-lg-3 valign-top panel panel-minimal pr30 npl">
+                    <div class="col-md-3 valign-top panel panel-minimal npl">
                          
                         <!-- panel heading -->
-            <div class="panel-heading">
-                <!-- panel toolbar -->
-                <div class="panel-toolbar">
-                    <div class="input-group">
-                        <div class="has-icon">
-                            <input type="text" class="form-control" placeholder="Filter message...">
-                            <i class="ico-search form-control-icon"></i>
+                        <div class="panel-heading">
+                            <!-- panel toolbar -->
+                            <div class="panel-toolbar">
+                                <h3>Recent Messages</h3>
+                            </div>
                         </div>
-                        <div class="input-group-btn">
-                            <button type="button" class="btn btn-default">Search</button>
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                            <ul class="dropdown-menu pull-right" role="menu">
-                                <li class="dropdown-header">Filter :</li>
-                                <li><a href="javascript:void(0);"><i class="icon ico-download22"></i>Inbox</a></li>
-                                <li><a href="javascript:void(0);"><i class="icon ico-upload22"></i>Outbox</a></li>
-                                <li><a href="javascript:void(0);"><i class="icon ico-remove4"></i>Trash</a></li>
-                                <li class="divider"></li>
-                                <li><a href="javascript:void(0);"><i class="icon ico-briefcase2"></i>Others</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--/ panel heading -->
+                        <!--/ panel heading -->
 
-            <hr class="mt10 mb10"><!-- horizontal line -->
-            
-            <!-- panel body -->
-            <div class="panel-body">
-                <!-- message list -->
-                <div class="media-list">
-                    <a href="" class="media">
-                        <span class="pull-left">
-                            <img src="../image/avatar/avatar6.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading">Arthur Abbott</span>
-                            <span class="media-text ellipsis nm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</span>
-                            <!-- meta icon -->
-                            <span class="media-meta"><i class="ico-star6"></i></span>
-                            <span class="media-meta"><i class="ico-attachment"></i></span>
-                            <span class="media-meta pull-right">2m</span>
-                            <!--/ meta icon -->
-                        </span>
-                    </a>
+                          <!-- panel body -->
+                          <div class="panel-body npl">
+                              <!-- message list -->
+                              <div class="media-list">
+                                  <a href="" class="media">
+                                      <span class="pull-left">
+                                          <img src="../image/avatar/avatar6.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
+                                      </span>
+                                      <span class="media-body">
+                                          <span class="media-heading">Arthur Abbott</span>
+                                          <span class="media-text ellipsis nm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</span>
+                                          <!-- meta icon -->
+                                          <span class="media-meta"><i class="ico-star6"></i></span>
+                                          <span class="media-meta"><i class="ico-attachment"></i></span>
+                                          <span class="media-meta pull-right">2m</span>
+                                          <!--/ meta icon -->
+                                      </span>
+                                  </a>
 
-                    <a href="" class="media read">
-                        <span class="pull-left">
-                            <img src="../image/avatar/avatar1.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading">Martina Poole</span>
-                            <span class="media-text ellipsis nm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</span>
-                            <!-- meta icon -->
-                            <span class="media-meta"><i class="ico-reply"></i></span>
-                            <span class="media-meta"><i class="ico-attachment"></i></span>
-                            <span class="media-meta pull-right">20m</span>
-                            <!--/ meta icon -->
-                        </span>
-                    </a>
+                                  <a href="" class="media read">
+                                      <span class="pull-left">
+                                          <img src="../image/avatar/avatar1.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
+                                      </span>
+                                      <span class="media-body">
+                                          <span class="media-heading">Martina Poole</span>
+                                          <span class="media-text ellipsis nm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</span>
+                                          <!-- meta icon -->
+                                          <span class="media-meta"><i class="ico-reply"></i></span>
+                                          <span class="media-meta"><i class="ico-attachment"></i></span>
+                                          <span class="media-meta pull-right">20m</span>
+                                          <!--/ meta icon -->
+                                      </span>
+                                  </a>
 
-                    <a href="" class="media">
-                        <span class="pull-left">
-                            <img src="../image/avatar/avatar2.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading">Elvis Christensen</span>
-                            <span class="media-text ellipsis nm">Duis aute irure dolor in reprehenderit in voluptate velit esse.</span>
-                            <!-- meta icon -->
-                            <span class="media-meta"><i class="ico-attachment"></i></span>
-                            <span class="media-meta pull-right">5h</span>
-                            <!--/ meta icon -->
-                        </span>
-                    </a>
+                                  <a href="" class="media">
+                                      <span class="pull-left">
+                                          <img src="../image/avatar/avatar2.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
+                                      </span>
+                                      <span class="media-body">
+                                          <span class="media-heading">Elvis Christensen</span>
+                                          <span class="media-text ellipsis nm">Duis aute irure dolor in reprehenderit in voluptate velit esse.</span>
+                                          <!-- meta icon -->
+                                          <span class="media-meta"><i class="ico-attachment"></i></span>
+                                          <span class="media-meta pull-right">5h</span>
+                                          <!--/ meta icon -->
+                                      </span>
+                                  </a>
 
-                    <a href="" class="media read">
-                        <span class="pull-left">
-                            <img src="../image/avatar/avatar3.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading">Walter Foster</span>
-                            <span class="media-text ellipsis nm">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
-                            <!-- meta icon -->
-                            <span class="media-meta"><i class="ico-attachment"></i></span>
-                            <span class="media-meta pull-right">21h</span>
-                            <!--/ meta icon -->
-                        </span>
-                    </a>
+                                  <a href="" class="media read">
+                                      <span class="pull-left">
+                                          <img src="../image/avatar/avatar3.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
+                                      </span>
+                                      <span class="media-body">
+                                          <span class="media-heading">Walter Foster</span>
+                                          <span class="media-text ellipsis nm">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
+                                          <!-- meta icon -->
+                                          <span class="media-meta"><i class="ico-attachment"></i></span>
+                                          <span class="media-meta pull-right">21h</span>
+                                          <!--/ meta icon -->
+                                      </span>
+                                  </a>
 
-                    <a href="" class="media read">
-                        <span class="pull-left">
-                            <img src="../image/avatar/avatar4.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading">Callum Santosr</span>
-                            <span class="media-text ellipsis nm">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
-                            <!-- meta icon -->
-                            <span class="media-meta pull-right">1d</span>
-                            <!--/ meta icon -->
-                        </span>
-                    </a>
+                                  <a href="" class="media read">
+                                      <span class="pull-left">
+                                          <img src="../image/avatar/avatar4.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
+                                      </span>
+                                      <span class="media-body">
+                                          <span class="media-heading">Callum Santosr</span>
+                                          <span class="media-text ellipsis nm">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
+                                          <!-- meta icon -->
+                                          <span class="media-meta pull-right">1d</span>
+                                          <!--/ meta icon -->
+                                      </span>
+                                  </a>
 
-                    <a href="" class="media read">
-                        <span class="pull-left">
-                            <img src="../image/avatar/avatar5.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading">Noelani Blevins</span>
-                            <span class="media-text ellipsis nm">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis.</span>
-                            <!-- meta icon -->
-                            <span class="media-meta pull-right">2d</span>
-                            <!--/ meta icon -->
-                        </span>
-                    </a>
+                                  <a href="" class="media read">
+                                      <span class="pull-left">
+                                          <img src="../image/avatar/avatar5.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
+                                      </span>
+                                      <span class="media-body">
+                                          <span class="media-heading">Noelani Blevins</span>
+                                          <span class="media-text ellipsis nm">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis.</span>
+                                          <!-- meta icon -->
+                                          <span class="media-meta pull-right">2d</span>
+                                          <!--/ meta icon -->
+                                      </span>
+                                  </a>
 
-                    <a href="" class="media read">
-                        <span class="pull-left">
-                            <img src="../image/avatar/avatar8.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading">Carl Johnson</span>
-                            <span class="media-text ellipsis nm">Curabitur consequat, lectus sit amet luctus vulputate, nisi sem</span>
-                            <!-- meta icon -->
-                            <span class="media-meta"><i class="ico-attachment"></i></span>
-                            <span class="media-meta pull-right">2w</span>
-                            <!--/ meta icon -->
-                        </span>
-                    </a>
+                                  <a href="" class="media read">
+                                      <span class="pull-left">
+                                          <img src="../image/avatar/avatar8.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
+                                      </span>
+                                      <span class="media-body">
+                                          <span class="media-heading">Carl Johnson</span>
+                                          <span class="media-text ellipsis nm">Curabitur consequat, lectus sit amet luctus vulputate, nisi sem</span>
+                                          <!-- meta icon -->
+                                          <span class="media-meta"><i class="ico-attachment"></i></span>
+                                          <span class="media-meta pull-right">2w</span>
+                                          <!--/ meta icon -->
+                                      </span>
+                                  </a>
 
-                    <a href="" class="media read">
-                        <span class="pull-left">
-                            <img src="../image/avatar/avatar9.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading">Tamara Moon</span>
-                            <span class="media-text ellipsis nm">Aliquam ultrices iaculis odio. Nam interdum enim non nisi. Aenean eget metus.</span>
-                            <!-- meta icon -->
-                            <span class="media-meta"><i class="ico-attachment"></i></span>
-                            <span class="media-meta pull-right">2w</span>
-                            <!--/ meta icon -->
-                        </span>
-                    </a>
-                </div>
-                <!-- message list -->
-            </div>
-            <!--/ panel body -->
+                                  <a href="" class="media read">
+                                      <span class="pull-left">
+                                          <img src="../image/avatar/avatar9.jpg" class="media-object img-circle" alt="" width="50px" height="50px;">
+                                      </span>
+                                      <span class="media-body">
+                                          <span class="media-heading">Tamara Moon</span>
+                                          <span class="media-text ellipsis nm">Aliquam ultrices iaculis odio. Nam interdum enim non nisi. Aenean eget metus.</span>
+                                          <!-- meta icon -->
+                                          <span class="media-meta"><i class="ico-attachment"></i></span>
+                                          <span class="media-meta pull-right">2w</span>
+                                          <!--/ meta icon -->
+                                      </span>
+                                  </a>
+                              </div>
+                              <!-- message list -->
+                          </div>
+                          <!--/ panel body -->
                     </div>
                     <!--/ message list -->
 
                     <!-- content -->
-                    <div class="col-lg-8 valign-top panel panel-default">
+                    <div class="col-md-7 col-md-offset-1  valign-top panel panel-default">
                         <!-- panel toolbar wrapper -->
                         <div class="panel-toolbar-wrapper pl0 pt5 pb5">
                             <!-- panel toolbar -->

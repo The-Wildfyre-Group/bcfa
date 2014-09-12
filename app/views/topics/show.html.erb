@@ -1,243 +1,268 @@
-<%= render 'shared/backend_head' %>
+<!DOCTYPE html>
+<!-- 
+TEMPLATE NAME : Adminre backend
+VERSION : 1.2.0
+AUTHOR : JohnPozy
+AUTHOR URL : http://themeforest.net/user/JohnPozy
+EMAIL : pampersdry@gmail.com
+LAST UPDATE: 23/06/2014
 
-<%#= render 'shared/header' %>
+** A license must be purchased in order to legally use this template for your project **
+** PLEASE SUPPORT ME. YOUR SUPPORT ENSURE THE CONTINUITY OF THIS PROJECT **
+-->
+<html class="backend">
+  <%= render 'shared/backend_head' %>
+  <%#= render 'shared/header' %>
 
+  <!-- START Body -->
+  <body>
+  
 
-	<!-- START Template Container -->
-	<div class="container-fluid">
-    <div class="page-header page-header-block">
-      <div class="container">
-        <div class="page-header-section">
-            <h4 class="title semibold">Message - rich</h4>
-        </div>
-        <div class="page-header-section">
-            <div class="toolbar">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalComposeMessage"><i class="ico-pencil5"></i> Compose Message</button>
+   <%= render 'shared/header_member' %>
+
+   <!-- START Template Main -->
+    <section id="main" role="main">
+      <%#= render 'shared/navigation_member_secondary' %><!-- START Template Container -->
+    	<div class="container">
+        <div class="page-header page-header-block">
+          <div class="container">
+            <div class="page-header-section">
+                <h4 class="title semibold">Message - rich</h4>
             </div>
+            <div class="page-header-section">
+                <div class="toolbar">
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalComposeMessage"><i class="ico-pencil5"></i> Compose Message</button>
+                </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <!-- Page Header -->
+        <!-- Page Header -->
 
-    <div class="container pt60">
-      <!-- START Table layout -->
-      <div class="table-layout">
-        <!-- message list-->
-        <div class="col-lg-3 valign-top panel panel-minimal pr30">
-            <!-- panel heading -->
-            <div class="panel-heading">
-                <!-- panel toolbar -->
-                <div class="panel-toolbar">
-                    <div class="input-group">
-                        <div class="has-icon">
-                            <input type="text" class="form-control" placeholder="Filter message...">
-                            <i class="ico-search form-control-icon"></i>
-                        </div>
-                        <div class="input-group-btn">
-                            <button type="button" class="btn btn-default">Search</button>
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                            <ul class="dropdown-menu pull-right" role="menu">
-                                <li class="dropdown-header">Filter :</li>
-                                <li><a href="javascript:void(0);"><i class="icon ico-download22"></i>Inbox</a></li>
-                                <li><a href="javascript:void(0);"><i class="icon ico-upload22"></i>Outbox</a></li>
-                                <li><a href="javascript:void(0);"><i class="icon ico-remove4"></i>Trash</a></li>
-                                <li class="divider"></li>
-                                <li><a href="javascript:void(0);"><i class="icon ico-briefcase2"></i>Others</a></li>
-                            </ul>
+        <div class="container pt60">
+          <!-- START Table layout -->
+          <div class="table-layout">
+            <!-- message list-->
+            <div class="col-lg-3 valign-top panel panel-minimal pr30">
+                <!-- panel heading -->
+                <div class="panel-heading">
+                    <!-- panel toolbar -->
+                    <div class="panel-toolbar">
+                        <div class="input-group">
+                            <div class="has-icon">
+                                <input type="text" class="form-control" placeholder="Filter message...">
+                                <i class="ico-search form-control-icon"></i>
+                            </div>
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default">Search</button>
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                <ul class="dropdown-menu pull-right" role="menu">
+                                    <li class="dropdown-header">Filter :</li>
+                                    <li><a href="javascript:void(0);"><i class="icon ico-download22"></i>Inbox</a></li>
+                                    <li><a href="javascript:void(0);"><i class="icon ico-upload22"></i>Outbox</a></li>
+                                    <li><a href="javascript:void(0);"><i class="icon ico-remove4"></i>Trash</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="javascript:void(0);"><i class="icon ico-briefcase2"></i>Others</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!--/ panel heading -->
+                <!--/ panel heading -->
 
-            <hr class="mt10 mb10"><!-- horizontal line -->
+                <hr class="mt10 mb10"><!-- horizontal line -->
+                
+                <!-- panel body -->
+                <div class="panel-body">
+                    <!-- message list -->
+                    <div class="media-list">
+    					<% @posts.take(6).each do |post| %>
+                        <a href="<%= "/topics/#{post.topic_id}##{post.id}" %>"  class="media">
+                            <span class="pull-left">
+                                <img src="<%= post.user.avatar %>" class="media-object img-circle" alt="" width="50px" height="50px;">
+                            </span>
+                            <span class="media-body">
+                                <span class="media-heading"><%= post.user.full_name_or_level %></span>
+                                <span class="media-text ellipsis nm"><%= truncate post.content, length: 50%></span>
+                                <!-- meta icon -->
+                                <span class="media-meta"><i class="ico-star6"></i></span>
+                                <span class="media-meta"><i class="ico-attachment"></i></span>
+                                <span class="media-meta pull-right"><%= distance_of_time_in_words_to_now post.created_at %></span>
+                                <!--/ meta icon -->
+                            </span>
+                        </a>
+    					<% end %>
+
             
-            <!-- panel body -->
-            <div class="panel-body">
-                <!-- message list -->
-                <div class="media-list">
-					<% @posts.take(6).each do |post| %>
-                    <a href="<%= "/topics/#{post.topic_id}##{post.id}" %>"  class="media">
-                        <span class="pull-left">
-                            <img src="<%= post.user.avatar %>" class="media-object img-circle" alt="" width="50px" height="50px;">
-                        </span>
-                        <span class="media-body">
-                            <span class="media-heading"><%= post.user.full_name_or_level %></span>
-                            <span class="media-text ellipsis nm"><%= truncate post.content, length: 50%></span>
-                            <!-- meta icon -->
-                            <span class="media-meta"><i class="ico-star6"></i></span>
-                            <span class="media-meta"><i class="ico-attachment"></i></span>
-                            <span class="media-meta pull-right"><%= distance_of_time_in_words_to_now post.created_at %></span>
-                            <!--/ meta icon -->
-                        </span>
-                    </a>
-					<% end %>
 
-        
-
-                 
+                     
+                    </div>
+                    <!-- message list -->
                 </div>
-                <!-- message list -->
+                <!--/ panel body -->
             </div>
-            <!--/ panel body -->
-        </div>
-        <!--/ message list -->
+            <!--/ message list -->
 
-        <!-- content -->
-        <div class="col-lg-8 valign-top panel panel-default">
-            <!-- toolbar -->
-            <div class="panel-toolbar-wrapper pt10 pb10">
-                <div class="panel-toolbar">
-                    <div class="btn-group">
-                    <%= link_to forum_path(@topic.forum_id) do %>
-                  	 <button type="button" class="btn btn-default pull-left ws2">
-                        <i class="ico-arrow-left mr5"></i>
-                      Back to All Topics 
-                    </button>
-                  <% end %>
-                </div>
-              </div>
-              <div class="panel-toolbar text-right">
-                <%= link_to topic_path(@forum.next_topic(@topic.id)) do %>
-                  <button type="button" class="btn btn-default pull-right">
-                    <span class="bold mr5">Next: </span>
-                    <span class="text-primary"><%= @forum.next_topic(@topic.id).name %></span>
-                    <i class="ico-arrow-right ml5"></i>
-                </button>
-                <% end %>
-              </div>
-          </div>
-          <!--/ toolbar -->
-
-
-		    <% @topic.name %>
-							 
-								<!-- panel body -->
-                <div class="panel-body"  style="padding: 25px 50px;">
-                    <!-- sender detail -->
-                    <ul class="list-table">
-                        <li style="width:100px;">
-                            <img class="img-circle" src="<%= @topic.user.avatar %>" alt="" width="95px" height="95px">
-                        </li>
-                        <li class="text-left">
-                            <h4 class="semibold ellipsis">
-                                <%= link_to @first_post.user.full_name, user_url(@first_post.user) %><br/>
-                                <small class="text-muted mt0">
-                                  <a href="javascript:void(0);"><%= %></a>
-                                </small>
-                                <br/>
-                                <h5><small class="fs12 text-muted"><em><%= @topic.created_at.strftime("%b %-d, %Y")%></em></small></h5>
-                            </h4>
-                        </li>
-                        <li class="text-right">
-                            <button class="btn btn-default">Private Message</button>
-                            <%= link_to "#{new_post_path}?topic=#{@topic.id}" do %>
-                              <button class="btn btn-primary">Follow</button>
-                            <% end%>
-                            <button class="btn btn-info">Like</button>
-                        </li>
-                    </ul>
-                    <!--/ sender detail -->
-                </div>
-                <!--/ panel body -->
-
-                <!-- panel body -->
-                <div class="panel-body slimscroll" style="padding: 20px 50px; background: #f3f3f3; margin: 0 50px 50px 0; border-radius: 0 6px 6px 0; border: 1px solid #e5e5e5; border-left: none;">
-                    <h3 class="semibold mt0 mb10">Forum post topic or question</h3>
-                    <p><%= @first_post.content %></p>
-                </div>
-                <!--/ panel body -->
-
-                <hr class="nm"><!-- horizontal line -->
-
-                <!-- panel body -->
-                  <div class="panel-body bgcolor-default" style="padding-left: 50px;">
-                      <h4 class="semibold text-primary pull-left"> Comments (<%= @topic.posts.count - 1 %>)</h4>
-                      <%= link_to "#{new_post_path}?topic=#{@topic.id}" do %>
-                        <button class="btn btn-default pull-right mr30">Reply</button>
-                      <% end%>
+            <!-- content -->
+            <div class="col-lg-8 valign-top panel panel-default">
+                <!-- toolbar -->
+                <div class="panel-toolbar-wrapper pt10 pb10">
+                    <div class="panel-toolbar">
+                        <div class="btn-group">
+                        <%= link_to forum_path(@topic.forum_id) do %>
+                      	 <button type="button" class="btn btn-default pull-left ws2">
+                            <i class="ico-arrow-left mr5"></i>
+                          Back to All Topics 
+                        </button>
+                      <% end %>
+                    </div>
                   </div>
-                  <!--/ panel body -->
-
-	              <hr class="nm"><!-- horizontal line -->
-
-                <!-- Comments -->
-                <section class="panel-body pt30" style="padding: 0 50px 50px 75px;">
-                 
-                <div class="media-list media-list-bubble">
-                    <% @topic.posts.offset(1).each do |post| %>
-					<a id="<%= post.id %>"></a>
-                      <div class="media">
-                          <a href="javascript:void(0);" class="media-object pull-left">
-                              <img src="<%= post.user.avatar %>" class="img-circle" alt="">
-                          </a>
-                          <div class="media-body">
-                              <div class="media-text">
-                                  <h5 class="semibold mt0 mb5 text-default"><%= link_to post.user.full_name, user_url(post.user) %></h5>
-                                  <p class="mb5"><%= post.content %></p>
-                                  <!-- meta icon -->
-                                  <p class="mb0">
-                                      <span class="media-meta"><%= post.created_at.strftime("%b %-d, %Y")%></span>
-                                      <span class="mr5 ml5 text-muted">&#8226;</span>
-                                      <a href="javascript:void(0);" class="media-meta text-default" data-toggle="tooltip" title="Like"><i class="ico-heart"></i></a>
-                                  </p>
-                                  <!--/ meta icon -->
-                              </div>
-                          </div>
-                      </div>
+                  <div class="panel-toolbar text-right">
+                    <%= link_to topic_path(@forum.next_topic(@topic.id)) do %>
+                      <button type="button" class="btn btn-default pull-right">
+                        <span class="bold mr5">Next: </span>
+                        <span class="text-primary"><%= @forum.next_topic(@topic.id).name %></span>
+                        <i class="ico-arrow-right ml5"></i>
+                    </button>
                     <% end %>
                   </div>
-                </section>
-                <!-- Comments -->
+              </div>
+              <!--/ toolbar -->
 
-                <!-- Post Comments -->
-                <section class="panel-footer pb0" style="padding: 25px 50px;">
-                    <h4 class="mt0 mb15 bold">Post your comment</h4>
-                    <!-- form -->
-                    <div class="form-horizontal" data-toggle="formajax" data-options='{ "url": "server/form-ajax.php" }'>
-                        <div class="form-group message-container">
-                            <div class="alert alert-danger">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                <h4 class="mt0 mb5 semibold">No Spamming</h4>
-                                <p class="nm">Please do not spam. Any spamming activity will not be tolerated.</p>
-                            </div>
-                        </div><!-- will be use as done/fail message container -->
 
-                        <hr/>
-
-                        <div class="form-group">
-                            <div class="col-sm-2">
-                                <img src="<%= current_user.avatar %>" class="img-circle img-responsive" alt="">
-                            </div>
-                            <div class="col-sm-10">
-                                <h4 class="semibold text-primary">
-                                    <%= current_user.full_name %>
+    		    <% @topic.name %>
+    							 
+    								<!-- panel body -->
+                    <div class="panel-body"  style="padding: 25px 50px;">
+                        <!-- sender detail -->
+                        <ul class="list-table">
+                            <li style="width:100px;">
+                                <img class="img-circle" src="<%= @topic.user.avatar %>" alt="" width="95px" height="95px">
+                            </li>
+                            <li class="text-left">
+                                <h4 class="semibold ellipsis">
+                                    <%= link_to @first_post.user.full_name, user_url(@first_post.user) %><br/>
+                                    <small class="text-muted mt0">
+                                      <a href="javascript:void(0);"><%= %></a>
+                                    </small>
+                                    <br/>
+                                    <h5><small class="fs12 text-muted"><em><%= @topic.created_at.strftime("%b %-d, %Y")%></em></small></h5>
                                 </h4>
-								<%= form_for Post.new do |f| %>
-								<%= f.text_area :content, placeholder: "Enter comment here...", rows: 10, class: "form-control" %>
-								<%= f.hidden_field :user_id, value: current_user.id %>
-								<%= f.hidden_field :topic_id, value: @topic.id %>
-                                
+                            </li>
+                            <li class="text-right">
+                                <button class="btn btn-default">Private Message</button>
+                                <%= link_to "#{new_post_path}?topic=#{@topic.id}" do %>
+                                  <button class="btn btn-primary">Follow</button>
+                                <% end%>
+                                <button class="btn btn-info">Like</button>
+                            </li>
+                        </ul>
+                        <!--/ sender detail -->
+                    </div>
+                    <!--/ panel body -->
+
+                    <!-- panel body -->
+                    <div class="panel-body slimscroll" style="padding: 20px 50px; background: #f3f3f3; margin: 0 50px 50px 0; border-radius: 0 6px 6px 0; border: 1px solid #e5e5e5; border-left: none;">
+                        <h3 class="semibold mt0 mb10">Forum post topic or question</h3>
+                        <p><%= @first_post.content %></p>
+                    </div>
+                    <!--/ panel body -->
+
+                    <hr class="nm"><!-- horizontal line -->
+
+                    <!-- panel body -->
+                      <div class="panel-body bgcolor-default" style="padding-left: 50px;">
+                          <h4 class="semibold text-primary pull-left"> Comments (<%= @topic.posts.count - 1 %>)</h4>
+                          <%= link_to "#{new_post_path}?topic=#{@topic.id}" do %>
+                            <button class="btn btn-default pull-right mr30">Reply</button>
+                          <% end%>
+                      </div>
+                      <!--/ panel body -->
+
+    	              <hr class="nm"><!-- horizontal line -->
+
+                    <!-- Comments -->
+                    <section class="panel-body pt30" style="padding: 0 50px 50px 75px;">
+                     
+                    <div class="media-list media-list-bubble">
+                        <% @topic.posts.offset(1).each do |post| %>
+    					<a id="<%= post.id %>"></a>
+                          <div class="media">
+                              <a href="javascript:void(0);" class="media-object pull-left">
+                                  <img src="<%= post.user.avatar %>" class="img-circle" alt="">
+                              </a>
+                              <div class="media-body">
+                                  <div class="media-text">
+                                      <h5 class="semibold mt0 mb5 text-default"><%= link_to post.user.full_name, user_url(post.user) %></h5>
+                                      <p class="mb5"><%= post.content %></p>
+                                      <!-- meta icon -->
+                                      <p class="mb0">
+                                          <span class="media-meta"><%= post.created_at.strftime("%b %-d, %Y")%></span>
+                                          <span class="mr5 ml5 text-muted">&#8226;</span>
+                                          <a href="javascript:void(0);" class="media-meta text-default" data-toggle="tooltip" title="Like"><i class="ico-heart"></i></a>
+                                      </p>
+                                      <!--/ meta icon -->
+                                  </div>
+                              </div>
+                          </div>
+                        <% end %>
+                      </div>
+                    </section>
+                    <!-- Comments -->
+
+                    <!-- Post Comments -->
+                    <section class="panel-footer pb0" style="padding: 25px 50px;">
+                        <h4 class="mt0 mb15 bold">Post your comment</h4>
+                        <!-- form -->
+                        <div class="form-horizontal" data-toggle="formajax" data-options='{ "url": "server/form-ajax.php" }'>
+                            <div class="form-group message-container">
+                                <div class="alert alert-danger">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    <h4 class="mt0 mb5 semibold">No Spamming</h4>
+                                    <p class="nm">Please do not spam. Any spamming activity will not be tolerated.</p>
+                                </div>
+                            </div><!-- will be use as done/fail message container -->
+
+                            <hr/>
+
+                            <div class="form-group">
+                                <div class="col-sm-2">
+                                    <img src="<%= current_user.avatar %>" class="img-circle img-responsive" alt="">
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4 class="semibold text-primary">
+                                        <%= current_user.full_name %>
+                                    </h4>
+    								<%= form_for Post.new do |f| %>
+    								<%= f.text_area :content, placeholder: "Enter comment here...", rows: 10, class: "form-control" %>
+    								<%= f.hidden_field :user_id, value: current_user.id %>
+    								<%= f.hidden_field :topic_id, value: @topic.id %>
+                                    
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-12">
-								<%= f.submit "Submit", class: "btn btn-success ladda-button" %>
-                                
+                            <div class="form-group">
+                                <div class="col-sm-12">
+    								<%= f.submit "Submit", class: "btn btn-success ladda-button" %>
+                                    
+                                </div>
+    							<% end %>
                             </div>
-							<% end %>
-                        </div>
-					</div>
-                    <!-- form -->
-                </section>
-                <!--/ Post Comments -->
+    					</div>
+                        <!-- form -->
+                    </section>
+                    <!--/ Post Comments -->
+                </div>
+                <!--/ content -->
             </div>
-            <!--/ content -->
+            <!--/ END Table layout -->
+          </div>
         </div>
-        <!--/ END Table layout -->
+        <!--/ END Template Container -->
       </div>
-    </div>
-    <!--/ END Template Container -->
+    </section>
+
+  </body>
+
+</html>
 
 
 

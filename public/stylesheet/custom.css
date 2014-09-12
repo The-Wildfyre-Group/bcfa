@@ -12,6 +12,8 @@
  *
  * --------------------------- */
 
+.npl {padding-left: 0 !important;}
+
 
 .white.pattern1 {
 	background-image: url("../image/pattern/blizzard.png");
