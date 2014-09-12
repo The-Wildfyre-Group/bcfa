@@ -1,0 +1,63 @@
+<!-- START jumbotron -->
+<section class="jumbotron nm pt40 pb40" data-stellar-background-ratio="0.4">
+    <!-- pattern + overlay -->
+    <div class="overlay darker pattern pattern5"></div>
+    <!--/ pattern + overlay -->
+     <div class="container">
+        <div class="col-md-10 col-md-offset-1">
+        <div class="row">
+            
+            <div class="center">
+                <img class="img-circle mb5 mr10 ml5 pull-left mt10" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 150px; width: 150px; opacity: .5">
+                </div>
+                <h1 class="text-center mb10 mt20 text-white gf_droid" style="vertical-align: middle">
+                    <span class="fa fa-bookmark mr5 text-warning"></span>
+                    <span class="lh-24" >CFA Charterholders.</span>
+                </h1>
+
+                <h3 class="mute text-center mb40 mt0 text-muted gf_droid">
+                    <%= @users.count %> members worldwide.
+                </h3>
+
+                <div class="col-md-12">
+                <!-- follower stats -->
+                <ul class="nav nav-section nav-justified">
+                    <li>
+                        <div class="section">
+                            <h4 class="nm semibold"><%= @users.count %></h4>
+                            <p class="nm text-primary">Members</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="section">
+                            <h4 class="nm semibold"><%= @charterholders.count %></h4>
+                            <p class="nm text-primary">Charterholders</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="section">
+                            <h4 class="nm semibold"><%= @level_3_candidates.count %></h4>
+                            <p class="nm text-primary">L3 Candidates</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="section">
+                            <h4 class="nm semibold"><%= @level_2_candidates.count %></h4>
+                            <p class="nm text-primary">L2 Candidates</p>
+                        </div>
+                    </li>
+                    <li>
+                       <div class="section">
+                            <h4 class="nm semibold"><%= @level_1_candidates.count %></h4>
+                            <p class="nm text-primary">L1 Candidates</p>
+                        </div>
+                    </li>
+                
+                </ul>
+                <!--/ follower stats -->
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<!--/ END jumbotron -->
