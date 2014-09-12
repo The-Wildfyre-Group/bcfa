@@ -152,9 +152,8 @@ LAST UPDATE: 23/06/2014
               <!-- panel body -->
                 <div class="panel-body bgcolor-default" style="padding-left: 50px;">
                     <h4 class="semibold text-primary pull-left"> Comments (<%= @topic.posts.count - 1 %>)</h4>
-                    <%= link_to "#{new_post_path}?topic=#{@topic.id}" do %>
-                      <button class="btn btn-default pull-right mr30">Reply</button>
-                    <% end%>
+                    
+                    <a href="#reply" class="btn btn-default pull-right mr30">Reply</a>
                 </div>
                 <!--/ panel body -->
 
@@ -189,7 +188,7 @@ LAST UPDATE: 23/06/2014
               <!-- Comments -->
 
                 <!-- Post Comments -->
-                <section class="panel-footer pb0" style="padding: 25px 50px;">
+                <section id="reply" class="panel-footer pb0" style="padding: 25px 50px;">
                   <h4 class="mt0 mb15 bold">Post your comment</h4>
                   <!-- form -->
                   <div class="form-horizontal" data-toggle="formajax" data-options='{ "url": "server/form-ajax.php" }'>
