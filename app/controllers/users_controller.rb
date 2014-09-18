@@ -40,9 +40,10 @@ class UsersController < ApplicationController
   end
   
   def update
-    if !params[:user][:password]
+    if params[:user][:password].blank?
       @user_detail = @user.user_detail
       if @user.update_attributes(user_params)
+        flash[:success] = "Updated successfully."
         redirect_to @user
       else
         render 'edit'
@@ -51,9 +52,11 @@ class UsersController < ApplicationController
       if @user == @user.authenticate(params[:user][:current_password])
         @user_detail = @user.user_detail
         @user.update_attributes(user_params)
+        flash[:success] = "Password Changed."
         redirect_to @user
       else
         flash[:error] = "Current Password is not a match."
+        render 'edit'
       end
     end 
   end
