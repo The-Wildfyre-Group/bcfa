@@ -17,11 +17,11 @@
                             <h3 class="semibold ellipsis mt0"><%= @user.full_name %></h5>
                             <div style="">
                                 <p class="text-muted clearfix nm">
-                                    <span class="mr5">Washinton, DC </span>
+                                    <span class="mr5"><%= @user.user_detail.location%> </span>
                                     <span class="mr5">&#8226;</span>
-                                    <span class="mr5">Wildfyre</span>
+                                    <span class="mr5"><%= @user.user_detail.company %></span>
                                     <span class="mr5">&#8226;</span>
-                                    <span class="mr5">Ruby on Rails Developer</span>
+                                    <span class="mr5"><%= @user.user_detail.title %></span>
                                 </p>
                             </div>
                         </div>
@@ -40,13 +40,17 @@
                 <ul class="nav nav-section nav-justified mt25">
                     <li>
                         <div class="section">
-                            <h5 class="nm semibold">2010</h5>
+                            <h5 class="nm semibold"><%= @user.user_detail.year_of_charter %></h5>
+							<% if @user.level == "Charterholder" %>
                             <p class="nm text-muted">Charter Holder Since</p>
+							<% else %>
+							<p class="nm text-muted">Expected Year of Charter</p>
+							<% end %>
                         </div>
                     </li>
                     <li>
                         <div class="section">
-                            <h5 class="nm semibold">Howard University</h5>
+                            <h5 class="nm semibold"><%= @user.user_detail.undergraduate_school %></h5>
                             <p class="nm text-muted">Alum</p>
                         </div>
                     </li>
