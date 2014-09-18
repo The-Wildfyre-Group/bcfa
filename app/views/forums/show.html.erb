@@ -133,7 +133,7 @@
                                 <h5 class="semibold mb0">
                                   <%= link_to h(topic.name), topic_path(topic.id) %>
                                 </h5>
-                                <p class="date small mt5"><em>Created 8/15/2014</em></p>
+                                <p class="date small mt5"><em>Created <%= date_with_slashes(topic.created_at) %></em></p>
                             </td>
                             <td class="text-center semibold"><%= [topic.posts.count - 1,0].max %></td>
                             <td class="text-center semibold"><%= topic.visit.total_visits %></td>
