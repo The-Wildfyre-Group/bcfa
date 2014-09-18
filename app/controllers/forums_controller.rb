@@ -1,4 +1,5 @@
 class ForumsController < ApplicationController
+  before_action :authenticate_user!
   #TODO authenticate user
   
   def index

@@ -1,7 +1,5 @@
 class TopicsController < ApplicationController
-  #before_action :find_forum
-  #before_action :authenticate_group_member_for_topic_access, except: %w[new create]
-  #before_action :authenticate_group_member_for_new_topic, only: %w[new]
+  before_action :authenticate_user!
   
   def new
     @topic = Topic.new

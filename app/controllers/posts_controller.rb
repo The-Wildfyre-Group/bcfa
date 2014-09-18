@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
-  #before_action :authenticate_group_member_for_post_access, except: %w[new create]
-  #before_action :authenticate_group_member_for_new_post, only: %w[new]
+   before_action :authenticate_user!
   
   def new
     @post = Post.new
