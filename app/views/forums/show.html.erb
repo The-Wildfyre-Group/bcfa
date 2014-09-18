@@ -78,10 +78,14 @@
                   <!-- panel toolbar -->
                   <div class="panel-toolbar pl10">
                       <div class="btn-group">
-                          <button type="button" class="btn btn-default pull-left ws2">
-                            <i class="ico-arrow-left mr5"></i>
-                            Back to All Forums 
-                          </button>
+						  <% unless Forum.count == 1%>
+						  <% link_to forums_path do %>
+	                          <button type="button" class="btn btn-default pull-left ws2">
+	                            <i class="ico-arrow-left mr5"></i>
+	                            Back to All Forums 
+	                          </button>
+							  <% end %>
+						  <% end %>
                       </div>
                   </div>
                   <div class="panel-toolbar text-right">
