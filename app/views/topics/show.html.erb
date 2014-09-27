@@ -24,22 +24,12 @@ LAST UPDATE: 23/06/2014
     <section id="main" role="main">
       <%#= render 'shared/navigation_member_secondary' %><!-- START Template Container -->
     	<div class="container">
-        <div class="page-header page-header-block">
-          <div class="container">
-            <div class="page-header-section">
-                <h4 class="title semibold">Message - rich</h4>
-            </div>
-            <div class="page-header-section">
-                <div class="toolbar">
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalComposeMessage"><i class="ico-pencil5"></i> Compose Message</button>
-                </div>
-            </div>
-          </div>
-        </div>
-        <!-- Page Header -->
+        <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#ModalComposeMessage"><i class="ico-pencil5"></i> Compose Message</button>
+      </div>
+      <!-- Page Header -->
 
       <div class="container-fluid">
-        <div class="container pt60">
+        <div class="container">
           <!-- START Table layout -->
           <div class="table-layout">
             <!-- message list-->
@@ -48,9 +38,8 @@ LAST UPDATE: 23/06/2014
                 <div class="panel-heading">
                   <!-- panel toolbar -->
                   <div class="panel-toolbar">
-                      <h3>Recent Messages</h3>
+                      <h4 class="gf_muli">Recent Messages</h4>
                   </div>
-                  <hr class="mt10 mb10"><!-- horizontal line -->
                 </div>
                 <!--/ panel heading -->
 
@@ -68,8 +57,7 @@ LAST UPDATE: 23/06/2014
                             <span class="media-heading"><%= post.user.full_name_or_level %></span>
                             <span class="media-text ellipsis nm"><%= truncate post.content, length: 50%></span>
                             <!-- meta icon -->
-                            <span class="media-meta"><i class="ico-star6"></i></span>
-                            <span class="media-meta"><i class="ico-attachment"></i></span>
+                            
                             <span class="media-meta pull-right"><%= distance_of_time_in_words_to_now post.created_at %></span>
                             <!--/ meta icon -->
                         </span>
