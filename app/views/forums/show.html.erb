@@ -1,8 +1,24 @@
-<%= render 'shared/backend_head' %>
-<%#= render 'shared/header' %>
+<!DOCTYPE html>
+<!-- 
+TEMPLATE NAME : Adminre backend
+VERSION : 1.2.0
+AUTHOR : JohnPozy
+AUTHOR URL : http://themeforest.net/user/JohnPozy
+EMAIL : pampersdry@gmail.com
+LAST UPDATE: 23/06/2014
 
- <%= render 'shared/header_member' %>
- <!-- START Template Header -->
+** A license must be purchased in order to legally use this template for your project **
+** PLEASE SUPPORT ME. YOUR SUPPORT ENSURE THE CONTINUITY OF THIS PROJECT **
+-->
+<html class="backend">
+  <%= render 'shared/backend_head' %>
+  <%#= render 'shared/header' %>
+
+  <!-- START Body -->
+  <body>
+    
+
+     <%= render 'shared/header_member' %>
 
 
 <!-- START Template Main -->
@@ -36,7 +52,7 @@
           <div class="panel-heading">
             <!-- panel toolbar -->
             <div class="panel-toolbar">
-                <h3>Recent Messages</h3>
+                <h3 class="gf_muli">Recent Messages</h3>
             </div>
           </div>
           <!--/ panel heading -->
@@ -171,6 +187,12 @@
     <!--/ END To Top Scroller -->
 
 </section>
+
+<!--/ END Template Main -->
+  </body>
+  <!--/ END Body -->
+<%= render 'shared/js' %>
+</html>
 <!--/ END Template Main -->
 
 <%#= link_to "New Forum", new_forum_path %>

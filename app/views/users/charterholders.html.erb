@@ -28,87 +28,71 @@
             </div>
             <!-- Page Header -->
 
+            <!-- START Template Main -->
             <section id="members" class="section" style="min-height: 800px; position: relative; background: #fff;">
+                
                 <div class="overlay light pattern pattern13"></div>
-            <!-- START Template Container -->
+                <!-- START Template Container -->
 
+                <!-- START Template Container -->
                 <div class="container">
+                
 
-                    <!-- START Row -->
-                    <div class="row" id="shuffle-grid">
-    					
-    					<% @charterholders.each do |user| %>
-                            <!-- user widget -->
-                            <div class="col-sm-2 post">
-                                <article class="panel overflow-hidden">
-                                    <!-- Thumbnail -->
-                                    <header class="thumbnail">
-                                        <!-- media -->
-                                        <div class="media">
-                                            <!-- indicator -->
-                                            <div class="indicator"><span class="spinner"></span></div>
-                                            <!--/ indicator -->
-                                            <!-- toolbar overlay -->
-                                            <div class="overlay">
-                                                <div class="toolbar">
-                                                    <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
-                                                </div>
-                                            </div>
-                                            <!--/ toolbar overlay -->
-                                            <img data-toggle="" src="<%= user.avatar %>" alt="Photo" height="auto" width="100%">
-                                        </div>
-                                        <!--/ media -->
-                                    </header>
-                                    <!--/ Thumbnail -->
-                                    <!-- Content -->
-                                    <section class="panel-body text-center">
-                                        <!-- heading -->
-                                        <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default"><%= user.full_name %></a></h6>
-                                        <h6 class="h7 font-al nm ellipsis lh22">
-                                            <a href="javascript:void(0);" class="text-primary gf_muli">
-                                                <span class="ico ico-location4"></span> 
+                <!-- START Row -->
+                <div class="row" id="shuffle-grid">
+                    
+                    <% @charterholders.each do |user| %>
+
+                        <div class="col-sm-6 col-md-4 shuffle">
+                            <div class="panel widget">
+                                <div class="table-layout nm">
+                                    <div class="col-xs-5 text-center"><img src="../image/avatar/avatar.png" width="100%"></div>
+                                    <div class="col-xs-7 valign-middle">
+                                        <div class="panel-body">
+                                            <h5 class="semibold mt0 mb5"><a href="javascript:void(0);"><%= user.full_name %></a></h5>
+                                            <p class="ellipsis text-muted mb5"><i class="ico-envelop mr5"></i>  <%= user.user_detail.try(:email) %></p>
+                                            <p class="text-muted nm"><i class="ico-location2 mr5"></i>  
                                                 <%= user.user_detail.try(:location_description) %>
-                                            </a>
-                                        </h6>
-                                        <!--/ heading -->
-                                        <hr class="mt5 mb10"/>
-                                        <!-- meta -->
-                                        <p class="meta nm text-center">
-                                            <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
-					                        <% unless user.user_detail.linkedin.blank? %>
-												<%= link_to user.linkedin, target: "_blank" do %>
-	                                                <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
-													<% end %>
-											<% else %>
-	                                                <img src="http://www.almaskorotana.co.uk/images/socmedlinkedin.png" height="40" alt=""/>
-											<% end %>
-											
-                                            <a href="#" class="">
-                                                <img src="image/social/email_circle-128.png" height="40" alt=""/><%#= user.email %>
-                                            </a>
-											<%= link_to user_path(user), target: "_blank" do %>
-                                            <button class="btn btn-block btn-inverse btn-xs mt10">
-                                                <span class="ico-profile mr5"></span> Full Profile
-                                            </button>
-											<% end %>
-                                        </p>
-                                        <!--/ meta -->
-                                    </section>
-                                    <!--/ Content -->
-                                </article>
+                                                </a>
+                                            </p>
+                                            <!-- meta -->
+                                            <p class="meta mb0 mt15">
+                                                <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
+                                                <% unless user.user_detail.linkedin.blank? %>
+                                                    <%= link_to user.linkedin, target: "_blank" do %>
+                                                        <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
+                                                        <% end %>
+                                                <% else %>
+                                                        <img src="http://www.almaskorotana.co.uk/images/socmedlinkedin.png" height="40" alt=""/>
+                                                <% end %>
+                                                
+                                                <a href="#" class="">
+                                                    <img src="image/social/email_circle-128.png" height="40" alt=""/><%#= user.email %>
+                                                </a>
+                                            </p>
+                                            <!--/ meta -->
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <!--/ User Widget -->
-    					<% end %>
-                    </div>
-                    <!--/ END Row -->
+                        </div>
+
+                    <% end %>
+                    
                 </div>
-                <!--/ END Template Container -->
+                <!--/ END Row -->
+            </div>
+            <!--/ END Template Container -->
 
-                <!-- START To Top Scroller -->
-                <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
-                <!--/ END To Top Scroller -->
-            </section>
+            <!-- START To Top Scroller -->
+            <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
+            <!--/ END To Top Scroller -->
 
+        </section>
+        <!--/ END Template Main -->
+
+
+        
             <!-- bottom footer -->
             <div class="footer-bottom" style="height: 200px; background: #222; padding: 30px 20px 20px; z-index: 99999; border: 1px solid #333;">
                 <!-- copyright -->
@@ -172,3 +156,4 @@
     </body>
     <!--/ END Body -->
 </html>
+

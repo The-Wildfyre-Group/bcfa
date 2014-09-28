@@ -1152,7 +1152,9 @@ LAST UPDATE: 23/06/2014
                                     <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default"><%= user.full_name_or_level %></a></h6>
                                     <h6 class="h7 font-al nm ellipsis lh22">
                                         <a href="javascript:void(0);" class="text-primary gf_muli">
+
                                         <span class="ico ico-location4"></span> <%= user.user_detail.location_description %></a>
+
                                     </h6>
                                     <!--/ heading -->
                                     <hr class="mt5 mb10"/>
@@ -1166,14 +1168,13 @@ LAST UPDATE: 23/06/2014
 										<% end %>
                                             
                                         
-                                    <% if user.user_detail.twitter.present? %>
-									<%= link_to image_tag("image/social/twitter_circle-128.png", height: "30"), user.user_detail.twitter %>
+                                    <% if user.email.present? %>
+									<%= link_to image_tag("image/social/email_circle-128.png", height: "40"), user.email %>
 									<% else %>
-									<img src="http://www.fbcuvalde.com/hp_wordpress/wp-content/uploads/2014/09/Icon-Twitter-Grey1.png" height="30" alt=""/>
+									<img src="image/social/email_circle-128.png" height="40" alt=""/>
 									
 									<% end %>
-                                           
-                                      
+
                                         <button class="btn btn-block btn-inverse btn-xs mt10">
                                             <span class="ico-profile mr5"></span> Full Profile
                                         </button>
@@ -1186,10 +1187,7 @@ LAST UPDATE: 23/06/2014
                         <!--/ Blog post #1 -->
 						<% end %>
 
-                        
-
-                        
-              
+    
                     </div>
                     <!--/ END row -->
 
