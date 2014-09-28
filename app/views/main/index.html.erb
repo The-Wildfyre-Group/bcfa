@@ -43,7 +43,9 @@ LAST UPDATE: 23/06/2014
                                 <div class="col-md-8 col-md-offset-2">
                                 <div class="row">
                                     <div class="col-md-6">
+										<%= link_to signup_path do %>
                                         <button class="btn btn-lg btn-primary btn-block" style="padding: 20px 15px; border-radius: 2px;">Sign Up</button>
+										<% end %>
                                     </div>
                                     <div class="col-md-6">
                                         <button class="btn btn-lg btn-transparent btn-block col-md-6" style="padding: 20px 15px; border-radius: 2px;">Learn More</button>
@@ -83,7 +85,7 @@ LAST UPDATE: 23/06/2014
                                     Connecting Our Community
                                     </h5> -->
                                     <h4 class="gf_merriweather nm" style="border-left: 2px solid #30d2ff; color: #e3f9ff; line-height: 30px; padding: 5px 0 0 40px;">
-                                    To connect and empowering professionals that have achieved the CFA designation and those pursuing the CFA course of study.
+                                    To connect and empower professionals that have achieved the CFA designation and those pursuing the CFA course of study.
                                     </h4>
                                 </blockquote>
                             </div>
@@ -1120,6 +1122,8 @@ LAST UPDATE: 23/06/2014
                    
                     <!-- START row -->
                     <div class="row">
+						
+						<% @charterholders.sample(12).each do |user| %>
                         <!-- Blog post #1 -->
                         <div class="col-sm-2 post">
                             <article class="panel overflow-hidden">
@@ -1145,22 +1149,31 @@ LAST UPDATE: 23/06/2014
                                 <!-- Content -->
                                 <section class="panel-body text-center">
                                     <!-- heading -->
-                                    <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default">Cordis Stanfield</a></h6>
+                                    <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default"><%= user.full_name_or_level %></a></h6>
                                     <h6 class="h7 font-al nm ellipsis lh22">
                                         <a href="javascript:void(0);" class="text-primary gf_muli">
-                                        <span class="ico ico-location4"></span> Los Angeles, CA</a>
+                                        <span class="ico ico-location4"></span> <%= user.user_detail.location_description %></a>
                                     </h6>
                                     <!--/ heading -->
                                     <hr class="mt5 mb10"/>
                                     <!-- meta -->
                                     <p class="meta nm text-center">
                                         <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
-                                        <a href="#" class="">
-                                            <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <a href="#" class="">
-                                            <img src="image/social/twitter_circle-128.png" height="40" alt=""/>
-                                        </a>
+										<% if user.linkedin.present? %>
+                                        <%= link_to image_tag("/image/social/linkedin_circle-128.png", height: "40"), user.linkedin %>
+										<% else %>
+										<img src="http://www.almaskorotana.co.uk/images/socmedlinkedin.png" height="40" alt=""/>
+										<% end %>
+                                            
+                                        
+                                    <% if user.user_detail.twitter.present? %>
+									<%= link_to image_tag("image/social/twitter_circle-128.png", height: "30"), user.user_detail.twitter %>
+									<% else %>
+									<img src="http://www.fbcuvalde.com/hp_wordpress/wp-content/uploads/2014/09/Icon-Twitter-Grey1.png" height="30" alt=""/>
+									
+									<% end %>
+                                           
+                                      
                                         <button class="btn btn-block btn-inverse btn-xs mt10">
                                             <span class="ico-profile mr5"></span> Full Profile
                                         </button>
@@ -1171,583 +1184,12 @@ LAST UPDATE: 23/06/2014
                             </article>
                         </div>
                         <!--/ Blog post #1 -->
+						<% end %>
 
-                        <!-- Blog post #2 -->
-                        <div class="col-sm-2 post">
-                            <article class="panel overflow-hidden">
-                                <!-- Thumbnail -->
-                                <header class="thumbnail">
-                                    <!-- media -->
-                                    <div class="media">
-                                        <!-- indicator -->
-                                        <div class="indicator"><span class="spinner"></span></div>
-                                        <!--/ indicator -->
-                                        <!-- toolbar overlay -->
-                                        <div class="overlay">
-                                            <div class="toolbar">
-                                                <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
-                                            </div>
-                                        </div>
-                                        <!--/ toolbar overlay -->
-                                       <img data-toggle="" src="../image/avatar/donnie.jpg" data-src="../image/avatar/donnie.jpg" alt="Photo" height="auto" width="100%">
-                                    </div>
-                                    <!--/ media -->
-                                </header>
-                                <!--/ Thumbnail -->
-                                <!-- Content -->
-                                <section class="panel-body text-center">
-                                    <!-- heading -->
-                                    <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default">Donnie Beamer</a></h6>
-                                    <h6 class="h7 font-al nm ellipsis lh22">
-                                        <a href="javascript:void(0);" class="text-primary gf_muli">
-                                        <span class="ico ico-location4"></span> Los Angeles, CA</a>
-                                    </h6>
-                                    <!--/ heading -->
-                                    <hr class="mt5 mb10"/>
-                                    <!-- meta -->
-                                    <p class="meta nm text-center">
-                                        <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
-                                        <a href="#" class="">
-                                            <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <a href="#" class="">
-                                            <img src="image/social/twitter_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <button class="btn btn-block btn-inverse btn-xs mt10">
-                                            <span class="ico-profile mr5"></span> Full Profile
-                                        </button>
-                                    </p>
-                                    <!--/ meta -->
-                                </section>
-                                <!--/ Content -->
-                            </article>
-                        </div>
-                        <!--/ Blog post #2 -->
-
-                        <!-- Blog post #3 -->
-                        <div class="col-sm-2 post">
-                            <article class="panel overflow-hidden nm">
-                                <!-- Thumbnail -->
-                                <header class="thumbnail">
-                                    <!-- media -->
-                                    <div class="media">
-                                        <!-- indicator -->
-                                        <div class="indicator"><span class="spinner"></span></div>
-                                        <!--/ indicator -->
-                                        <!-- toolbar overlay -->
-                                        <div class="overlay">
-                                            <div class="toolbar">
-                                                <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
-                                            </div>
-                                        </div>
-                                        <!--/ toolbar overlay -->
-                                        <img data-toggle="" src="../image/avatar/sam.jpg" data-src="../image/avatar/sam.jpg" alt="Photo" height="auto" width="100%">
-                                    </div>
-                                    <!--/ media -->
-                                </header>
-                                <!--/ Thumbnail -->
-                                <!-- Content -->
-                                <section class="panel-body text-center">
-                                    <!-- heading -->
-                                    <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default">Sam Kamara</a></h6>
-                                    <h6 class="h7 font-al nm ellipsis lh22">
-                                        <a href="javascript:void(0);" class="text-primary gf_muli">
-                                        <span class="ico ico-location4"></span> San Francisco, CA</a>
-                                    </h6>
-                                    <!--/ heading -->
-                                    <hr class="mt5 mb10"/>
-                                    <!-- meta -->
-                                    <p class="meta nm text-center">
-                                        <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
-                                        <a href="#" class="">
-                                            <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <a href="#" class="">
-                                            <img src="image/social/twitter_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <button class="btn btn-block btn-inverse btn-xs mt10">
-                                            <span class="ico-profile mr5"></span> Full Profile
-                                        </button>
-                                    </p>
-                                    <!--/ meta -->
-                                </section>
-                                <!--/ Content -->
-                            </article>
-                        </div>
-                        <!--/ Blog post #3 -->
-
-                        <!-- Blog post #3 -->
-                        <div class="col-sm-2 post">
-                            <article class="panel overflow-hidden nm">
-                                <!-- Thumbnail -->
-                                <header class="thumbnail">
-                                    <!-- media -->
-                                    <div class="media">
-                                        <!-- indicator -->
-                                        <div class="indicator"><span class="spinner"></span></div>
-                                        <!--/ indicator -->
-                                        <!-- toolbar overlay -->
-                                        <div class="overlay">
-                                            <div class="toolbar">
-                                                <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
-                                            </div>
-                                        </div>
-                                        <!--/ toolbar overlay -->
-                                        <img data-toggle="" src="../image/avatar/lorenzo.jpg" data-src="../image/avatar/lorenzo.jpg" alt="Photo" height="auto" width="100%">
-                                    </div>
-                                    <!--/ media -->
-                                </header>
-                                <!--/ Thumbnail -->
-                                <!-- Content -->
-                                <section class="panel-body text-center">
-                                    <!-- heading -->
-                                    <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default">Lorenzo Newsome</a></h6>
-                                    <h6 class="h7 font-al nm ellipsis lh22">
-                                        <a href="javascript:void(0);" class="text-primary gf_muli">
-                                        <span class="ico ico-location4"></span> Raleigh, NC</a>
-                                    </h6>
-                                    <!--/ heading -->
-                                    <hr class="mt5 mb10"/>
-                                    <!-- meta -->
-                                    <p class="meta nm text-center">
-                                        <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
-                                        <a href="#" class="">
-                                            <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <a href="#" class="">
-                                            <img src="image/social/twitter_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <button class="btn btn-block btn-inverse btn-xs mt10">
-                                            <span class="ico-profile mr5"></span> Full Profile
-                                        </button>
-                                    </p>
-                                    <!--/ meta -->
-                                </section>
-                                <!--/ Content -->
-                            </article>
-                        </div>
-                        <!--/ Blog post #3 -->
-
-                        <!-- Blog post #3 -->
-                        <div class="col-sm-2 post">
-                            <article class="panel overflow-hidden nm">
-                                <!-- Thumbnail -->
-                                <header class="thumbnail">
-                                    <!-- media -->
-                                    <div class="media">
-                                        <!-- indicator -->
-                                        <div class="indicator"><span class="spinner"></span></div>
-                                        <!--/ indicator -->
-                                        <!-- toolbar overlay -->
-                                        <div class="overlay">
-                                            <div class="toolbar">
-                                                <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
-                                            </div>
-                                        </div>
-                                        <!--/ toolbar overlay -->
-                                        <img data-toggle="" src="../image/avatar/daniel.jpg" data-src="../image/avatar/daniel.jpg" alt="Photo" height="auto" width="100%">
-                                    </div>
-                                    <!--/ media -->
-                                </header>
-                                <!--/ Thumbnail -->
-                                <!-- Content -->
-                                <section class="panel-body text-center">
-                                    <!-- heading -->
-                                    <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default">Daniel Eguche</a></h6>
-                                    <h6 class="h7 font-al nm ellipsis lh22">
-                                        <a href="javascript:void(0);" class="text-primary gf_muli">
-                                        <span class="ico ico-location4"></span> New York, NY</a>
-                                    </h6>
-                                    <!--/ heading -->
-                                    <hr class="mt5 mb10"/>
-                                    <!-- meta -->
-                                    <p class="meta nm text-center">
-                                        <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
-                                        <a href="#" class="">
-                                            <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <a href="#" class="">
-                                            <img src="image/social/twitter_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <button class="btn btn-block btn-inverse btn-xs mt10">
-                                            <span class="ico-profile mr5"></span> Full Profile
-                                        </button>
-                                    </p>
-                                    <!--/ meta -->
-                                </section>
-                                <!--/ Content -->
-                            </article>
-                        </div>
-                        <!--/ Blog post #3 -->
-
-                        <!-- Blog post #3 -->
-                        <div class="col-sm-2 post">
-                            <article class="panel overflow-hidden nm">
-                                <!-- Thumbnail -->
-                                <header class="thumbnail">
-                                    <!-- media -->
-                                    <div class="media">
-                                        <!-- indicator -->
-                                        <div class="indicator"><span class="spinner"></span></div>
-                                        <!--/ indicator -->
-                                        <!-- toolbar overlay -->
-                                        <div class="overlay">
-                                            <div class="toolbar">
-                                                <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
-                                            </div>
-                                        </div>
-                                        <!--/ toolbar overlay -->
-                                        <img data-toggle="" src="../image/avatar/marcel.jpg" data-src="../image/avatar/marcel.jpg" alt="Photo" height="auto" width="100%">
-                                    </div>
-                                    <!--/ media -->
-                                </header>
-                                <!--/ Thumbnail -->
-                                <!-- Content -->
-                                <section class="panel-body text-center">
-                                    <!-- heading -->
-                                    <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default">Marcel Beamer</a></h6>
-                                    <h6 class="h7 font-al nm ellipsis lh22">
-                                        <a href="javascript:void(0);" class="text-primary gf_muli">
-                                        <span class="ico ico-location4"></span> San Mateo, CA</a>
-                                    </h6>
-                                    <!--/ heading -->
-                                    <hr class="mt5 mb10"/>
-                                    <!-- meta -->
-                                    <p class="meta nm text-center">
-                                        <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
-                                        <a href="#" class="">
-                                            <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <a href="#" class="">
-                                            <img src="image/social/twitter_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <button class="btn btn-block btn-inverse btn-xs mt10">
-                                            <span class="ico-profile mr5"></span> Full Profile
-                                        </button>
-                                    </p>
-                                    <!--/ meta -->
-                                </section>
-                                <!--/ Content -->
-                            </article>
-                        </div>
-                        <!--/ Blog post #3 -->
-                    </div>
-                    <!--/ END row -->
-
-                    <!-- START row -->
-                    <div class="row">
                         
-                        <!-- Blog post #1 -->
-                        <div class="col-sm-2 post">
-                            <article class="panel overflow-hidden">
-                                <!-- Thumbnail -->
-                                <header class="thumbnail">
-                                    <!-- media -->
-                                    <div class="media">
-                                        <!-- indicator -->
-                                        <div class="indicator"><span class="spinner"></span></div>
-                                        <!--/ indicator -->
-                                        <!-- toolbar overlay -->
-                                        <div class="overlay">
-                                            <div class="toolbar">
-                                                <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
-                                            </div>
-                                        </div>
-                                        <!--/ toolbar overlay -->
-                                        <img data-toggle="" src="../image/avatar/cordis.jpg" data-src="../image/avatar/cordis.jpg" alt="Photo" height="auto" width="100%">
-                                    </div>
-                                    <!--/ media -->
-                                </header>
-                                <!--/ Thumbnail -->
-                                <!-- Content -->
-                                <section class="panel-body text-center">
-                                    <!-- heading -->
-                                    <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default">Donnie Beamer</a></h6>
-                                    <h6 class="h7 font-al nm ellipsis lh22">
-                                        <a href="javascript:void(0);" class="text-primary gf_muli">
-                                        <span class="ico ico-location4"></span> Los Angeles, CA</a>
-                                    </h6>
-                                    <!--/ heading -->
-                                    <hr class="mt5 mb10"/>
-                                    <!-- meta -->
-                                    <p class="meta nm text-center">
-                                        <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
-                                        <a href="#" class="">
-                                            <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <a href="#" class="">
-                                            <img src="image/social/twitter_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <button class="btn btn-block btn-inverse btn-xs mt10">
-                                            <span class="ico-profile mr5"></span> Full Profile
-                                        </button>
-                                    </p>
-                                    <!--/ meta -->
-                                </section>
-                                <!--/ Content -->
-                            </article>
-                        </div>
-                        <!--/ Blog post #1 -->
 
-                        <!-- Blog post #2 -->
-                        <div class="col-sm-2 post">
-                            <article class="panel overflow-hidden">
-                                <!-- Thumbnail -->
-                                <header class="thumbnail">
-                                    <!-- media -->
-                                    <div class="media">
-                                        <!-- indicator -->
-                                        <div class="indicator"><span class="spinner"></span></div>
-                                        <!--/ indicator -->
-                                        <!-- toolbar overlay -->
-                                        <div class="overlay">
-                                            <div class="toolbar">
-                                                <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
-                                            </div>
-                                        </div>
-                                        <!--/ toolbar overlay -->
-                                       <img data-toggle="" src="../image/avatar/donnie.jpg" data-src="../image/avatar/donnie.jpg" alt="Photo" height="auto" width="100%">
-                                    </div>
-                                    <!--/ media -->
-                                </header>
-                                <!--/ Thumbnail -->
-                                <!-- Content -->
-                                <section class="panel-body text-center">
-                                    <!-- heading -->
-                                    <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default">Donnie Beamer</a></h6>
-                                    <h6 class="h7 font-al nm ellipsis lh22">
-                                        <a href="javascript:void(0);" class="text-primary gf_muli">
-                                        <span class="ico ico-location4"></span> Los Angeles, CA</a>
-                                    </h6>
-                                    <!--/ heading -->
-                                    <hr class="mt5 mb10"/>
-                                    <!-- meta -->
-                                    <p class="meta nm text-center">
-                                        <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
-                                        <a href="#" class="">
-                                            <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <a href="#" class="">
-                                            <img src="image/social/twitter_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <button class="btn btn-block btn-inverse btn-xs mt10">
-                                            <span class="ico-profile mr5"></span> Full Profile
-                                        </button>
-                                    </p>
-                                    <!--/ meta -->
-                                </section>
-                                <!--/ Content -->
-                            </article>
-                        </div>
-                        <!--/ Blog post #2 -->
-
-                        <!-- Blog post #3 -->
-                        <div class="col-sm-2 post">
-                            <article class="panel overflow-hidden nm">
-                                <!-- Thumbnail -->
-                                <header class="thumbnail">
-                                    <!-- media -->
-                                    <div class="media">
-                                        <!-- indicator -->
-                                        <div class="indicator"><span class="spinner"></span></div>
-                                        <!--/ indicator -->
-                                        <!-- toolbar overlay -->
-                                        <div class="overlay">
-                                            <div class="toolbar">
-                                                <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
-                                            </div>
-                                        </div>
-                                        <!--/ toolbar overlay -->
-                                        <img data-toggle="" src="../image/avatar/sam.jpg" data-src="../image/avatar/sam.jpg" alt="Photo" height="auto" width="100%">
-                                    </div>
-                                    <!--/ media -->
-                                </header>
-                                <!--/ Thumbnail -->
-                                <!-- Content -->
-                                <section class="panel-body text-center">
-                                    <!-- heading -->
-                                    <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default">Donnie Beamer</a></h6>
-                                    <h6 class="h7 font-al nm ellipsis lh22">
-                                        <a href="javascript:void(0);" class="text-primary gf_muli">
-                                        <span class="ico ico-location4"></span> Los Angeles, CA</a>
-                                    </h6>
-                                    <!--/ heading -->
-                                    <hr class="mt5 mb10"/>
-                                    <!-- meta -->
-                                    <p class="meta nm text-center">
-                                        <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
-                                        <a href="#" class="">
-                                            <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <a href="#" class="">
-                                            <img src="image/social/twitter_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <button class="btn btn-block btn-inverse btn-xs mt10">
-                                            <span class="ico-profile mr5"></span> Full Profile
-                                        </button>
-                                    </p>
-                                    <!--/ meta -->
-                                </section>
-                                <!--/ Content -->
-                            </article>
-                        </div>
-                        <!--/ Blog post #3 -->
-
-                        <!-- Blog post #3 -->
-                        <div class="col-sm-2 post">
-                            <article class="panel overflow-hidden nm">
-                                <!-- Thumbnail -->
-                                <header class="thumbnail">
-                                    <!-- media -->
-                                    <div class="media">
-                                        <!-- indicator -->
-                                        <div class="indicator"><span class="spinner"></span></div>
-                                        <!--/ indicator -->
-                                        <!-- toolbar overlay -->
-                                        <div class="overlay">
-                                            <div class="toolbar">
-                                                <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
-                                            </div>
-                                        </div>
-                                        <!--/ toolbar overlay -->
-                                        <img data-toggle="" src="../image/avatar/lorenzo.jpg" data-src="../image/avatar/lorenzo.jpg" alt="Photo" height="auto" width="100%">
-                                    </div>
-                                    <!--/ media -->
-                                </header>
-                                <!--/ Thumbnail -->
-                                <!-- Content -->
-                                <section class="panel-body text-center">
-                                    <!-- heading -->
-                                    <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default">Donnie Beamer</a></h6>
-                                    <h6 class="h7 font-al nm ellipsis lh22">
-                                        <a href="javascript:void(0);" class="text-primary gf_muli">
-                                        <span class="ico ico-location4"></span> Los Angeles, CA</a>
-                                    </h6>
-                                    <!--/ heading -->
-                                    <hr class="mt5 mb10"/>
-                                    <!-- meta -->
-                                    <p class="meta nm text-center">
-                                        <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
-                                        <a href="#" class="">
-                                            <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <a href="#" class="">
-                                            <img src="image/social/twitter_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <button class="btn btn-block btn-inverse btn-xs mt10">
-                                            <span class="ico-profile mr5"></span> Full Profile
-                                        </button>
-                                    </p>
-                                    <!--/ meta -->
-                                </section>
-                                <!--/ Content -->
-                            </article>
-                        </div>
-                        <!--/ Blog post #3 -->
-
-                        <!-- Blog post #3 -->
-                        <div class="col-sm-2 post">
-                            <article class="panel overflow-hidden nm">
-                                <!-- Thumbnail -->
-                                <header class="thumbnail">
-                                    <!-- media -->
-                                    <div class="media">
-                                        <!-- indicator -->
-                                        <div class="indicator"><span class="spinner"></span></div>
-                                        <!--/ indicator -->
-                                        <!-- toolbar overlay -->
-                                        <div class="overlay">
-                                            <div class="toolbar">
-                                                <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
-                                            </div>
-                                        </div>
-                                        <!--/ toolbar overlay -->
-                                        <img data-toggle="" src="../image/avatar/sam.jpg" data-src="../image/avatar/sam.jpg" alt="Photo" height="auto" width="100%">
-                                    </div>
-                                    <!--/ media -->
-                                </header>
-                                <!--/ Thumbnail -->
-                                <!-- Content -->
-                                <section class="panel-body text-center">
-                                    <!-- heading -->
-                                    <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default">Donnie Beamer</a></h6>
-                                    <h6 class="h7 font-al nm ellipsis lh22">
-                                        <a href="javascript:void(0);" class="text-primary gf_muli">
-                                        <span class="ico ico-location4"></span> Los Angeles, CA</a>
-                                    </h6>
-                                    <!--/ heading -->
-                                    <hr class="mt5 mb10"/>
-                                    <!-- meta -->
-                                    <p class="meta nm text-center">
-                                        <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
-                                        <a href="#" class="">
-                                            <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <a href="#" class="">
-                                            <img src="image/social/twitter_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <button class="btn btn-block btn-inverse btn-xs mt10">
-                                            <span class="ico-profile mr5"></span> Full Profile
-                                        </button>
-                                    </p>
-                                    <!--/ meta -->
-                                </section>
-                                <!--/ Content -->
-                            </article>
-                        </div>
-                        <!--/ Blog post #3 -->
-
-                        <!-- Blog post #3 -->
-                        <div class="col-sm-2 post">
-                            <article class="panel overflow-hidden nm">
-                                <!-- Thumbnail -->
-                                <header class="thumbnail">
-                                    <!-- media -->
-                                    <div class="media">
-                                        <!-- indicator -->
-                                        <div class="indicator"><span class="spinner"></span></div>
-                                        <!--/ indicator -->
-                                        <!-- toolbar overlay -->
-                                        <div class="overlay">
-                                            <div class="toolbar">
-                                                <a href="javascript:void(0);" class="btn btn-success"><i class="ico-new-tab"></i></a>
-                                            </div>
-                                        </div>
-                                        <!--/ toolbar overlay -->
-                                        <img data-toggle="" src="../image/avatar/lorenzo.jpg" data-src="../image/avatar/lorenzo.jpg" alt="Photo" height="auto" width="100%">
-                                    </div>
-                                    <!--/ media -->
-                                </header>
-                                <!--/ Thumbnail -->
-                                <!-- Content -->
-                                <section class="panel-body text-center">
-                                    <!-- heading -->
-                                    <h6 class="font-alt mt0 mb0 "><a href="javascript:void(0);" class="text-default">Donnie Beamer</a></h6>
-                                    <h6 class="h7 font-al nm ellipsis lh22">
-                                        <a href="javascript:void(0);" class="text-primary gf_muli">
-                                        <span class="ico ico-location4"></span> Los Angeles, CA</a>
-                                    </h6>
-                                    <!--/ heading -->
-                                    <hr class="mt5 mb10"/>
-                                    <!-- meta -->
-                                    <p class="meta nm text-center">
-                                        <!-- <span class="text-muted mr5 ml5">&#8226;</span> -->
-                                        <a href="#" class="">
-                                            <img src="image/social/linkedin_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <a href="#" class="">
-                                            <img src="image/social/twitter_circle-128.png" height="40" alt=""/>
-                                        </a>
-                                        <button class="btn btn-block btn-inverse btn-xs mt10">
-                                            <span class="ico-profile mr5"></span> Full Profile
-                                        </button>
-                                    </p>
-                                    <!--/ meta -->
-                                </section>
-                                <!--/ Content -->
-                            </article>
-                        </div>
-                        <!--/ Blog post #3 -->
+                        
+              
                     </div>
                     <!--/ END row -->
 
