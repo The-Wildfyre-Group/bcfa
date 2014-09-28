@@ -1,12 +1,175 @@
+<!DOCTYPE html>
+<!-- 
+TEMPLATE NAME : Adminre frontend
+VERSION : 1.2.0
+AUTHOR : JohnPozy
+AUTHOR URL : http://themeforest.net/user/JohnPozy
+EMAIL : pampersdry@gmail.com
+LAST UPDATE: 23/06/2014
 
-  <%= form_tag password_resets_path, :method => :post do %>
-    Need to reset your password? <br/>
-          <span class="semi-bold text-success">We've got you covered.</span>
+** A license must be purchased in order to legally use this template for your project **
+** PLEASE SUPPORT ME. YOUR SUPPORT ENSURE THE CONTINUITY OF THIS PROJECT **
+-->
+<html class="frontend">
+    <!-- START Head -->
+    <%= render 'shared/frontend_head' %>
+    <!--/ END Head -->
 
-        <h5 class="text-center muted">( Enter your e-mail address for instructions )</h5>
-    
-          <%= text_field_tag :email, params[:email], placeholder: "Enter you email ...", class: "form-control", type: "text" %>
+    <!-- START Body -->
+    <body>
 
-            <%= submit_tag "Send Reset Instructions", :class => "bold btn btn-primary btn-large btn-cons", type: "submit" %>
+        <!-- START Template Main -->
+        <section id="main" role="main">
+            <!-- START jumbotron -->
+            <section class="jumbotron jumbotron-bg6 nm" data-stellar-background-ratio="0.4" style="min-height:900px; background: url(">
+                <!-- pattern + overlay -->
+                <div class="overlay pattern pattern2"></div>
+                <!--/ pattern + overlay -->
+                <div class="container" style="padding-top:10%;">
+                    <div class="row">
+                        <div class="col-md-4 npl npr col-md-offset-4" style="border: 1px solid #222; border-radius: 6px; background: rgba(0,0,0, .2); border-left: 1px solid #444;
+                        border-top: 1px solid #444;">
+                            <div class="panel nm bgcolor-transparent no-border">
+                                <div class="center panel-body" style="background: #fff; padding: 5px 20px 3px 20px; border-radius: 0 0 6px 6px; margin-top: -1px; border: 2px solid #ccc; border-top: none; box-shadow: 1px 1px 1px #444;">
+                                    <img class="img-circle mb5 mr5 pull-left" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 20px; width: 20px;">
+                                    <h5 class="lh-22 nm bold pull-left" style="color: #333;">
+                                        BlackCFA
+                                    </h5>
+                                </div>
+                                <div class="panel-body pr30 pl30">
+                                    <!-- <img class="img-circle mb5 mr10 ml5 pull-left mt10" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 37px; width: 37px;">
+                                             -->
+                                    <h3 class="text-center text-white mb5 mt0 thin">
+                                    Forgot Your Password?
+                                    </h3>
+                                    <div class="clearfix"></div>
+                                    <p class="text-muted text-center mb0 pr5 ml10">
+                                    </p>
+                                    <!-- <div class="col-md-3 row">
+                                        <a class="btn btn-default btn-outline text-white btn-lg">Learn More</a>
+                                    </div> -->
+                                    <!-- <div class="clearfix"></div> -->
+                                </div>
+                                <hr class="dark nm" />
+                                <div class="panel-body pr30 pl30 pb0">
+                                    <%= form_tag password_resets_path, :method => :post do %>
+                                        <div class="form-group">
+                                            <%= text_field_tag :email, params[:email], placeholder: "Enter you email ...", class: "form-control", type: "text" %>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer pr30 pl30" style="border-top: 2px solid #ccc; box-shadow: 1px 1px 1px #777;">
+                                        <%= button_tag(type: 'submit', class: "mt10 semibold btn btn-primary btn-3d btn-block") do %>
+                                            <span class="semibold" style="padding: 12px 16px; font-size: 16px;">SEND INSTRUCTIONS</span>
+                                        <% end %>
+                                        <br/>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--/ END jumbotron -->
 
-    <% end %>
+            <!-- START Template Footer -->
+            <footer id="footer" role="contentinfo" style="border-top: 10px solid #222; border:">
+            
+                <!-- pattern + overlay -->
+                <!-- <div class="overlay pattern pattern0"></div> -->
+                <!--/ pattern + overlay -->
+
+                <!-- container -->
+                <div class="container">
+                    <!-- row -->
+                    <div class="row pb60 pt40">
+                        <!-- About -->
+                        <div class="col-md-8">
+                        </div>
+                        <!--/ About -->
+                        <div class="col-md-4">
+                            <img class="img-circle mb5 mr5 pull-left" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 20px; width: 20px;">
+                            <h4 class="mt0 gf_montserrat">BlackCFA</h4>
+                            <form role="form">
+                                <div class="form-group">
+                                    <p class="form-control-static">Connecting and empowering professionals that have achieved the CFA designation and those pursuing the CFA course of study.</p>
+                                </div>
+                            </form>
+                        </div>
+                        <!--/ Newsletter -->
+                    </div>
+                    <!--/ row -->
+                </div>
+                <!--/ container -->
+
+                <!-- bottom footer -->
+                <div class="footer-bottom" style="position: absolute; bottom: 0; background: #222; padding: 30px 20px 20px; z-index: 99999; border: 1px solid #333;">
+                    <!-- copyright -->
+                   <div class="container" style="border-top: 5px solid #444; border-bottom: 1px solid #333; padding-top: 15px;">
+                        <div class="row">
+                            <div class="col-sm-8 gf_montserrat thin">
+                                 <h5 class="text-muted thin gf_muli mt5 mb5">
+                                    <span class="ico-share22 mr10 text-success"></span>
+                                    <span class="mr5">Like Us.</span> 
+                                    <span class="mr5">Share Us.<span class="mr5">
+                                    Follow Us.
+                                </h5>
+                                 <ul class="inline-li social_64 ml0 pl0 mt15">
+                                    <li><img src="image/social/youtube_circle-128.png"/></li>
+                                    <li><img src="image/social/twitter_circle-128.png"/></li>
+                                    <li><img src="image/social/slideshare_circle-128.png"/></li>
+                                    <li><img src="image/social/linkedin_circle-128.png"/></li>
+                                    <li><img src="image/social/instagram_circle-128.png"/></li>
+                                    <li><img src="image/social/facebook_circle-128.png"/></li>
+                                </ul>
+                                <!--/ copyright -->
+                            </div>
+                             <div class="col-sm-4 gf_montserrat text-right">
+                                <p class="text-muted bold mb5">BLACKCFA</p>
+                                <!-- copyright -->
+                                <ul class="unstyled gf_muli">
+                                    <li>Our Team</li>
+                                    <li>Partnerships</li>
+                                    <li>Contact Us</li>
+                                    <li>Terms and Policies</li>
+                                </ul>
+                                <!--/ copyright -->
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ container -->
+                </div>
+
+                <!--/ bottom footer -->
+            </footer>
+            <!--/ END Template Footer -->
+        </section>
+           
+
+        <!-- START JAVASCRIPT SECTION (Load javascripts at bottom to reduce load time) -->
+        <!-- Library script : mandatory -->
+        <script type="text/javascript" src="../library/jquery/js/jquery.min.js"></script>
+        <script type="text/javascript" src="../library/jquery/js/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="../library/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../library/core/js/core.min.js"></script>
+        <!--/ Library script -->
+
+        <!-- App and page level script -->
+        <script type="text/javascript" src="../plugins/sparkline/js/jquery.sparkline.min.js"></script><!-- will be use globaly as a summary on sidebar menu -->
+        <script type="text/javascript" src="../javascript/app.min.js"></script>
+        
+        
+        <script type="text/javascript" src="../plugins/owl/js/owl.carousel.min.js"></script>
+        
+        <script type="text/javascript" src="../plugins/layerslider/js/greensock.min.js"></script>
+        
+        <script type="text/javascript" src="../plugins/layerslider/js/transitions.min.js"></script>
+        
+        <script type="text/javascript" src="../plugins/layerslider/js/layerslider.min.js"></script>
+        
+        <script type="text/javascript" src="../javascript/pages/frontend/home.js"></script>
+        
+        <!--/ App and page level scrip -->
+        <!--/ END JAVASCRIPT SECTION -->
+    </body>
+    <!--/ END Body -->
+</html>
