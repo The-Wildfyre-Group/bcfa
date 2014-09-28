@@ -1,8 +1,11 @@
 <%= render 'shared/backend_head' %>
 
     <body>
-
+        <% if current_user %>
         <%= render 'shared/header_member' %>
+		<% else %>
+		<%= render 'shared/header_visitor' %>
+		<% end %>
 
         <!-- START Template Main -->
         <section id="main" role="main">
