@@ -64,6 +64,13 @@
          </div>
 		 <%= f.fields_for :user_detail, @user_detail do |builder| %>
          <div class="form-group">
+             <label class="col-sm-3 control-label">Phone Number (optional)</label>
+             <div class="col-sm-6">
+                <%= builder.text_field :phone_number, class: "form-control"  %>
+             </div>
+         </div>
+		 
+         <div class="form-group">
              <label class="col-sm-3 control-label">Title</label>
              <div class="col-sm-6">
                 <%= builder.text_field :title, class: "form-control"  %>
