@@ -129,7 +129,7 @@
                                                     <%= number_to_phone(@user.user_detail.try(:phone_number), area_code: true) %><br>
                                                     <%= mail_to @user.email do %>
                                                     <abbr title="Email">E:</abbr> 
-                                                    <%= @user.email %>
+                                                    <%= truncate @user.email, length: 20 %>
                                                     <% end %>
                                                 </address>
 
