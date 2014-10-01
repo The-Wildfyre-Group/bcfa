@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
   
   def authenticate_charter_rights!
     authenticate_user!
-    unless current_user.admin? or current_user == User.find(params[:id])
+    unless current_user.admin? or current_user == User.friendly.find(params[:id])
       redirect_to user_path(current_user)
     end
   end
