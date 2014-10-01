@@ -46,10 +46,10 @@
                       <div class="col-sm-6 col-md-4 shuffle">
                           <div class="panel widget">
                               <div class="table-layout nm">
-                                  <div class="col-xs-5 text-center"><img src="../image/avatar/avatar.png" width="100%"></div>
+                                  <div class="col-xs-5 text-center"><img src="<%= user.avatar %>" width="100%"></div>
                                   <div class="col-xs-7 valign-middle">
                                       <div class="panel-body">
-                                          <h5 class="semibold mt0 mb5"><a href="javascript:void(0);"><%= user.full_name %></a></h5>
+                                          <h5 class="semibold mt0 mb5"><a href="<%= "users/#{user.id}"%>"><%= user.full_name %></a></h5>
                                           <p class="ellipsis text-muted mb5"><i class="ico-envelop mr5"></i>  <%= user.user_detail.try(:email) %></p>
                                           <p class="text-muted nm"><i class="ico-location2 mr5"></i>  
                                               <%= user.user_detail.try(:location_description) %>

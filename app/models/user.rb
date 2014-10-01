@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   include Location
+  extend FriendlyId
+  friendly_id :use_for_slug, use: :slugged
   has_secure_password
   #validates_presence_of :password, :on => :create
   #validates :first_name, :presence => true, length: {minimum: 2, maximum: 20}
@@ -58,6 +60,24 @@ class User < ActiveRecord::Base
         logger.info "Error: Current Password is Incorrect."
       end
     end
+  end
+  
+  def use_for_slug
+    existing_user = User.where('first_name = ?', self.first_name).where('last_name = ?', self.last_name)
+    if existing_user.present?
+      "#{first_name} #{last_name} #{existing_user.count}"
+    else
+      "#{first_name} #{last_name}"
+    end    
+  end
+  
+  def apply_slug_to_existing
+    existing_user = User.where('first_name = ?', self.first_name).where('last_name = ?', self.last_name)
+    if existing_user.present? && existing_user.count > 1
+      "#{first_name}-#{last_name}-#{existing_user.count}"
+    else
+      "#{first_name}-#{last_name}"
+    end    
   end
   
   def encrypt_password 
