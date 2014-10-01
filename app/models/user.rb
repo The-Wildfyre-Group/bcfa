@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   friendly_id :use_for_slug, use: :slugged
   has_secure_password
   #validates_presence_of :password, :on => :create
-  #validates :first_name, :presence => true, length: {minimum: 2, maximum: 20}
-  #validates :last_name, :presence => true, length: {minimum: 2, maximum: 20}
+  validates :first_name, :presence => true, length: {minimum: 2, maximum: 20}
+  validates :last_name, :presence => true, length: {minimum: 2, maximum: 20}
   validates :email, :presence => true
   validates :level, :presence => true
   #before_save { self.email = email.downcase }
