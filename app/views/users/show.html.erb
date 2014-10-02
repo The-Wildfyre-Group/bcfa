@@ -124,21 +124,22 @@
                                                         <%= @user.user_detail.try(:location_description) %></h4>
                                                 </address> -->
                                                 <address>
-                                                    <strong>Phone and Email</strong><br>
-                                                    <abbr title="Phone">P:</abbr> 
-                                                    <%= number_to_phone(@user.user_detail.try(:phone_number), area_code: true) %><br>
-                                                    <%= mail_to @user.email do %>
-                                                    <abbr title="Email">E:</abbr> 
-                                                    <%= truncate @user.email, length: 20 %>
-                                                    <% end %>
-                                                </address>
-
-                                                <address>
+                                                    <strong>Phone and Email</strong></br>
+                                                    <hr class="mt5 mb0"/>
+                                                    <p class="mt10">
+                                                        <a href="#" class="" data-toggle="popover" data-placement="left" data-content="" data-original-title="" title=" <%= number_to_phone(@user.user_detail.try(:phone_number), area_code: true) %>">
+                                                        <img src="/image/social/phone_circle.png" height="40" alt=""/><%#= user.email %>
+                                                        </a>
+                                                     <a href="#" class="" data-toggle="popover" data-placement="right" data-content="" data-original-title="" title="<%= @user.email %>">
+                                                        <img src="/image/social/email_circle-128.png" height="40" alt=""/><%#= user.email %>
+                                                    </a>
+                                                    </p>
+                                                    
                                                     <strong>Website</strong><br>
+                                                    <hr class="mt5 mb0"/>
                                                     <%= link_to @user.user_detail.try(:website) do %>
                                                     <a href="mailto:#"><%= @user.user_detail.try(:website) %></a>
                                                     <% end %>
-                                                </address>
                                                  
 												<% if @user.user_detail.social_media? %> 
                                                 <address>

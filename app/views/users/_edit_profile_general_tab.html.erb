@@ -16,11 +16,17 @@
                 <label class="col-sm-3 control-label">Photo</label>
                 <div class="col-sm-9">
                     <div class="fileinput fileinput-new" data-provides="fileinput">
-                        <div class="col-md-5">
-                            <div class="fileinput-new thumbnail">
-                                <img class="img-circle img-bordered img-responsive" src="<%= @user.avatar %>" alt="...">
+                        <div style="width: 120px;" class="col-md-5 pull-left inline-block">
+                            <div class="pull-left" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden;">
+                                <div class="fileinput-new thumbnail">
+                                    <div class="img-h" style="width: 100%; height: 100%; overflow: hidden;">
+                                        <img src="<%= @user.avatar %>" alt="..."  style="width: auto; height: 100%; position: relative;">
+                                    </div>
+                                </div>
+                                <div class="img-h" style="width: 120px; height: 120px; overflow: hidden;">
+                                    <div class="fileinput-preview fileinput-exists thumbnail" style="width: 100%; height: 100%; overflow: hidden;"></div>
+                                </div>
                             </div>
-                            <div class="fileinput-preview fileinput-exists thumbnail" style="border-radius: 50%;"></div>
                         </div>
                         <div class="col-md-7 pt30">
                             <div class="row">

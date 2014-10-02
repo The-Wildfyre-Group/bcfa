@@ -9,8 +9,12 @@
             <div class="col-md-7">
                 <!-- figure with progress -->
                 <ul class="list-table">
-                    <li style="width:130px;">
-                        <%= image_tag @user.avatar, class: "img-circle img-bordered", width: "110px", height: "110px" %>
+                    <li style="width:150px;">
+                       <div class="fileinput-new thumbnail" style="background: transparent; border: 3px solid #fff; border-radius: 50%;">
+                            <div class="img-h" style="width: 100%; height: 100%; overflow: hidden; border-radius: 50%;">
+                                <img src="<%= @user.avatar %>" alt="..."  style="width: auto; height: 130px; position: relative;">
+                            </div>
+                        </div>
                     </li>
                     <li class="text-left">
                         <div class="pull-left">
