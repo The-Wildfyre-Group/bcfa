@@ -85,7 +85,11 @@ LAST UPDATE: 23/06/2014
                         </div>
                         <div class="col-md-4 np col-md-offset-2 p" style="border: 1px solid #222; border-radius: 6px; background: rgba(0,0,0, .2); border-left: 1px solid #444;
                         border-top: 1px solid #444;">
-                            <div class="panel nm bgcolor-transparent no-border">
+
+                        <form class="panel nm bgcolor-transparent no-border" action="" data-parsley-validate>
+                            
+                            <%= form_for User.new, url: users_path, html: {novalidate: true} do |f| %>
+
                                 <div class="center panel-body" style="background: #fff; padding: 5px 20px 3px 20px; border-radius: 0 0 6px 6px; margin-top: -1px; border: 2px solid #ccc; border-top: none; box-shadow: 1px 1px 1px #444;">
                                     <img class="img-circle mb5 mr5 pull-left" src="/image/logo/cfa-logo-inverse.jpg" alt="" style="height: 20px; width: 20px;">
                                     <h5 class="lh-22 nm bold pull-left" style="color: #333;">
@@ -107,46 +111,47 @@ LAST UPDATE: 23/06/2014
                                     </div> -->
                                     <!-- <div class="clearfix"></div> -->
                                 </div>
-                                <hr class="dark nm" />
-                                <div class="panel-body pr30 pl30 pb0">
-                                    
-                                    <%= form_for User.new, url: users_path, html: {novalidate: true} do |f| %>
-                                        <div class="form-group">
-                                            <%= f.text_field :first_name, class: "form-control", id: "signup_first_name", placeholder: "First Name" %>
+                                <hr class="dark nm" />              
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <%= f.text_field :first_name, class: "form-control", id: "signup_first_name", :required => true, name: "fname", type: "text", placeholder: "First Name"%>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <%= f.text_field :last_name, class: "form-control", id: "signup_last_name", placeholder: "Last Name" %>
-                                        </div>
-										
-										<div class="form-group">
-                                            <%= f.text_field :email, class: "form-control", id: "signup_email", placeholder: "Email" %>
-                                        </div>
-                                        <div class="form-group">
-                                            <%= f.password_field :password, class: "form-control", id: "signup_password", placeholder: "Password" %>
-                                        </div>
-                                         <div class="form-group">
-											 <%= f.select :level, ["L1 Candidate", "L2 Candidate", "L3 Candidate", "Charterholder"], {prompt: "Select Program Level (Required)"}, class: "form-control" %>
-                                        </div>
-                                        <!-- <div class="form-group">
-                                            <%#= f.password_field :password_confirmation, class: "form-control input-lg", id: "signup_username", placeholder: "Password Confirmation" %>
-                                        </div>
-                                        --> 
-                                        <!-- <div class="form-group">
-                                            <%#= f.text_field :access_code, class: "form-control input-lg", id: "access_code", placeholder: "Access Code" %>
-                                        </div> -->
-                                        <!-- <div class="form-group mb0">
-                                            <span class="help-block text-muted mb0">Don't have an access code? <a href="#">How to get one.</a></span>
-                                        </div> -->
                                     </div>
-                                    <div class="panel-footer pr30 pl30" style="border-top: 2px solid #ccc; box-shadow: 1px 1px 1px #777;">
-                                        <%= f.submit "Sign up for BlackCFA", class: "mt10 semibold btn btn-primary btn-3d btn-block", style: "padding: 12px 16px; font-size: 18px;" %>
-                                        <div class="form-group pt10">
-                                            <span class="help-block text-muted fs10">By clicking "Sign up for BlackCFA", you agree to our <a href="#">terms of service</a> and <a href="#">privacy policy</a>. We will send you account related emails occasionally.</span>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                 <%= f.text_field :last_name, class: "form-control", id: "signup_first_name", :required => true, name: "lname", type: "text", placeholder: "Last Name"%>
+                                            </div>
                                         </div>
-                                    <% end %>
+                                    </div>
+                                     <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                 <%= f.text_field :email, class: "form-control", id: "signup_email", placeholder: "Email", :required => true, type: "email" %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <%= f.select :level, ["L1 Candidate", "L2 Candidate", "L3 Candidate", "Charterholder"], {prompt: "Select Program Level (Required)"}, class: "form-control", :required => true, 'parsley-required' => 'true', name: "type" %>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                                <div class="panel-footer">
+                                    <%= f.submit "Sign up for BlackCFA", class: "mt10 semibold btn btn-primary btn-3d btn-block", style: "padding: 12px 16px; font-size: 18px;" %>
+                                    <div class="form-group pt10">
+                                        <span class="help-block text-muted fs10">By clicking "Sign up for BlackCFA", you agree to our <a href="#">terms of service</a> and <a href="#">privacy policy</a>. We will send you account related emails occasionally.</span>
+                                    </div>
+                                </div>
+
+                            <% end %>
+
+                        </form>
                     </div>
                 </div>
             </section>
@@ -249,6 +254,12 @@ LAST UPDATE: 23/06/2014
         <script type="text/javascript" src="../plugins/layerslider/js/layerslider.min.js"></script>
         
         <script type="text/javascript" src="../javascript/pages/frontend/home.js"></script>
+          
+        <script type="text/javascript" src="../plugins/parsley/js/parsley.min.js"></script>
+        
+        <script type="text/javascript" src="../plugins/selectize/js/selectize.min.js"></script>
+        
+        <script type="text/javascript" src="../javascript/forms/validation.js"></script>
         
         <!--/ App and page level scrip -->
         <!--/ END JAVASCRIPT SECTION -->
