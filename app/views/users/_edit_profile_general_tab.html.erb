@@ -17,10 +17,12 @@
                 <div class="col-sm-9">
                     <div class="fileinput fileinput-new" data-provides="fileinput">
                         <div class="col-md-5">
-                            <div class="fileinput-new thumbnail">
-                                <img class="img-circle img-bordered img-responsive" src="<%= @user.avatar %>" alt="...">
+                            <div class="pull-left" style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
+                                <div class="fileinput-new thumbnail" >
+                                    <img src="<%= @user.avatar %>" alt="..." style="overflow: hidden; min-height: 100; min-width: 100px;">
+                                </div>
+                                <div class="fileinput-preview fileinput-exists thumbnail"></div>
                             </div>
-                            <div class="fileinput-preview fileinput-exists thumbnail" style="border-radius: 50%;"></div>
                         </div>
                         <div class="col-md-7 pt30">
                             <div class="row">
