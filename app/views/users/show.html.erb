@@ -125,12 +125,12 @@
                                                 </address> -->
                                                 <address>
                                                     <strong>Phone and Email</strong><br>
-                                                    <abbr title="Phone">P:</abbr> 
-                                                    <%= number_to_phone(@user.user_detail.try(:phone_number), area_code: true) %><br>
-                                                    <%= mail_to @user.email do %>
-                                                    <abbr title="Email">E:</abbr> 
-                                                    <%= truncate @user.email, length: 20 %>
-                                                    <% end %>
+                                                    <a href="#" class="mt30" data-toggle="popover" data-placement="right" data-content="" data-original-title="" title=" <%= number_to_phone(@user.user_detail.try(:phone_number), area_code: true) %>">
+                                                        <img src="/image/social/email_circle-128.png" height="40" alt=""/><%#= user.email %>
+                                                    </a>
+                                                     <a href="#" class="" data-toggle="popover" data-placement="right" data-content="" data-original-title="" title="<%= @user.email %>">
+                                                        <img src="/image/social/email_circle-128.png" height="40" alt=""/><%#= user.email %>
+                                                    </a>
                                                 </address>
 
                                                 <address>
