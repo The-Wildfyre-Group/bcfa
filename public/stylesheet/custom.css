@@ -506,19 +506,11 @@ ul.inline-li li {display: inline-block;}
 }
 
 
-.fileinput-preview.fileinput-exists.thumbnail,
-.fileinput-new.thumbnail {
-	width: 100px;
-	height: 100px; 
-	overflow: hidden;
-	border-radius: 50%;
-}
 
-.fileinput-preview.fileinput-exists.thumbnail img,
-.fileinput-new.thumbnail img {
-	min-width: 100px; 
-	min-height: 100px; 
-	width: 100%;
+.fileinput-preview.fileinput-exists.thumbnail img {
+	height: 100%;
+	width: auto;
+	position: relative;
 }
 
 
