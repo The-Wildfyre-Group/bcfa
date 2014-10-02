@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002220808) do
+ActiveRecord::Schema.define(version: 20141002230156) do
 
   create_table "forums", force: true do |t|
     t.string   "name"
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20141002220808) do
     t.string   "phone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "skills",               default: "--- []\n"
+    t.string   "skills",               default: "{}"
   end
 
   create_table "user_profile_pictures", force: true do |t|
