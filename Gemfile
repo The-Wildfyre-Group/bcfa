@@ -55,6 +55,8 @@ gem "letter_opener", :group => :development
 #for environment variables
 gem "figaro", github: 'laserlemon/figaro'
 
+gem 'postgres_ext'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
