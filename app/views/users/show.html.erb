@@ -67,7 +67,9 @@
                                                         <h6 class="text-muted pr15"><%= @user.first_name_with_capital %> has demonstrated professional experience in these areas.</h5>
                                                     </td>
                                                     <td>
-                                                        <h5 class="nm"><a href="#"><%= @user.user_detail.try(:skills) %></a></h5>
+														<% @user.user_detail.skills.each do |skill|  %>
+                                                        <h5 class="nm"><a href="#"><%= skill  %></a></h5>
+														<% end %>
                                                     </td>
                                                 </tr>
                                                 <tr>

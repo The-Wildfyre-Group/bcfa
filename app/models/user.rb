@@ -216,6 +216,14 @@ class User < ActiveRecord::Base
     end
   end
   
+  def skills
+    if user_detail.skills.last.empty?
+      
+    else
+      
+    end
+  end
+  
   
   
   

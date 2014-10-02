@@ -154,11 +154,14 @@
                     <%= builder.text_area :industries, rows: "2", class: "form-control", placeholder: "Industries" %>
                 </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label class="col-sm-3 control-label">Skills</label>
                 <div class="col-sm-8">
                     <div class="form-group pt0">
                         <div class="col-sm-12">
+
+
+
                             <select id="select-skills" class="form-control" placeholder="Select state..." multiple>
                                 <option value="">Select a state...</option>
                                 <option value="AL">Alabama</option>
@@ -217,7 +220,25 @@
                     </div>
                     <%#= builder.text_area :skills, rows: "10", class: "form-control", placeholder: "Skills" %>
                 </div>
+            </div> -->
+			
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Skills</label>
+                <div class="col-sm-8">
+                    <div class="form-group pt0">
+                        <div class="col-sm-12">
+							
+							
+							
+                            <%= builder.collection_select :skills, Skill.skills.sort, :to_s, :to_s, {include_blank: false}, {:multiple => true, :style => "width:100%", :id => "select-skills", :class => "form-control", :placeholder => "ljh, Texas..."  } %>
+                        </div>
+                    </div>
+                    <%#= builder.text_area :skills, rows: "10", class: "form-control", placeholder: "Skills" %>
+                </div>
             </div>
+			<%#= f.collection_select :skills, ["hey", "me"], :to_s, :to_s, {include_blank: false}, {:multiple => true, :style => "width:100%", :id => "select-skill", :class => "form-control", :placeholder => "Select Location: California, New York, Florida, Texas..."  } %>
+			
+			
             <div class="form-group">
                 <label class="col-sm-3 control-label">Interests</label>
                 <div class="col-sm-8">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001194006) do
+ActiveRecord::Schema.define(version: 20141002220808) do
 
   create_table "forums", force: true do |t|
     t.string   "name"
@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 20141001194006) do
     t.string   "industries"
     t.string   "website"
     t.string   "interests"
-    t.string   "skills"
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
@@ -71,6 +70,7 @@ ActiveRecord::Schema.define(version: 20141001194006) do
     t.string   "phone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "skills",               default: "--- []\n"
   end
 
   create_table "user_profile_pictures", force: true do |t|
