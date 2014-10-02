@@ -243,7 +243,7 @@ LAST UPDATE: 23/06/2014
                                           <h4 class="semibold mb0">
                                             <%= link_to h(forum.name), forum_path(forum.id) %>
                                           </h4>
-                                          <p class="date small mt5"><em>Created 8/15/2014</em></p>
+                                          <p class="date small mt5"><em>Created <%= date_with_slashes(forum.created_at) %></em></p>
                                           <p class="text"><%=h forum.description %></p>
                                       </td>
                                       <td class="text-center semibold">8</td>
