@@ -86,7 +86,7 @@ LAST UPDATE: 23/06/2014
                         <div class="col-md-4 np col-md-offset-2 p" style="border: 1px solid #222; border-radius: 6px; background: rgba(0,0,0, .2); border-left: 1px solid #444;
                         border-top: 1px solid #444;">
 
-                        <form class="panel nm bgcolor-transparent no-border" action="" data-parsley-validate>
+                        <div class="panel nm bgcolor-transparent no-border" action="" data-parsley-validate>
                             
                             <%= form_for User.new, url: users_path, html: {novalidate: true} do |f| %>
 
@@ -151,7 +151,7 @@ LAST UPDATE: 23/06/2014
 
                             <% end %>
 
-                        </form>
+						</div>
                     </div>
                 </div>
             </section>
