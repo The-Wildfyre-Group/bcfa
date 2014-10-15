@@ -86,7 +86,7 @@ LAST UPDATE: 23/06/2014
                         <div class="col-md-4 np col-md-offset-2 p" style="border: 1px solid #222; border-radius: 6px; background: rgba(0,0,0, .2); border-left: 1px solid #444;
                         border-top: 1px solid #444;">
 
-                        <div class="panel nm bgcolor-transparent no-border" action="" data-parsley-validate>
+                        
                             
                             <%= form_for @user, url: users_path do |f| %>
 
@@ -144,7 +144,7 @@ LAST UPDATE: 23/06/2014
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <%= f.password_field :password, class: "form-control", :required => true %>
+                                                <%= f.password_field :password, class: "form-control", :required => true, placeholder: "Password" %>
                                             </div>
                                         </div>
                                     </div>
