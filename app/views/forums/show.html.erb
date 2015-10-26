@@ -152,7 +152,7 @@ LAST UPDATE: 23/06/2014
                                 <p class="date small mt5"><em>Created <%= date_with_slashes(topic.created_at) %></em></p>
                             </td>
                             <td class="text-center semibold"><%= [topic.posts.count - 1,0].max %></td>
-                            <td class="text-center semibold"><%= topic.visit.total_visits %></td>
+                            <td class="text-center semibold"><%= topic.visit.try(:total_visits) %></td>
                             <td>
                              <small>
                               <span class="semibold">
